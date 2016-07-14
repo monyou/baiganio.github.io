@@ -1,3 +1,44 @@
+@font-face {
+    font-family: 'BulgariaModernaV3';
+    src: url('../fonts/myfonts/BulgariaModernaV3.otf') format('truetype');
+}
+@font-face {
+    font-family: 'BernardoModaContrast';
+    src: url('../fonts/myfonts/BernardoModaContrast.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RuslanDisplay';
+    src: url('../fonts/myfonts/RuslanDisplay.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AvdiraR';
+    src: url('../fonts/myfonts/Avdira_R.otf') format('truetype');
+}
+.AvdirR {
+    font-family: AvdiraR !important;
+    font-size: 1.2em;
+}
+
+.RuslanDisplay {
+    font-family: RuslanDisplay !important;
+    font-size: 1.2em;
+}
+
+.BernardoModaContrast {
+    font-family: BernardoModaContrast !important;
+    font-size: 1em;
+}
+.BulgariaModernaV3 {
+    font-family: BulgariaModernaV3 !important;
+    font-size: 2.5em;
+}
+
+.daliQ {
+    /*font-family: BulgariaModernaV3 !important;*/
+    font-family: AvdiraR !important;
+    font-size: 1.6em;
+
+}
 #carousel-wrapper{
    /* background-color: greenyellow; */
     width:80%;
@@ -5,7 +46,6 @@
 }
 .slider-size {
     height: 450px; /* This is your slider height */
-
     background-size:cover;
 }
 .carousel {
