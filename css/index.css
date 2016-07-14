@@ -1,4 +1,14 @@
-body{
-    background-color: greenyellow;
-    font-size: 50px;
+#carousel-wrapper{
+   /* background-color: greenyellow; */
+    width:80%;
+    margin:0 auto;
+}
+.slider-size {
+    height: 450px; /* This is your slider height */
+
+    background-size:cover;
+}
+.carousel {
+    width:70%;
+    margin:0 auto; /* center your carousel if other than 100% */
 }
