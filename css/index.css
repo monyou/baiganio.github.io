@@ -27,29 +27,34 @@
 
 .BernardoModaContrast {
     font-family: BernardoModaContrast !important;
-    font-size: 1em;
+    color: #6f11ca;
+    font-size:2em !important;
+    text-shadow: 2px 8px 6px #808080,
+    20px -15px 85px rgba(255,255,255,0.3);
 }
 .BulgariaModernaV3 {
     font-family: BulgariaModernaV3 !important;
-    font-size: 2.5em;
 }
 
 .daliQ {
     /*font-family: BulgariaModernaV3 !important;*/
-    font-family: AvdiraR !important;
-    font-size: 1.6em;
-
+    font-family: BulgariaModernaV3 !important;
+    font-size:2em;
 }
 #carousel-wrapper{
    /* background-color: greenyellow; */
-    width:80%;
+    width:60%;
     margin:0 auto;
 }
 .slider-size {
-    height: 450px; /* This is your slider height */
+    height: 250px; /* This is your slider height */
     background-size:cover;
 }
 .carousel {
     width:70%;
     margin:0 auto; /* center your carousel if other than 100% */
+}
+
+footer{
+    text-align: center;
 }
