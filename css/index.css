@@ -15,14 +15,14 @@
 
     src: url('../fonts/myfonts/Avdira_R.otf') format('truetype');
 }
-.AvdirR {
+.AvdiraR {
     font-family: AvdiraR !important;
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .RuslanDisplay {
     font-family: RuslanDisplay !important;
-    font-size: 1.2em;
+    font-size: 3em;
 }
 
 .BernardoModaContrast {
@@ -43,18 +43,45 @@
 }
 #carousel-wrapper{
    /* background-color: greenyellow; */
-    width:60%;
+    width:70%;
     margin:0 auto;
 }
 .slider-size {
-    height: 250px; /* This is your slider height */
+    height: 280px; /* This is your slider height */
     background-size:cover;
 }
 .carousel {
-    width:70%;
+    width:100%;
     margin:0 auto; /* center your carousel if other than 100% */
+}
+
+.carousel-caption > a{
+    color: #4cff00;
+    text-decoration: none !important;
+}
+.carousel-caption > a:hover{
+    color: #ffff00;
+}
+
+
+
+#main-content{
+    font-family: "Buxton Sketch";
+    height: 500px;
+    background-color: #eea236;
+    margin: 20px;
+    text-align: center;
+    font-size: 50px;
+    vertical-align: middle;
 }
 
 footer{
     text-align: center;
+}
+
+
+@media (min-width: 768px){
+    .nav-tabs-justified>li>a{
+        border-bottom: 0px !important;
+    }
 }
