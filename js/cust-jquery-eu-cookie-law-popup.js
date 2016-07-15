@@ -257,7 +257,7 @@
                 //'popupTitle': 'Този сайт използва "бисквитки". ',
                 //'popupText': 'Използваме ги, за да ви предоставим най-добрата функционалност на сайта. Ако продължите да използвате сайта, ние приемаме, че сте съгласни с условията за използване на "бисквитки".'
                 'popupTitle': 'This website uses "cookies" for demonstration purposes. ',
-                'popupText': 'Nobody uses them for anything. The functionality of the site is available through from GitHub. If you continue using our website, we\'ll assume that you are happy to receive all cookies on this website.'
+                'popupText': 'Nobody uses them for anything. The functionality of the site is available through GitHub. If you continue using our website, we\'ll assume that you are happy to receive all cookies on this website.'
             });
         }
     });
