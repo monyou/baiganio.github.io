@@ -14,6 +14,10 @@
     font-family: 'AvdiraR';
     src: url('../fonts/myfonts/Avdira_R.otf') format('truetype');
 }
+@font-face {
+    font-family: 'BuxtonSketch';
+    src: url('../fonts/myfonts/BuxtonSketch.ttf') format('truetype');
+}
 .AvdiraR {
     font-family: AvdiraR !important;
     font-size: 1.6em;

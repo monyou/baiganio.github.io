@@ -24,19 +24,20 @@
 .carousel-caption > a:hover{
     color: #ffff00;
 }
-#main-content{
-    font-family: "Buxton Sketch";
-    height: 580px;
-    width: 85%;
+#main-content {
+    font-family: BuxtonSketch;
+    height: 600px;
     display: none;
-    margin: 0 auto ;
     font-size: 1.8em;
-    /*background: url("../images/frame.png") no-repeat center;*/
-    /*-webkit-background-size: 85%;*/
-    /*background-size: 85%;*/
+    background: url("../images/frame.png") no-repeat center;
+    -webkit-background-size: 65%;
+    background-size: 75%;
 }
 #bai-ganio{
-    display: none;
+    margin: 0 auto;
+}
+#bai-ganio > h1{
+    text-align: center;
 }
 #bai-ganio > h1 > a:hover{
     text-decoration: none;
@@ -52,6 +53,6 @@ footer{
 }
 @media (max-width: 360px){
     #main-content{
-        text-align: center;
+        background: none;
     }
 }
