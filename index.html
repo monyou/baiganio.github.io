@@ -48,7 +48,10 @@
 </head>
 <body>
 
-
+<!--
+http://www.menucool.com/tooltip/css-tooltip
+http://www.dyn-web.com/code/tooltips/
+-->
 
 
     <!--============================== Navigation Bar Fixed 2 Top =================================-->
@@ -134,7 +137,7 @@
 
                     <div style="background:url(images/ganio.jpg) center no-repeat; background-size:contain;" class="slider-size">
                         <div class="carousel-caption" role="option">
-                            <a class="RuslanDisplay" href="#">
+                            <a class="BulgariaModernaV3" href="#">
                                 Who is Bai Ganio?
                             </a>
                         </div>
@@ -234,7 +237,31 @@
         <br>
         <br>
         <br>
-        TO DO....
+
+        <h1>
+            Bai Ganio is a fictional character of
+            <a href="#" class="BulgariaModernaV3" data-toggle="tooltip" data-placement="top"
+               title="Aleko Ivanitsov Konstantinov known under the alias 'Lucky' , a Bulgarian writer, lawyer & a public man.
+               Born in the town of Svishtov on January 13th year of 1863.">
+                Aleko Konstantinov
+            </a>
+            and protagonist in his series of satirical feuilletons.
+        </h1>
+        <br>
+        <h3>
+            "Do not despise this simple , lukavichak , pricey wretch ,
+            it was the brainchild of the harsh environment he was the victim of rough educators.
+            <br>
+            Thai evil is not in himself, but in the influence of the environment. Bai Ganyo is powerful, thoughtful , perceptive - mostly receptive !
+            <br>
+            Put it under the influence of a good leader, and you will see what a feat he is able to do .
+            <br>
+
+            Bai Ganyo is manifested so far only animals energy, but it is Thai large pool of potential spiritual force that expects only a moral impulse to become a living force ...
+            "
+            <br>
+            - by the feuilleton "Bai Ganio in Russia"
+        </h3>
     </div>
     <!--============================== End Main Content =================================-->
 
@@ -253,7 +280,7 @@
         <div>
             <span class="BernardoModaContrast">2015 - 2016 Bai Ganio on GitHub.IO</span>
             <br />
-            <span class="BernardoModaContrast">All Rights Reserved <b>&#128527;</b></span>
+            <span class="BernardoModaContrast">All Rights Reserved <b>&#127757;</b></span>
         </div>
     </footer>
     <!--============================== End Footer Content =================================-->
@@ -275,6 +302,10 @@
     <!-- Custom JavaScript Files -->
     <script src="js/cust-jquery-eu-cookie-law-popup.js"></script>
 
-
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 </html>

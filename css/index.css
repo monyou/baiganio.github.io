@@ -70,9 +70,10 @@
     height: 500px;
     background-color: #eea236;
     margin: 20px;
-    text-align: center;
-    font-size: 50px;
-    vertical-align: middle;
+    text-align: justify;
+    font-size: 1.8em;}
+#main-content > h1 > a:hover{
+    text-decoration: none;
 }
 
 footer{
