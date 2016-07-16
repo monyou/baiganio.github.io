@@ -5,11 +5,11 @@
 }
 #carousel-wrapper{
    /* background-color: greenyellow; */
-    width:70%;
+    width:80%;
     margin:0 auto;
 }
 .slider-size {
-    height: 280px; /* This is your slider height */
+    height: 380px; /* This is your slider height */
     background-size:cover;
 }
 .carousel {
@@ -19,19 +19,18 @@
 .carousel-caption > a{
     color: #4cff00;
     text-decoration: none !important;
-    font-size: 2em;
 }
 .carousel-caption > a:hover{
     color: #ffff00;
 }
 #main-content {
     font-family: BuxtonSketch;
-    height: 600px;
+    height: 680px;
     display: none;
-    font-size: 1.8em;
+    font-size: 1.8em !important;
     background: url("../images/frame.png") no-repeat center;
-    -webkit-background-size: 65%;
-    background-size: 75%;
+    -webkit-background-size: 80%;
+    background-size: 85%;
 }
 #bai-ganio{
     margin: 0 auto;
@@ -50,12 +49,18 @@ footer{
     margin: 20px;
 }
 @media (min-width: 768px){
-    .nav-tabs-justified>li>a{
+    .nav-tabs-justified>li>a {
         border-bottom: 0px !important;
+    }
+    .BulgariaModernaV3 {
+        font-size: 3em !important;
     }
 }
 @media (max-width: 360px){
     #main-content{
         background: none;
+    }
+    #ganio-info{
+        font-size: 2em !important;
     }
 }

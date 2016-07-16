@@ -18,14 +18,21 @@
     font-family: 'BuxtonSketch';
     src: url('../fonts/myfonts/BuxtonSketch.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'BeyondWonderland';
+    src: url('../fonts/myfonts/BeyondWonderland.ttf') format('truetype');
+}
 .AvdiraR {
     font-family: AvdiraR !important;
-    font-size: 1.6em;
+    font-size: 2em;
 }
-
+.BeyondWonderland {
+    font-family: BeyondWonderland !important;
+    font-size: 2.5em;
+}
 .RuslanDisplay {
     font-family: RuslanDisplay !important;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .BernardoModaContrast {
@@ -37,6 +44,7 @@
 }
 .BulgariaModernaV3 {
     font-family: BulgariaModernaV3 !important;
+    font-size: 1em;
 }
 hr.custom-fancy {
     height: 30px;
