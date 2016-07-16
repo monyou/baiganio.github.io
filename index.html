@@ -36,6 +36,8 @@
 
     <!-- Custom Css Files -->
     <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/cuts-jquery-eupopup.css">
 
 
@@ -63,16 +65,16 @@ http://www.dyn-web.com/code/tooltips/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">BAI GANIO</a>
+                <a class="navbar-brand" href="#">BAI GANIO <b>&#128527;</b></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav nav-tabs-justified">
                     <li style="text-indent:16em;">&nbsp;</li>
                     <li class="daliQ">
-                        <a href='#'>HOME</a>
+                        <a href='index.html'>HOME</a>
                     </li>
                     <li class="daliQ">
-                        <a href='#'>ABOUT US</a>
+                        <a href=''>ABOUT US</a>
                     </li>
                     <li class="daliQ">
                         <a href='#'>PRODUCTS</a>
@@ -137,7 +139,7 @@ http://www.dyn-web.com/code/tooltips/
 
                     <div style="background:url(images/ganio.jpg) center no-repeat; background-size:contain;" class="slider-size">
                         <div class="carousel-caption" role="option">
-                            <a class="BulgariaModernaV3" href="#">
+                            <a class="BulgariaModernaV3 show-info" href="#" id="ganio-info">
                                 Who is Bai Ganio?
                             </a>
                         </div>
@@ -230,41 +232,46 @@ http://www.dyn-web.com/code/tooltips/
         </div>
     </div>
     <!--============================== End Index Page Carousel =================================-->
-
+<br>
 
     <!--============================== Main Content =================================-->
     <div id="main-content">
         <br>
-        <br>
-        <br>
 
-        <h1>
-            Bai Ganio is a fictional character of
-            <a href="#" class="BulgariaModernaV3" data-toggle="tooltip" data-placement="top"
-               title="Aleko Ivanitsov Konstantinov known under the alias 'Lucky' , a Bulgarian writer, lawyer & a public man.
+       <div id="bai-ganio">
+           <h1>
+               Bai Ganio is a fictional character & protagonist in
+               <a href="#" class="BulgariaModernaV3" data-toggle="tooltip" data-placement="top"
+                  title="Aleko Ivanitsov Konstantinov known under the alias 'Lucky', a Bulgarian writer, lawyer and a public man.
                Born in the town of Svishtov on January 13th year of 1863.">
-                Aleko Konstantinov
-            </a>
-            and protagonist in his series of satirical feuilletons.
-        </h1>
-        <br>
-        <h3>
-            "Do not despise this simple , lukavichak , pricey wretch ,
-            it was the brainchild of the harsh environment he was the victim of rough educators.
-            <br>
-            Thai evil is not in himself, but in the influence of the environment. Bai Ganyo is powerful, thoughtful , perceptive - mostly receptive !
-            <br>
-            Put it under the influence of a good leader, and you will see what a feat he is able to do .
-            <br>
+                   Aleko Konstantinov's
+               </a>
+               series of satirical feuilletons.
+           </h1>
+           <hr class="custom-fancy">
+           <h3>
+               "Do not despise this simple, sly, pricey wretch,
+               he's brainchild of the harsh environment, victim of rough educators.
+               <br>
+               The evil is not within himself, but within the influence of the environment.
+               Bai Ganio is powerful, thoughtful, perceptive - mostly receptive!
+               <br>
+               Put him under the influence of a good leader, and you will see what a feats he is able to do.
+               <br>
+               Bai Ganio is manifested so far only with his primitive animal energy,
+               but he is keeping within a large pool of spiritual force,
+               that expects only a moral impulse to become a living force...".
+               <br>
+               <br>
+               - by the feuilleton "Bai Ganio in Russia"
+               <hr class="custom-fancy">
+           </h3>
 
-            Bai Ganyo is manifested so far only animals energy, but it is Thai large pool of potential spiritual force that expects only a moral impulse to become a living force ...
-            "
-            <br>
-            - by the feuilleton "Bai Ganio in Russia"
-        </h3>
+       </div>
+
     </div>
     <!--============================== End Main Content =================================-->
-
+    <div style="height: 40px;"></div>
 
     <!--============================== Footer Content =================================-->
     <footer>
@@ -301,6 +308,7 @@ http://www.dyn-web.com/code/tooltips/
 
     <!-- Custom JavaScript Files -->
     <script src="js/cust-jquery-eu-cookie-law-popup.js"></script>
+    <script src="js/index.js"></script>
 
     <script>
         $(document).ready(function(){

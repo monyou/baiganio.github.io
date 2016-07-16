@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'BulgariaModernaV3';
+    src: url('../fonts/myfonts/BulgariaModernaV3.otf') format('truetype');
+}
+@font-face {
+    font-family: 'BernardoModaContrast';
+    src: url('../fonts/myfonts/BernardoModaContrast.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RuslanDisplay';
+    src: url('../fonts/myfonts/RuslanDisplay.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AvdiraR';
+    src: url('../fonts/myfonts/Avdira_R.otf') format('truetype');
+}
+.AvdiraR {
+    font-family: AvdiraR !important;
+    font-size: 1.6em;
+}
+
+.RuslanDisplay {
+    font-family: RuslanDisplay !important;
+    font-size: 3em;
+}
+
+.BernardoModaContrast {
+    font-family: BernardoModaContrast !important;
+    color: #6f11ca;
+    font-size:2em !important;
+    text-shadow: 2px 8px 6px #808080,
+    20px -15px 85px rgba(255,255,255,0.3);
+}
+.BulgariaModernaV3 {
+    font-family: BulgariaModernaV3 !important;
+}
+hr.custom-fancy {
+    height: 30px;
+    border: 0 solid #8c8b8b;
+    border-top-width: 2px;
+    border-radius: 20px;
+}
+hr.custom-fancy:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border: 0 solid #8c8b8b;
+    border-bottom-width: 1px;
+    border-radius: 20px;
+}
+
+/*hr.custom-fancy {*/
+    /*border-top: 4px double #8c8b8b;*/
+    /*text-align: center;*/
+/*}*/
+/*hr.custom-fancy:after {*/
+    /*content: '§';*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*top: -20px;*/
+    /*padding: 0 10px;*/
+    /*background: #f0f0f0;*/
+    /*color: #8c8b8b;*/
+    /*font-size: 18px;*/
+    /*-webkit-transform: rotate(45deg);*/
+    /*-moz-transform: rotate(45deg);*/
+    /*transform: rotate(45deg);*/
+/*}*/
