@@ -7,7 +7,6 @@ $('#ganio-info').click(function () {
     document.getElementById('bai-ganio').style.display = 'block';
     document.getElementById('bai-ganio').style.width = '65%';
     $('#bai-ganio').css('margin', '0 auto');
-
 });
 
 
