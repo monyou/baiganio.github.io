@@ -13,12 +13,7 @@ function openNav() {
         document.getElementById("mySidenav").style.width = "20%";
         document.getElementById("main").style.marginLeft = "20%";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
-        // let jo = $('.container-sandwich[data-menuopen=true]');
-        // console.log(jo);
-        // if(!jo.attr('data-menuopen')){
-        //     jo.toggle('change');
-        //     jo.attr('data-menuopen', 'true');
-        // }
+
     }
 }
 
