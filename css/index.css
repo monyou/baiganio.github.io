@@ -46,6 +46,9 @@
 footer{
     text-align: center;
 }
+.soc-icons>div>a{
+    margin: 20px;
+}
 @media (min-width: 768px){
     .nav-tabs-justified>li>a{
         border-bottom: 0px !important;
