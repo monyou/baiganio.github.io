@@ -22,13 +22,17 @@
     font-family: 'BeyondWonderland';
     src: url('../fonts/myfonts/BeyondWonderland.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Guildof';
+    src: url('../fonts/myfonts/guildof.ttf') format('truetype');
+}
 .AvdiraR {
     font-family: AvdiraR !important;
     font-size: 2em;
 }
 .BeyondWonderland {
     font-family: BeyondWonderland !important;
-    font-size: 3.5em;
+    font-size: 2em;
 }
 .RuslanDisplay {
     font-family: RuslanDisplay !important;

@@ -7,7 +7,7 @@ function openNav() {
     let maxwidth = $(window).width();
     if(maxwidth < 361){
         document.getElementById("mySidenav").style.width = "70%";
-        document.getElementById("main").style.marginLeft = "20%";
+        document.getElementById("main").style.marginLeft = "70%";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
     }else{
         document.getElementById("mySidenav").style.width = "20%";

@@ -14,6 +14,10 @@
     font-family: 'Guildof';
     src: url('../fonts/guildof.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'BuxtonSketch';
+    src: url('../fonts/BuxtonSketch.ttf') format('truetype');
+}
 
 .alsandra{
     font-family: Alsandra;
@@ -25,7 +29,10 @@
     font-family: TheMonkiesAteMySoul;
 }
 .guildof{
-    font-family: Guildof;
+     font-family: Guildof;
+}
+.buxtonSketch{
+    font-family: BuxtonSketch;
 }
 /* Aside */
 .sidebar{
@@ -44,8 +51,6 @@
     width: 40%;
 }
 .single-menu-element-link{
-    text-decoration: none;
-    color: maroon;
     font-weight: 900;
     -moz-transition-property: font-weight;
     -moz-transition-duration: 3s;
@@ -59,7 +64,6 @@
 }
 .single-menu-element-link:hover{
     transition: background 0.7s ease;
-    color: white;
 }
 /* End Aside */
 .page-navigation>a{

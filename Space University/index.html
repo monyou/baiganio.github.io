@@ -15,86 +15,11 @@
     <!-- Custom Css -->
     <link href="styles/side-navigation.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/aside-navigation-menu.css">
+    <link rel="stylesheet" href="styles/main-page-content.css">
+    <link rel="stylesheet" href="styles/login-register.css">
 
 </head>
 <body>
-<!--cool navs http://www.w3schools.com/howto/howto_js_sidenav.asp-->
-
-    <!--============================== Navigation Bar Fixed 2 Top =================================-->
-    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
-        <!--<div class="container">-->
-            <!--<div class="navbar-header daliQ">-->
-                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-                <!--<a class="navbar-brand" href="#">BAI GANIO <b>&#128527;</b></a>-->
-            <!--</div>-->
-            <!--<div class="navbar-collapse collapse">-->
-                <!--<ul class="nav navbar-nav nav-tabs-justified">-->
-                    <!--<li style="text-indent:16em;">&nbsp;</li>-->
-                    <!--<li class="daliQ">-->
-                        <!--<a href='index.html'>HOME</a>-->
-                    <!--</li>-->
-                    <!--<li class="daliQ">-->
-                        <!--<a href=''>ABOUT US</a>-->
-                    <!--</li>-->
-                    <!--<li class="dropdown daliQ">-->
-                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-                           <!--aria-expanded="false">FEW DEMOS<span class="caret"></span></a>-->
-                        <!--<ul class="dropdown-menu">-->
-                            <!--<li role="separator" class="divider"></li>-->
-                            <!--<li class="daliQ">-->
-                                <!--<a href="Space University/index.html">Space University</a>-->
-                            <!--</li>-->
-                            <!--<li role="separator" class="divider"></li>-->
-                            <!--<li class="daliQ">-->
-                                <!--<a href="#">Coming soon...</a>-->
-                            <!--</li>-->
-                            <!--<li role="separator" class="divider"></li>-->
-                            <!--<li class="daliQ">-->
-                                <!--<a href="#">Coming soon...</a>-->
-                            <!--</li>-->
-                            <!--<li role="separator" class="divider"></li>-->
-                        <!--</ul>-->
-                    <!--</li>-->
-                    <!--<li class="daliQ">-->
-                        <!--<a href='#'>CONTACTS</a>-->
-                    <!--</li>-->
-                    <!--<li style="text-indent:4em;">&nbsp;</li>-->
-
-                    <!--<li class="dropdown daliQ">-->
-                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
-                           <!--aria-expanded="false">-->
-                            <!--English &nbsp;<span class="caret"></span>-->
-                            <!--<img src="images/flags/eng_flag.png" />-->
-                        <!--</a>-->
-                        <!--<ul class="dropdown-menu">-->
-                            <!--<li role="separator" class="divider"></li>-->
-                            <!--<li class="daliQ">-->
-                                <!--<a href='Начало.html'>-->
-                                    <!--Български-->
-                                    <!--<img src="images/flags/bg.png" />-->
-                                <!--</a>-->
-                            <!--</li>-->
-                            <!--&lt;!&ndash;<li role="separator" class="divider"></li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<li class="daliQ">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
-                            <!--&lt;!&ndash;中國&ndash;&gt;-->
-                            <!--&lt;!&ndash;<img src="images/flags/flag-ch.png" />&ndash;&gt;-->
-                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<li role="separator" class="divider"></li>&ndash;&gt;-->
-                        <!--</ul>-->
-                    <!--</li>-->
-
-                <!--</ul>-->
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--============================== End Navigation Bar Fixed 2 Top =================================-->
 
     <!--============================== Animated Side Navigation =================================-->
     <div id="mySidenav" class="sidenav guildof">
@@ -111,6 +36,7 @@
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <div id="main">
         <div class="row">
+            <!-- Side Menu -->
             <div class="col-md-3">
                 <aside class="sidebar">
                     <div class="logo">
@@ -142,17 +68,120 @@
                         <div id="recent-posts" class="alsandra">
                             <h1>Recent posts</h1>
                             <hr>
-                            <h1>ALA BALA PORTOKALA</h1>
+                            <!--<h1>ALA BALA PORTOKALA</h1>-->
 
                         </div>
                     </nav>
                 </aside>
             </div>
-            <div class="col-md-9">
-                <div style="width: 70%; border: 2px solid black;">
-
+            <!-- Main Page Content -->
+            <div class="col-md-9" id="main-page-content">
+                <section id="loadingBox">Loading.....</section>
+                <section id="infoBox">Info.....</section>
+                <section id="errorBox">Error.....</section>
+                <section id="viewHome">
+                    <h1>Welcome to Space University</h1>
+                </section>
+                <div id="viewLogin">
+                    <br>
+                    <!-- START LOGIN CONTENT -->
+                    <h1 class="qtar" style="color: #c0a16b">Login</h1>
+                    <hr />
+                    <br>
+                    <h3 class="qtar" style="font-size: 2.5em">
+                        You need to be register to use
+                        <span style="color: red">Space University</span> functionallity :)
+                    </h3>
+                    <br>
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <!-- START: register-form -->
+                        <div id="login-form" class="text-left">
+                            <div class="main-login-form">
+                                <form action="POST">
+                                    <div class="login-group">
+                                        <!--Username-->
+                                        <div class="form-group">
+                                            <input type="text" id="loginUsername" placeholder="Username">
+                                        </div>
+                                        <!--Password-->
+                                        <div class="form-group">
+                                            <input type="password" id="loginPassword" placeholder="Password">
+                                        </div>
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
+                    <!-- END LOGIN CONTENT -->
                 </div>
+                <section id="viewRegister" style="text-align: center;">
+                    <!-- START REGISTRATION CONTENT -->
+                    <h1 class="alsandra" style="color: #c0a16b">REGISTER</h1>
+                    <hr />
+                    <h3 class="buxtonSketch">
+                        There is no need to fulfill real e-mail's.
+                        <br>
+                        This is just a demo.
+                        <br>
+                        But keep in mind your created user if you want to use
+                        <span style="color: red">Space University</span> functionallity :)
+                    </h3>
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <!-- START: register-form -->
+                        <div id="register-form" class="text-left">
+                            <div class="main-login-form">
+                                <form action="POST">
+                                    <div class="login-group">
+                                        <!--Username-->
+                                        <div class="form-group">
+                                            <input type="text" id="registerUsername" placeholder="Username">
+                                        </div>
+                                        <!--Email-->
+                                        <div class="form-group">
+                                            <input type="email" id="registerEmail" placeholder="Email">
+                                        </div>
+                                        <!--Password-->
+                                        <div class="form-group">
+                                            <input type="password" id="registerPassword" placeholder="Password">
+                                        </div>
+                                        <!--Confirm Password-->
+                                        <div class="form-group">
+                                            <input type="password" id="registerConfirmPassword" placeholder="Confirm Password">
+                                        </div>
+
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
+                    <!-- END REGISTRATION CONTENT -->
+                </section>
+                <section id="viewListPosts">
+                    <h1>
+                        List posts.....
+                    </h1>
+                </section>
+                <section id="viewCreatePOst">
+                    <h1>
+                        Create posts.....
+                    </h1>
+                </section>
             </div>
+        </div>
     </div>
 
 
@@ -164,6 +193,7 @@
 
     <script src="../js/bootstrap.min.js"></script>
     <script src="scripts/side-navigation.js"></script>
+    <script src="scripts/main-page-content.js"></script>
 
 </body>
 </html>

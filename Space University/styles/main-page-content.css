@@ -1,0 +1,10 @@
+#main-page-content{
+    text-align: center;
+}
+#loadingBox, #infoBox, #errorBox{
+    display: none;
+}
+
+#main-page-content > section{
+    display: none;
+}
