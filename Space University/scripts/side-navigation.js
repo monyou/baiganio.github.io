@@ -59,9 +59,11 @@ function closeNav() {
 
 
 $(function () {
+    // alert('Here');
     let maxwidth = $(window).width();
+    // alert('Here is maxwidth: ' + maxwidth + 'px');
     if(maxwidth < 720){
-        var move = "expand";
+        let move = "expand";
         $('.page-navigation a').click(function(){
             $('.sidebar').hide();
             $('#shrink-menu').show();

@@ -24,6 +24,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     padding: 5px;
     margin: 5px;
     color: black;
+    background-color: transparent;
 }
 .form-control:focus {
     border-color: inherit;
@@ -44,7 +45,8 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 #create-post-form {
     width: 70%;
-    background: #efefef;
+    /*background: #efefef;*/
+    background-color: rgba(255, 255, 255, 0.24);
     padding: 3px;
     margin: 0 auto;
 }
@@ -121,7 +123,8 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 .login-group {
     background: #ffffff;
-    color: #999999;
+    /*background-color: rgba(255, 0, 0, 0);*/
+    color: black;
     border-radius: 8px;
     padding: 10px 20px;
 }
