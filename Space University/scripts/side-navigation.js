@@ -60,7 +60,7 @@ function closeNav() {
 
 $(function () {
     let maxwidth = $(window).width();
-    if(maxwidth <= 980){
+    if(maxwidth < 720){
         var move = "expand";
         $('.page-navigation a').click(function(){
             $('.sidebar').hide();

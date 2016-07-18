@@ -137,7 +137,30 @@ function showRegisterView() {
     showView('viewRegister');
 }
 function register() {
+    let loginData = {
+        username : $('#registerUsername').val(),
+        password : $('#registerPassword').val()
+    };
+    // alert('IN LOGIN');
+    $.ajax({
+        method: "POST",
+        url:kinveyServiceBaseUrl + 'user/' + kinveyAppID + '/',
+        data:loginData,
+        headers: {
+            "Authorization": "Basic " + btoa(kinveyAppID + ":" + kinveyAppSecret)
+        },
+        success: registerSuccess,
+        error: showAJAXError
+    });
 
+    function registerSuccess(data, status) {
+
+        sessionStorage.authToken = data._kmd.authtoken;
+        showListPostsView();
+        showHideNavLinks();
+
+        showInfo('Register completed successfully.');
+    }
 }
 function showCreatePostView() {
     showView('viewCreatePost');
