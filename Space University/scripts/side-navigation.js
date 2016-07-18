@@ -56,3 +56,20 @@ function closeNav() {
 
     document.body.style.backgroundColor = "white";
 }
+
+
+$(function () {
+    let maxwidth = $(window).width();
+    if(maxwidth <= 980){
+        var move = "expand";
+        $('.page-navigation a').click(function(){
+            $('.sidebar').hide();
+            $('#shrink-menu').show();
+        });
+        $('#shrink-menu').click(function () {
+            $('.sidebar').show();
+            $('#shrink-menu').hide();
+        });
+    }
+
+});
