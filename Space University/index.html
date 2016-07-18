@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/login-register.css">
     <link rel="stylesheet" href="styles/footer-holder.css">
     <link rel="stylesheet" href="styles/viewHome.css">
+    <link rel="stylesheet" href="styles/view-create-posts.css">
 
 
 </head>
@@ -80,6 +81,7 @@
                         <div id="recent-posts" class="alsandra">
                             <a href="#" id="linkListPosts" class="single-menu-element-link">
                                 <h1>Recent posts</h1>
+                                <div id="post-title"></div>
                             </a>
 
                             <hr>
@@ -229,15 +231,15 @@
                                     <div class="login-group">
                                         <!--TITLE-->
                                         <div class="form-group">
-                                            <input type="text" id="title" placeholder="Title">
+                                            <input type="text" maxlength="30" id="title" placeholder="Title">
                                         </div>
                                         <!--DESCRIPTION-->
                                         <div class="form-group">
-                                            <input type="text" id="description" placeholder="Description">
+                                            <input type="text" maxlength="50" id="description" placeholder="Description">
                                         </div>
                                         <!--IMG URL-->
                                         <div class="form-group">
-                                            <input type="text" id="imgUrl" placeholder="Image url">
+                                            <input type="text"  id="imgUrl" placeholder="Image url">
                                         </div>
                                         <!--Confirm Password-->
                                         <div class="form-group">

@@ -178,13 +178,15 @@ function showListPostsView() {
         headers: {
             "Authorization": "Kinvey " + sessionStorage.authToken
         },
-        success: booksLoaded,
+        success: postsLoaded,
         error: showBooksAjaxError
     });
 
-    function booksLoaded(data, status) {
+    function postsLoaded(data, status) {
         if(!appended && sessionStorage.authToken != null){
             for(let book of data){
+                let bookTitle = book.Title.substring(0,50) + " ...";
+                // alert(bookTitle);
                 $('#previevwHolder')
                     .append($('<div class="col-md-6">')
                         .append($('<h2 class="guildof"></h2>').text(book.Title))
@@ -194,6 +196,11 @@ function showListPostsView() {
                         .append($("<br>"))
                         .append($("<a>", {class: 'postUrl', href: book.ArticleUrl, target: "_blank"}).text("Read more..."))
                     );
+
+                $('#post-title')
+                    .append($('<span class="alsandra"></span>').text(bookTitle))
+                    .append($("<br>"))
+                    .append($("<br>"));
             }
             appended = true;
         }
@@ -203,6 +210,7 @@ function showListPostsView() {
 function logout() {
     sessionStorage.clear();
     $('#previevwHolder').empty();
+    $('#post-title').empty();
     appended = false;
     showHideNavLinks();
     showHomeView();

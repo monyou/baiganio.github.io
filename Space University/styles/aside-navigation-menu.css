@@ -77,8 +77,11 @@
 .page-navigation>a:hover{
     color: #2e6da4;
 }
-
-
+#post-title{
+    font-size: 1.6em !important;
+    text-align: left !important;
+    color: black;
+}
 /*.container-sandwich {*/
     /*display: inline-block;*/
     /*cursor: pointer;*/
