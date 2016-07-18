@@ -12,21 +12,21 @@ function openNav() {
         // document.getElementById("footer-holder").style.marginLeft = "70%";
         // document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
     }
-    else if(maxwidth >= 320 && maxwidth < 360){
+    else if(maxwidth >= 320 && maxwidth <= 360){
         document.getElementById("mySidenav").style.width = "90%";
     }
-    else if(maxwidth >= 360 && maxwidth < 800){
+    else if(maxwidth > 360 && maxwidth <= 800){
         document.getElementById("mySidenav").style.width = "90%";
         document.getElementById("main").style.marginLeft = "90%";
         document.getElementById("footer-holder").style.marginLeft = "90%";
     }
-    else if(maxwidth > 800 && maxwidth < 980){
+    else if(maxwidth >= 800 && maxwidth <= 980){
         document.getElementById("mySidenav").style.width = "27%";
         document.getElementById("main").style.marginLeft = "27%";
         document.getElementById("footer-holder").style.marginLeft = "27%";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
     }
-    else if(maxwidth >= 980 && maxwidth < 1280){
+    else if(maxwidth > 980 && maxwidth <= 1280){
         document.getElementById("mySidenav").style.width = "25%";
         document.getElementById("main").style.marginLeft = "25%";
         document.getElementById("footer-holder").style.marginLeft = "25%";
