@@ -89,7 +89,7 @@
                 <!-- MESSAGES HELPERS -->
                 <section id="loadingBox">Loading.....</section>
                 <section id="infoBox" onclick="$(this).hide()">Info.....</section>
-                <section id="errorBox">Error.....</section>
+                <section id="errorBox" onclick="$(this).hide()">Error.....</section>
                 <!-- END MESSAGES HELPERS -->
 
                 <!-- START HOME PAGE CONTENT -->
@@ -190,9 +190,12 @@
                 <!-- END REGISTRATION CONTENT -->
 
                 <section id="viewListPosts">
-                    <h1>
-                        List posts.....
-                    </h1>
+                    <!--<h1>-->
+                        <!--List posts.....-->
+                    <!--</h1>-->
+                    <div class="row" id="postPreview">
+                        <div id="previevwHolder"></div>
+                    </div>
                 </section>
 
                 <!-- CREATE POST CONTENT -->
