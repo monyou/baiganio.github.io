@@ -12,16 +12,18 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
 
-    <!-- Custom Css -->
-    <link href="styles/side-navigation.css" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/side-navigation.css">
     <link rel="stylesheet" href="styles/aside-navigation-menu.css">
     <link rel="stylesheet" href="styles/main-page-content.css">
     <link rel="stylesheet" href="styles/login-register.css">
+    <link rel="stylesheet" href="styles/footer-holder.css">
+
 
 </head>
 <body>
 
-    <!--============================== Animated Side Navigation =================================-->
+    <!--============================== ANIMATED SIDE NAVIGATION =================================-->
     <div id="mySidenav" class="sidenav guildof">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">ABOUT</a>
@@ -30,13 +32,12 @@
         <a href="#">Contact</a>
         <a href="../index.html">Back to baiganio.github.io</a>
     </div>
-    <!--============================== End Animated Side Navigation =================================-->
-    <!-- Use any element to open the sidenav -->
+    <!--============================== END ANIMATED SIDE NAVIGATION =================================-->
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <!--============================== PAGE CONTENT =================================-->
     <div id="main">
         <div class="row">
-            <!-- Side Menu -->
+            <!-- SIDE MENU -->
             <div class="col-md-3">
                 <aside class="sidebar">
                     <div class="logo">
@@ -74,17 +75,27 @@
                     </nav>
                 </aside>
             </div>
-            <!-- Main Page Content -->
+            <!-- END SIDE MENU -->
+
+            <!-- MAIN PAGE CONTENT -->
             <div class="col-md-9" id="main-page-content">
+
+                <!-- MESSAGES HELPERS -->
                 <section id="loadingBox">Loading.....</section>
                 <section id="infoBox">Info.....</section>
                 <section id="errorBox">Error.....</section>
+                <!-- END MESSAGES HELPERS -->
+
+                <!-- START HOME PAGE CONTENT -->
                 <section id="viewHome">
                     <h1>Welcome to Space University</h1>
                 </section>
-                <div id="viewLogin">
+                <!-- END HOME PAGE CONTENT -->
+
+                <!-- START LOGIN CONTENT -->
+                <section id="viewLogin">
                     <br>
-                    <!-- START LOGIN CONTENT -->
+
                     <h1 class="qtar" style="color: #c0a16b">Login</h1>
                     <hr />
                     <br>
@@ -119,13 +130,15 @@
                         <!-- END: register-form -->
                     </div>
                     <!-- END FORM -->
-                    <!-- END LOGIN CONTENT -->
-                </div>
+
+                </section>
+                <!-- END LOGIN CONTENT -->
+
+                <!-- START REGISTRATION CONTENT -->
                 <section id="viewRegister" style="text-align: center;">
-                    <!-- START REGISTRATION CONTENT -->
                     <h1 class="alsandra" style="color: #c0a16b">REGISTER</h1>
                     <hr />
-                    <h3 class="buxtonSketch">
+                    <h3 class="qtar">
                         There is no need to fulfill real e-mail's.
                         <br>
                         This is just a demo.
@@ -168,8 +181,9 @@
                         <!-- END: register-form -->
                     </div>
                     <!-- END FORM -->
-                    <!-- END REGISTRATION CONTENT -->
                 </section>
+                <!-- END REGISTRATION CONTENT -->
+
                 <section id="viewListPosts">
                     <h1>
                         List posts.....
@@ -181,17 +195,28 @@
                     </h1>
                 </section>
             </div>
+            <!-- MAIN PAGE CONTENT -->
         </div>
     </div>
+    <!--============================== END PAGE CONTENT =================================-->
+    <hr>
+    <!--============================== FOOTER =================================-->
+    <footer>
+        <div id="footer-holder">
+            <span style="font-family: Alsandra;">(C) Space University - DateTime.Now</span>
+            <span>&#174;</span>
+        </div>
 
-
-
-
+    </footer>
+    <!--============================== END FOOTER =================================-->
+    <hr>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
     <script src="../js/bootstrap.min.js"></script>
+
+    <!--============================== CUSTOM SCRIPTS =================================-->
     <script src="scripts/side-navigation.js"></script>
     <script src="scripts/main-page-content.js"></script>
 
