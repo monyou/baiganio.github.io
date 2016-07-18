@@ -50,8 +50,10 @@
     /*border:2px solid black;*/
     width: 40%;
 }
-.single-menu-element-link{
+.single-menu-element-link > a{
     font-weight: 900;
+    text-decoration: none;
+
     -moz-transition-property: font-weight;
     -moz-transition-duration: 3s;
     -moz-transition-timing-function: linear;
@@ -62,7 +64,7 @@
     -webkit-transition-timing-function: linear;
     -webkit-transition-delay: 2.5s;
 }
-.single-menu-element-link:hover{
+.single-menu-element-link>a:hover{
     transition: background 0.7s ease;
 }
 /* End Aside */
@@ -70,13 +72,12 @@
     color: black;
     font-size: 2em;
     text-decoration: none;
+    display: block;
 }
 .page-navigation>a:hover{
     color: #2e6da4;
 }
-#recent-posts{
-    color: #c0a16b;
-}
+
 
 /*.container-sandwich {*/
     /*display: inline-block;*/

@@ -42,6 +42,12 @@ input[type="text"], input[type="email"], input[type="password"] {
     padding: 3px;
     margin: 0 auto;
 }
+#create-post-form {
+    width: 70%;
+    background: #efefef;
+    padding: 3px;
+    margin: 0 auto;
+}
 /*=== 2. Anchor Link ===*/
 /*a {*/
     /*color: #aaaaaa;*/
@@ -148,22 +154,22 @@ input[type="text"], input[type="email"], input[type="password"] {
     -webkit-transform: rotate(720deg);
     transform: rotate(720deg);
 }
-.login-form-1 .login-button.clicked {
-    color: #555555;
-}
-.login-form-1 .login-button.clicked:hover {
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-    -webkit-transform: none;
-    transform: none;
-}
-.login-form-1 .login-button.clicked.success {
-    color: #2ecc71;
-}
-.login-form-1 .login-button.clicked.error {
-    color: #e74c3c;
-}
+/*.login-form-1 .login-button.clicked {*/
+    /*color: #555555;*/
+/*}*/
+/*.login-form-1 .login-button.clicked:hover {*/
+    /*-moz-transform: none;*/
+    /*-ms-transform: none;*/
+    /*-o-transform: none;*/
+    /*-webkit-transform: none;*/
+    /*transform: none;*/
+/*}*/
+/*.login-form-1 .login-button.clicked.success {*/
+    /*color: #2ecc71;*/
+/*}*/
+/*.login-form-1 .login-button.clicked.error {*/
+    /*color: #e74c3c;*/
+/*}*/
 /*=== 6. Form Invalid ===*/
 label.form-invalid {
     position: absolute;

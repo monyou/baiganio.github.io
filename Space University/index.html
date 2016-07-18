@@ -52,22 +52,28 @@
                     <hr>
                     <br>
                     <nav class="page-navigation guildof">
-                        <a href="index.html" class="single-menu-element-link">
+                        <a href="#" id="linkHome" class="single-menu-element-link">
                             Home
                         </a>
-                        <br>
-                        <a href="login.html" class="single-menu-element-link">
+                        <a href="#" id="linkLogin" class="single-menu-element-link">
                             Login
                         </a>
-                        <br>
-                        <a href="register.html" class="single-menu-element-link">
+                        <a href="#" id="linkRegister" class="single-menu-element-link">
                             Register
                         </a>
-                        <br>
+                        <a href="#" id="linkCreatePost" class="single-menu-element-link">
+                            Create post
+                        </a>
+                        <a href="#" id="linkLogout" class="single-menu-element-link">
+                            Logout
+                        </a>
                         <br>
                         <hr>
                         <div id="recent-posts" class="alsandra">
-                            <h1>Recent posts</h1>
+                            <a href="#" id="linkListPosts" class="single-menu-element-link">
+                                <h1>Recent posts</h1>
+                            </a>
+
                             <hr>
                             <!--<h1>ALA BALA PORTOKALA</h1>-->
 
@@ -82,7 +88,7 @@
 
                 <!-- MESSAGES HELPERS -->
                 <section id="loadingBox">Loading.....</section>
-                <section id="infoBox">Info.....</section>
+                <section id="infoBox" onclick="$(this).hide()">Info.....</section>
                 <section id="errorBox">Error.....</section>
                 <!-- END MESSAGES HELPERS -->
 
@@ -95,7 +101,6 @@
                 <!-- START LOGIN CONTENT -->
                 <section id="viewLogin">
                     <br>
-
                     <h1 class="qtar" style="color: #c0a16b">Login</h1>
                     <hr />
                     <br>
@@ -109,7 +114,7 @@
                         <!-- START: register-form -->
                         <div id="login-form" class="text-left">
                             <div class="main-login-form">
-                                <form action="POST">
+                                <form  id="loginForm">
                                     <div class="login-group">
                                         <!--Username-->
                                         <div class="form-group">
@@ -121,7 +126,7 @@
                                         </div>
                                         <!--Button GO-->
                                         <div class="form-group">
-                                            <input type="submit" class="login-button" value="GO" />
+                                            <input type="submit" id="loginButton" class="login-button" value="GO" />
                                         </div>
                                     </div>
                                 </form>
@@ -151,7 +156,7 @@
                         <!-- START: register-form -->
                         <div id="register-form" class="text-left">
                             <div class="main-login-form">
-                                <form action="POST">
+                                <form action="POST" id="registerForm">
                                     <div class="login-group">
                                         <!--Username-->
                                         <div class="form-group">
@@ -172,7 +177,7 @@
 
                                         <!--Button GO-->
                                         <div class="form-group">
-                                            <input type="submit" class="login-button" value="GO" />
+                                            <input type="submit" id="registerButton" class="login-button" value="GO" />
                                         </div>
                                     </div>
                                 </form>
@@ -189,11 +194,80 @@
                         List posts.....
                     </h1>
                 </section>
-                <section id="viewCreatePOst">
-                    <h1>
-                        Create posts.....
-                    </h1>
+
+                <!-- CREATE POST CONTENT -->
+                <section id="viewCreatePost">
+                    <h1 class="alsandra" style="color: #c0a16b">CREATE POST</h1>
+                    <hr />
+                    <!--<h3 class="qtar">-->
+                        <!--There is no need to fulfill real e-mail's.-->
+                        <!--<br>-->
+                        <!--This is just a demo.-->
+                        <!--<br>-->
+                        <!--But keep in mind your created user if you want to use-->
+                        <!--<span style="color: red">Space University</span> functionallity :)-->
+                    <!--</h3>-->
+                    <!-- START FORM -->
+                    <div class="login-form-1">
+                        <!-- START: register-form -->
+                        <div id="create-post-form" class="text-left">
+                            <div class="main-login-form">
+                                <form action="POST" id="createPostForm">
+                                    <div class="login-group">
+                                        <!--TITLE-->
+                                        <div class="form-group">
+                                            <input type="text" id="title" placeholder="Title">
+                                        </div>
+                                        <!--DESCRIPTION-->
+                                        <div class="form-group">
+                                            <input type="text" id="description" placeholder="Description">
+                                        </div>
+                                        <!--IMG URL-->
+                                        <div class="form-group">
+                                            <input type="text" id="imgUrl" placeholder="Image url">
+                                        </div>
+                                        <!--Confirm Password-->
+                                        <div class="form-group">
+                                            <input type="text" id="articleUrl" placeholder="Article url">
+                                        </div>
+
+                                        <!--Button GO-->
+                                        <div class="form-group">
+                                            <input type="submit" id="createPostButton" class="login-button" value="GO" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <span class="qtar" style="font-size: 2em; color: #c0a16b">Or create post from url:</span>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="main-login-form">
+                            <form action="POST" id="createPostFormFromUrl">
+                                <div class="login-group">
+                                    <!--TITLE-->
+                                    <div class="form-group">
+                                        <input type="text" id="postUrl" placeholder="http://www.mysite.com/article" required="true">
+                                    </div>
+                                    <!--Button GO-->
+                                    <div class="form-group">
+                                        <input type="submit" id="createFromUrlPostButton" class="login-button" value="GO" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <!-- END: register-form -->
+                    </div>
+                    <!-- END FORM -->
                 </section>
+                <!-- END CREATE POST CONTENT -->
             </div>
             <!-- MAIN PAGE CONTENT -->
         </div>
