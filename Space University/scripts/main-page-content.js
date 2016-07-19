@@ -33,6 +33,7 @@ function showView(viewID) {
 };
 
 $(function () {
+
     $('#linkHome').click(showHomeView);
     $('#linkLogin').click(showLoginView);
     $('#linkRegister').click(showRegisterView);
