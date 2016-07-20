@@ -64,6 +64,5 @@
     text-decoration: none;
 }
 #postHolder{
-    height: 600px;
-    overflow: hidden;
+    border: 2px solid yellow;
 }
