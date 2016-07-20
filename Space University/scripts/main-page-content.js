@@ -57,7 +57,8 @@ $(function () {
 
 /* HANDLE THE ERRORS - ONCE FOR THE CREDENTIALS, ONCE FOR THE GET AND POST REQUESTS */
 function showAJAXError (data, status) {
-    let errorMsg = 'Error: ' + JSON.stringify(data);
+    let errorMsg = 'Error: ' + JSON.stringify(data) + " <br/> " +
+        "Read this to know what's happening: User exist!!!Try another one.";
     showError(errorMsg);
 }
 function showBooksAjaxError(data, status) {
@@ -230,6 +231,7 @@ function showListPostsView() {
                             href: book.ArticleUrl,
                             target: "_blank"
                         }).text("Read more..."))
+                        .append($('<span style="float: right; font-family: Alsandra">').text("Delete..."))
                     );
 
                 $('#post-title')
