@@ -217,8 +217,9 @@ function showListPostsView() {
             for(let book of data) {
                 let bookTitle = book.Title.substring(0, 50) + " ...";
                 // alert(bookTitle);
+
                 $('#previevwHolder')
-                    .append($('<div class="col-md-4" id="postHolder">')
+                    .append($('<div class="" id="postHolder">')
                         .append($('<h2 class="guildof"></h2>').text(book.Title))
                         .append($('<h4 class="buxtonSketch"></h4>').text(book.Description))
                         .append($("<img>", {class: 'postImg', src: book.ImgUrl}))
