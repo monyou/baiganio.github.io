@@ -6,32 +6,7 @@ const kinveyAppID = 'kid_rJXGMWdD';
 const kinveyAppSecret = '5a27b3abc82449b2aabb58126e3899d8';
 const kinveyServiceBaseUrl = 'https://baas.kinvey.com/';
 
-function showAJAXError (data, status) {
-    let errorMsg = 'Error: ' + JSON.stringify(data);
-    showError(errorMsg);
-}
-function showError(msgText) {
-    $('#errorBox').text(msgText).show();
-}
-function showInfo(msgText) {
-    $('#infoBox').text(msgText).show().delay(3000).fadeOut(800);
-}
-
-function showBooksAjaxError(data, status) {
-    let errorMsg = 'Error: ' + JSON.stringify(data);
-    // or
-    let errorMsgBk = "You need to be logged...";
-    showError(errorMsgBk);
-}
-
-function showView(viewID) {
-    /*
-     * Clear all views before that.
-     */
-    $('#main-page-content > section').hide();
-    $('#' + viewID).show();
-};
-
+/* This function is loaded every time we refresh the page */
 $(function () {
 
     $('#linkHome').click(showHomeView);
@@ -41,12 +16,12 @@ $(function () {
     $('#linkCreatePost').click(showCreatePostView);
     $('#linkLogout').click(logout);
 
-   /* Note that by default HTML forms submit their data as HTTP GET request.
-    You should prevent this default action and replace it with JavaScript code.
-    Use e.preventDefault() as shown above.
-    Otherwise, the form will sometimes execute your JavaScript code,
-    sometimes will post its data as HTTP GET request.
-    */
+    /* Note that by default HTML forms submit their data as HTTP GET request.
+     You should prevent this default action and replace it with JavaScript code.
+     Use e.preventDefault() as shown above.
+     Otherwise, the form will sometimes execute your JavaScript code,
+     sometimes will post its data as HTTP GET request.
+     */
     $('#loginForm').submit(function (e) {
         e.preventDefault();
         login();
@@ -66,9 +41,9 @@ $(function () {
 
     /* Attach AJAX "loading" event listener*/
     $(document).on({
-       ajaxStart: function () {
-           $('#loadingBox').show();
-       },
+        ajaxStart: function () {
+            $('#loadingBox').show();
+        },
         ajaxStop: function () {
             $('#loadingBox').hide();
         }
@@ -77,6 +52,26 @@ $(function () {
     showHomeView();
     showHideNavLinks();
 });
+
+
+
+/* HANDLE THE ERRORS - ONCE FOR THE CREDENTIALS, ONCE FOR THE GET AND POST REQUESTS */
+function showAJAXError (data, status) {
+    let errorMsg = 'Error: ' + JSON.stringify(data);
+    showError(errorMsg);
+}
+function showBooksAjaxError(data, status) {
+    let errorMsg = 'Error: ' + JSON.stringify(data);
+    // or
+    let errorMsgBk = "You need to be logged...";
+    showError(errorMsgBk);
+}
+function showError(msgText) {
+    $('#errorBox').text(msgText).show();
+}
+function showInfo(msgText) {
+    $('#infoBox').text(msgText).show().delay(3000).fadeOut(800);
+}
 
 /* Choose what links to be seen when user is logged or not */
 function showHideNavLinks() {
@@ -96,14 +91,21 @@ function showHideNavLinks() {
         $('#linkLogout').hide();
     }
 };
+function showView(viewID) {
+    /*
+     * Clear all views before that.
+     */
+    $('#main-page-content > section').hide();
+    $('#' + viewID).show();
+};
 
 function showHomeView() {
     showView('viewHome');
 }
+
 function showLoginView() {
     showView('viewLogin');
 }
-
 function login() {
     let loginData = {
         username : $('#loginUsername').val(),
@@ -130,9 +132,6 @@ function login() {
         showInfo('Login successful');
     }
 }
-
-
-
 
 function showRegisterView() {
     showView('viewRegister');
@@ -163,16 +162,46 @@ function register() {
         showInfo('Register completed successfully.');
     }
 }
+
 function showCreatePostView() {
     showView('viewCreatePost');
 }
 function createPost() {
-    
+    let postUrl = kinveyServiceBaseUrl + 'appdata/' + kinveyAppID + '/posts';
+    let authHeaders =  {
+        "Authorization": "Kinvey " + sessionStorage.authToken,
+        "Content-Type": "application/json"
+    };
+
+    let newPostData = {
+        Title: $('#title').val(),
+        Description: $('#description').val(),
+        ImgUrl: $('#imgUrl').val(),
+        ArticleUrl: $('#articleUrl').val()
+    };
+
+
+    $.ajax({
+        method: "POST",
+        url:postUrl,
+        data: JSON.stringify(newPostData),
+        headers: authHeaders,
+        success: postCreated,
+        error: showBooksAjaxError
+    });
+
+    function postCreated(data, status) {
+        showListPostsView();
+        showInfo('Post created successfully.');
+    }
+
 }
 
 let appended = false;
 function showListPostsView() {
     showView('viewListPosts');
+    $('#previevwHolder').text('');
+    $('#post-title').text('');
     $.ajax({
         method: "GET",
         url:kinveyServiceBaseUrl + 'appdata/' + kinveyAppID + '/posts',
@@ -185,17 +214,21 @@ function showListPostsView() {
 
     function postsLoaded(data, status) {
         if(!appended && sessionStorage.authToken != null){
-            for(let book of data){
-                let bookTitle = book.Title.substring(0,50) + " ...";
+            for(let book of data) {
+                let bookTitle = book.Title.substring(0, 50) + " ...";
                 // alert(bookTitle);
                 $('#previevwHolder')
-                    .append($('<div class="col-md-6">')
+                    .append($('<div class="col-md-4" id="postHolder">')
                         .append($('<h2 class="guildof"></h2>').text(book.Title))
                         .append($('<h4 class="buxtonSketch"></h4>').text(book.Description))
                         .append($("<img>", {class: 'postImg', src: book.ImgUrl}))
                         .append($("<br>"))
                         .append($("<br>"))
-                        .append($("<a>", {class: 'postUrl', href: book.ArticleUrl, target: "_blank"}).text("Read more..."))
+                        .append($("<a>", {
+                            class: 'postUrl',
+                            href: book.ArticleUrl,
+                            target: "_blank"
+                        }).text("Read more..."))
                     );
 
                 $('#post-title')
@@ -203,11 +236,11 @@ function showListPostsView() {
                     .append($("<br>"))
                     .append($("<br>"));
             }
-            appended = true;
         }
         showInfo('Posts loaded.');
     }
 }
+
 function logout() {
     sessionStorage.clear();
     $('#previevwHolder').empty();

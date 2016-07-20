@@ -63,3 +63,7 @@
     font-size: 2em;
     text-decoration: none;
 }
+#postHolder{
+    height: 600px;
+    overflow: hidden;
+}

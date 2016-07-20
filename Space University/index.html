@@ -9,17 +9,11 @@
     <title>Space University</title>
 
     <!-- Bootstrap -->
-
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/default-fonts.css">
 
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="scripts/main-page-content.js"></script>
-
-
-
-    <!--============================== CUSTOM SCRIPTS =================================-->
-    <script src="scripts/side-navigation.js"></script>
-
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="styles/side-navigation.css">
@@ -29,7 +23,7 @@
     <link rel="stylesheet" href="styles/footer-holder.css">
     <link rel="stylesheet" href="styles/viewHome.css">
     <link rel="stylesheet" href="styles/view-create-posts.css">
-    <script src="../js/fancybox/source/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="styles/modal-images.css">
 
 
 </head>
@@ -49,9 +43,6 @@
     <!--============================== PAGE CONTENT =================================-->
     <div id="main">
         <div class="row">
-
-
-
 
             <!-- SIDE MENU -->
             <div class="col-md-3" id="side-nav-menu">
@@ -113,116 +104,12 @@
                 <!-- END MESSAGES HELPERS -->
 
 
-
-
-                <style>
-                    #myImg {
-                        border-radius: 5px;
-                        cursor: pointer;
-                        transition: 0.3s;
-                    }
-
-                    #myImg:hover {opacity: 0.7;}
-
-                    /* The Modal (background) */
-                    .modal {
-                        display: none; /* Hidden by default */
-                        position: fixed; /* Stay in place */
-                        z-index: 1; /* Sit on top */
-                        padding-top: 100px; /* Location of the box */
-                        left: 0;
-                        top: 0;
-                        width: 100%; /* Full width */
-                        height: 100%; /* Full height */
-                        overflow: auto; /* Enable scroll if needed */
-                        background-color: rgb(0,0,0); /* Fallback color */
-                        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-                    }
-
-                    /* Modal Content (image) */
-                    .modal-content {
-                        margin: auto;
-                        display: block;
-                        width: 80%;
-                        max-width: 700px;
-                    }
-
-                    /* Caption of Modal Image */
-                    #caption {
-                        margin: auto;
-                        display: block;
-                        width: 80%;
-                        max-width: 700px;
-                        text-align: center;
-                        color: #ccc;
-                        padding: 10px 0;
-                        height: 150px;
-                    }
-
-                    /* Add Animation */
-                    .modal-content, #caption {
-                        -webkit-animation-name: zoom;
-                        -webkit-animation-duration: 0.6s;
-                        animation-name: zoom;
-                        animation-duration: 0.6s;
-                    }
-
-                    @-webkit-keyframes zoom {
-                        from {-webkit-transform:scale(0)}
-                        to {-webkit-transform:scale(1)}
-                    }
-
-                    @keyframes zoom {
-                        from {transform:scale(0)}
-                        to {transform:scale(1)}
-                    }
-
-                    /* The Close Button */
-                    .close {
-                        position: absolute;
-                        top: 15px;
-                        right: 35px;
-                        color: #f1f1f1;
-                        font-size: 40px;
-                        font-weight: bold;
-                        transition: 0.3s;
-                    }
-
-                    .close:hover,
-                    .close:focus {
-                        color: #bbb;
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-
-                    /* 100% Image Width on Smaller Screens */
-                    @media only screen and (max-width: 700px){
-                        .modal-content {
-                            width: 100%;
-                        }
-                    }
-                </style>
                 <!-- START HOME PAGE CONTENT -->
                 <section id="viewHome">
                     <div id="sectionWrapper">
                         <h1>Welcome to Space University</h1>
-                        <!--<a class="fancybox" rel="gallery1" href="images/puppets.jpg">-->
-                           <!---->
-                        <!--</a>-->
+
                         <img id="myImg" src="images/puppets.jpg" width="80%" alt="Some description soon...">
-
-                            <!-- The Modal -->
-                            <div id="myModal" class="modal">
-
-                                <!-- The Close Button -->
-                                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-
-                                <!-- Modal Content (The Image) -->
-                                <img class="modal-content" id="img01">
-
-                                <!-- Modal Caption (Image Text) -->
-                                <div id="caption"></div>
-
 
                     </div>
                 </section>
@@ -256,7 +143,7 @@
                                         </div>
                                         <!--Button GO-->
                                         <div class="form-group">
-                                            <input type="submit" id="loginButton" class="login-button" value="GO" />
+                                            <input type="submit" class="login-button" value="GO" />
                                         </div>
                                     </div>
                                 </form>
@@ -307,7 +194,7 @@
 
                                         <!--Button GO-->
                                         <div class="form-group">
-                                            <input type="submit" id="registerButton" class="login-button" value="GO" />
+                                            <input type="submit" class="login-button" value="GO" />
                                         </div>
                                     </div>
                                 </form>
@@ -349,24 +236,24 @@
                                     <div class="login-group">
                                         <!--TITLE-->
                                         <div class="form-group">
-                                            <input type="text" maxlength="30" id="title" placeholder="Title">
+                                            <input type="text" maxlength="100" id="title" placeholder="Title">
                                         </div>
                                         <!--DESCRIPTION-->
                                         <div class="form-group">
-                                            <input type="text" maxlength="50" id="description" placeholder="Description">
+                                            <input type="text" maxlength="300"  id="description" placeholder="Description">
                                         </div>
                                         <!--IMG URL-->
                                         <div class="form-group">
-                                            <input type="text"  id="imgUrl" placeholder="Image url">
+                                            <input type="text"  maxlength="100" id="imgUrl" placeholder="Image url">
                                         </div>
                                         <!--Confirm Password-->
                                         <div class="form-group">
-                                            <input type="text" id="articleUrl" placeholder="Article url">
+                                            <input type="text" maxlength="100" id="articleUrl" placeholder="Article url">
                                         </div>
 
                                         <!--Button GO-->
                                         <div class="form-group">
-                                            <input type="submit" id="createPostButton" class="login-button" value="GO" />
+                                            <input type="submit" class="login-button" value="GO" />
                                         </div>
                                     </div>
                                 </form>
@@ -416,45 +303,33 @@
     </footer>
     <!--============================== END FOOTER =================================-->
     <hr>
+
+    <!-- The Modal For Images -->
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+
+    </div>
+
+
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <link rel="stylesheet" href="../js/fancybox/source/jquery.fancybox.css">
-    <script src="../js/fancybox/source/jquery.fancybox.js"></script>
+
     <script src="../js/bootstrap.min.js"></script>
 
-    <!--<script>-->
-        <!--$(document).ready(function($) {-->
-            <!--(".fancybox").fancybox();-->
-        <!--});-->
-    <!--</script>-->
-
-
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImg');
-
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            modalImg.alt = this.alt;
-            captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-    </script>
+    <!--============================== CUSTOM SCRIPTS =================================-->
+    <script src="scripts/side-navigation.js"></script>
+    <script src="scripts/modal-images.js"></script>
 
 
 </body>
