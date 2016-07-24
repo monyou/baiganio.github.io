@@ -15,6 +15,8 @@ $(function () {
     $('#linkListPosts').click(showListPostsView);
     $('#linkCreatePost').click(showCreatePostView);
     $('#linkLogout').click(logout);
+    $('#linkJSONviaAJAX').click(showAJAXviaJSONView);
+
 
     /* Note that by default HTML forms submit their data as HTTP GET request.
      You should prevent this default action and replace it with JavaScript code.
@@ -38,6 +40,8 @@ $(function () {
     $('#loginButton').click(login);
     $('#registerButton').click(register);
     $('#createPostButton').click(createPost);
+    $('#listUsers').click(listUsers);
+    $('#listPosts').click(listPosts);
 
     /* Attach AJAX "loading" event listener*/
     $(document).on({
@@ -138,7 +142,7 @@ function showRegisterView() {
     showView('viewRegister');
 }
 function register() {
-    let loginData = {
+    let registerData = {
         username : $('#registerUsername').val(),
         password : $('#registerPassword').val()
     };
@@ -146,7 +150,7 @@ function register() {
     $.ajax({
         method: "POST",
         url:kinveyServiceBaseUrl + 'user/' + kinveyAppID + '/',
-        data:loginData,
+        data:registerData,
         headers: {
             "Authorization": "Basic " + btoa(kinveyAppID + ":" + kinveyAppSecret)
         },
@@ -242,6 +246,32 @@ function showListPostsView() {
         }
         showInfo('Posts loaded.');
     }
+}
+
+
+function showAJAXviaJSONView() {
+    showView('json-via-ajax');
+}
+function listUsers() {
+    $('#listUsers').text('');
+    $.ajax({
+        method: "GET",
+        url:kinveyServiceBaseUrl1 + 'environments/' + kinveyAppID + '/users',
+        url:kinveyServiceBaseUrl + 'appdata/' + kinveyAppID + '/posts',
+        headers: {
+            "Authorization": "Kinvey " + sessionStorage.authToken
+        },
+        success: listUsersLoaded,
+        error: showBooksAjaxError
+    });
+
+    function listUsersLoaded() {
+        alert('het');
+    }
+
+}
+function listPosts() {
+
 }
 
 function logout() {

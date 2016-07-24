@@ -83,3 +83,10 @@ hr.custom-fancy:before {
     /*-moz-transform: rotate(45deg);*/
     /*transform: rotate(45deg);*/
 /*}*/
+
+.whoIsBehind{
+    color: #4cff00 !important;
+}
+.whoIsBehind:hover{
+    color: snow !important;
+}

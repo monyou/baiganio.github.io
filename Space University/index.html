@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/viewHome.css">
     <link rel="stylesheet" href="styles/view-create-posts.css">
     <link rel="stylesheet" href="styles/modal-images.css">
+    <link rel="stylesheet" href="styles/json-via-ajax.css">
 
 
 </head>
@@ -37,6 +38,9 @@
         <a href="#">CLIENTS</a>
         <a href="#">Contact</a>
         <a href="../index.html">Back to baiganio.github.io</a>
+        <div style="width: 80%; margin: 0 auto;">
+            <img src="images/hidden-portals.jpg" id="portalsHolder" alt="NASA Discovers Hidden Portals In Earth’s Magnetic Field.">
+        </div>
     </div>
     <!--============================== END ANIMATED SIDE NAVIGATION =================================-->
 
@@ -77,6 +81,10 @@
                         <a href="#" id="linkLogout" class="single-menu-element-link">
                             Logout
                         </a>
+                        <a href="#" id="linkJSONviaAJAX" class="single-menu-element-link">
+                            Using jQuery to Retrieve JSON via AJAX
+                        </a>
+
                         <br>
                         <hr>
                         <div id="recent-posts" class="alsandra">
@@ -104,8 +112,7 @@
                 <section id="viewHome">
                     <div id="sectionWrapper">
                         <h1 class="alsandra">Respect the diversity of the species!</h1>
-                        <img id="myImg" src="images/lil.jpg"  alt="NASA-funded researchers at the University of Iowa
-                        will analyze a hidden portal discovered in the Earth's magnetic field." />
+                        <img id="myImg" src="images/lil.jpg"  alt="A picture from Sony World Photography Awards 2016." />
                         <h1 class="alsandra">We are all unique!</h1>
                         <br>
                         <h1 class="alsandra">Used technologies:</h1>
@@ -253,14 +260,13 @@
                 </section>
                 <!-- END REGISTRATION CONTENT -->
 
+                <!-- START LIST POSTS CONTENT -->
                 <section id="viewListPosts">
-                    <!--<h1>-->
-                        <!--List posts.....-->
-                    <!--</h1>-->
                     <div class="row" id="postPreview">
                         <div id="previevwHolder"></div>
                     </div>
                 </section>
+                <!-- END LIST POSTS CONTENT -->
 
                 <!-- CREATE POST CONTENT -->
                 <section id="viewCreatePost">
@@ -328,6 +334,28 @@
                     <!-- END FORM -->
                 </section>
                 <!-- END CREATE POST CONTENT -->
+
+                <!-- START JSON VIA AJAX CONTENT -->
+                <section id="json-via-ajax">
+                    <p>
+                        <a href="https://www.sanwebe.com/2013/01/40-css-buttons-from-codepen">custom buttons</a>
+                    </p>
+                    <button id="listUsers" class='cool_btn1 green'>
+                        <h1 class='top'>126</h1>
+                        <h2> <i>Total users</i></h2>
+                    </button>
+                    <button id="listPosts" class='cool_btn1 teal'>
+                        <h1 class='top'>10k</h1>
+                        <h2> <i>Created posts</i></h2>
+                    </button>
+                    <div class="row" id="ajaxViaJsonPreview">
+                        <div id="usersHolder"></div>
+                        <div id="postsHolder"></div>
+                    </div>
+
+                </section>
+                <!-- END JSON VIA AJAX CONTENT -->
+
             </div>
             <!-- MAIN PAGE CONTENT -->
         </div>

@@ -28,6 +28,10 @@
     color: #f1f1f1;
 }
 
+#portalsHolder{
+    width: 100%;
+}
+
 /* Position and style the close button (top right corner) */
 .closebtn {
     position: absolute;

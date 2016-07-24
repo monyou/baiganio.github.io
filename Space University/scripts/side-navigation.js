@@ -8,7 +8,8 @@ let maxwidth1 = $(window).width();
 if(maxwidth1 > 320 && maxwidth1 <= 361){
     document.getElementById("myImg").style.width = "80%";
 }else{
-
+    // // document.getElementById("portalsHolder").style.width = "80%";
+    // $('portalsHolder').css('width, margin', '20%, 0 auto')
     document.getElementById("myImg").style.width = "50%";
 }
 
