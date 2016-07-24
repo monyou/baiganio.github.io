@@ -40,7 +40,6 @@ $(function () {
     $('#loginButton').click(login);
     $('#registerButton').click(register);
     $('#createPostButton').click(createPost);
-    $('#listUsers').click(listUsers);
     $('#listPosts').click(listPosts);
 
     /* Attach AJAX "loading" event listener*/
@@ -218,8 +217,10 @@ function showListPostsView() {
     });
 
     function postsLoaded(data, status) {
+        let counter = 0;
         if(!appended && sessionStorage.authToken != null){
             for(let book of data) {
+                counter++;
                 let bookTitle = book.Title.substring(0, 50) + " ...";
                 // alert(bookTitle);
 
@@ -243,7 +244,10 @@ function showListPostsView() {
                     .append($("<br>"))
                     .append($("<br>"));
             }
+
+            $('#listPosts .top').text(counter);
         }
+
         showInfo('Posts loaded.');
     }
 }
@@ -252,25 +256,34 @@ function showListPostsView() {
 function showAJAXviaJSONView() {
     showView('json-via-ajax');
 }
-function listUsers() {
-    $('#listUsers').text('');
+
+function listPosts() {
+    $('#postsHolderRaw').text('');
     $.ajax({
         method: "GET",
-        url:kinveyServiceBaseUrl1 + 'environments/' + kinveyAppID + '/users',
         url:kinveyServiceBaseUrl + 'appdata/' + kinveyAppID + '/posts',
         headers: {
             "Authorization": "Kinvey " + sessionStorage.authToken
         },
-        success: listUsersLoaded,
+        success: ajaxPostsLoaded,
         error: showBooksAjaxError
     });
 
-    function listUsersLoaded() {
-        alert('het');
-    }
+    function ajaxPostsLoaded(data,status) {
+        for(let post of data) {
+            let items = [];
 
-}
-function listPosts() {
+            $.each(post, function (key, val) {
+                items.push('<h3 class="alsandra">' + key + ' : ' + val + "</h3>");
+            });
+
+
+            $('#postsHolderRaw')
+                .append(items)
+                .append('<br>')
+                .append('<hr style="border: 3px dotted green; width: 60%;">')
+        }
+    }
 
 }
 
@@ -278,6 +291,7 @@ function logout() {
     sessionStorage.clear();
     $('#previevwHolder').empty();
     $('#post-title').empty();
+    $('#listPosts .top').text('Log in first');
     appended = false;
     showHideNavLinks();
     showHomeView();
