@@ -19,6 +19,11 @@
     src: url('../fonts/BuxtonSketch.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster.otf') format('truetype');
+}
+
 .alsandra{
     font-family: Alsandra;
 }
