@@ -14,7 +14,6 @@
 }
 #loadingBox, #infoBox, #errorBox{
     display: none;
-
 }
 #infoBox{
     background-color: #4cff00;
@@ -67,4 +66,13 @@
     border: 2px solid yellow;
     /*padding: 20px;*/
     margin: 20px;
+}
+
+.read-more{
+    color: red;
+}
+.read-more:hover{
+    color: greenyellow;
+    text-decoration: none;
+    cursor: pointer;
 }

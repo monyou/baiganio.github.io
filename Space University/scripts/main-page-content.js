@@ -87,12 +87,14 @@ function showHideNavLinks() {
         $('#linkCreatePost').show();
         $('#linkListPosts').show();
         $('#linkLogout').show();
+        $('#linkJSONviaAJAX').show();
     }else{
         $('#linkLogin').show();
         $('#linkRegister').show();
         $('#linkCreatePost').hide();
         $('#linkListPosts').show();
         $('#linkLogout').hide();
+        $('#linkJSONviaAJAX').hide();
     }
 };
 function showView(viewID) {
@@ -221,7 +223,7 @@ function showListPostsView() {
         if(!appended && sessionStorage.authToken != null){
             for(let book of data) {
                 counter++;
-                let bookTitle = book.Title.substring(0, 50) + " ...";
+                let bookTitle = book.Title.substring(0, 50);
                 // alert(bookTitle);
 
                 $('#previevwHolder')
@@ -231,16 +233,13 @@ function showListPostsView() {
                         .append($("<img>", {class: 'postImg', src: book.ImgUrl}))
                         .append($("<br>"))
                         .append($("<br>"))
-                        .append($("<a>", {
-                            class: 'postUrl',
-                            href: book.ArticleUrl,
-                            target: "_blank"
-                        }).text("Read more..."))
+                        .append($("<a>", { class: 'postUrl', href: book.ArticleUrl, target: "_blank"}).text("Read more..."))
                         .append($('<span style="float: right; font-family: Alsandra">').text("Delete..."))
                     );
 
                 $('#post-title')
                     .append($('<span class="alsandra"></span>').text(bookTitle))
+                    .append($("<a class='read-more' data-toggle='tooltip' title='read more :)'>").text(" [...]"))
                     .append($("<br>"))
                     .append($("<br>"));
             }
@@ -274,7 +273,7 @@ function listPosts() {
             let items = [];
 
             $.each(post, function (key, val) {
-                items.push('<h3 class="alsandra">' + key + ' : ' + val + "</h3>");
+                items.push('<h3 class="alsandra">Key: ' + key + ' <br/> Value: ' + val + "</h3>");
             });
 
 

@@ -37,6 +37,9 @@
         <a href="#">SERVICES</a>
         <a href="#">CLIENTS</a>
         <a href="#">Contact</a>
+        <a href="#" id="linkJSONviaAJAX" class="single-menu-element-link">
+            Using jQuery to Retrieve JSON via AJAX
+        </a>
         <a href="../index.html">Back to baiganio.github.io</a>
         <div style="width: 80%; margin: 0 auto;">
             <img src="images/hidden-portals.jpg" id="portalsHolder" alt="NASA Discovers Hidden Portals In Earth’s Magnetic Field.">
@@ -80,13 +83,9 @@
                         </a>
                         <a href="#" id="linkLogout" class="single-menu-element-link">
                             Logout
+                            <br>
+                            <hr>
                         </a>
-                        <a href="#" id="linkJSONviaAJAX" class="single-menu-element-link">
-                            Using jQuery to Retrieve JSON via AJAX
-                        </a>
-
-                        <br>
-                        <hr>
                         <div id="recent-posts" class="alsandra">
                             <a href="#" id="linkListPosts" class="single-menu-element-link">
                                 <h1>Recent posts</h1>
@@ -143,8 +142,13 @@
                         <h3 class="alsandra">&#x2713; <b>Ajax</b></h3>
                         <br>
                         <h3 class="alsandra">
-                            <a href="https://github.com/BaiGanio/baiganio.github.io/tree/master/Space%20University" target="_blank">
-                                <b>Source Code on Github here...</b>
+                            <b>Source Code on Github here</b>
+                            <a href="https://github.com/BaiGanio/baiganio.github.io/tree/master/Space%20University"
+                               class='read-more'
+                               target="_blank"
+                               data-toggle='tooltip'
+                               title='source code :)'>
+                                <b>[...]</b>
                             </a>
                         </h3>
                     </div>
@@ -390,7 +394,7 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
     <script src="../js/bootstrap.min.js"></script>
@@ -398,6 +402,7 @@
     <!--============================== CUSTOM SCRIPTS =================================-->
     <script src="scripts/side-navigation.js"></script>
     <script src="scripts/modal-images.js"></script>
+
 
 
 </body>
