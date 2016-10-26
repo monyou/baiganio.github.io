@@ -8,25 +8,150 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Plovdiv University</title>
 
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/default-fonts.css">
+    <script type="text/java script">
+ var $= jquery.noConflict();
+</script>
+
 
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../fancybox/lib/jquery-1.10.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Add fancyBox -->
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="../fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="../fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="../fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <!--<link rel="stylesheet" href="../fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />-->
+    <!--<script type="text/javascript" src="../fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>-->
+    <!--<script type="text/javascript" src="../fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>-->
+
+    <!--<link rel="stylesheet" href="../fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />-->
+    <!--<script type="text/javascript" src="../fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>-->
+
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="styles/default-fonts.css">-->
+
+
+    <style>
+        #wrapper{
+            width: 98%;
+            margin:0 auto;
+        }
+        #footer-holder{
+            text-align: center;
+        }
+    </style>
+
 </head>
 <body>
 
-hgnhgxhjgjfj
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-    <script src="../js/bootstrap.min.js"></script>
+    <!-- MAIN WRAPPER -->
+    <div id="wrapper">
+
+        <!-- NAVIGATION MENU -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Plovdiv University</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Students <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">STD 1A</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">STD 3A</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">ITMOM</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">MIT</a></li>
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="#">One more separated link</a></li>-->
+                            </ul>
+                        </li>
+                        <li><a href="#">Results</a></li>
+                    </ul>
+                    <!--<form class="navbar-form navbar-left">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" class="form-control" placeholder="Search">-->
+                        <!--</div>-->
+                        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                    <!--</form>-->
+                    <!--<ul class="nav navbar-nav navbar-right">-->
+                        <!--<li><a href="#">Link</a></li>-->
+                        <!--<li class="dropdown">-->
+                            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Action</a></li>-->
+                                <!--<li><a href="#">Another action</a></li>-->
+                                <!--<li><a href="#">Something else here</a></li>-->
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- END NAVIGATION MENU -->
+
+    </div>
+    <!-- END MAIN WRAPPER -->
+
+
+
+
+
+
+    <!--============================== FOOTER =================================-->
+    <footer>
+        <div id="footer-holder">
+            <span style="font-family: Alsandra;">(C) Plovdiv University - 2016</span>
+        </div>
+
+    </footer>
+    <!--============================== END FOOTER =================================-->
+
+
+    <script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox({
+                openEffect	: 'none',
+                closeEffect	: 'none'
+            });
+        });
+    </script>
 
     <!--============================== CUSTOM SCRIPTS =================================-->
-    <script src="scripts/side-navigation.js"></script>
-    <script src="scripts/modal-images.js"></script>
+    <!--<script src="scripts/side-navigation.js"></script>-->
+    <!--<script src="scripts/modal-images.js"></script>-->
 
 
 </body>
