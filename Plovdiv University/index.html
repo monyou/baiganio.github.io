@@ -8,11 +8,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Plovdiv University</title>
 
-    <script type="text/java script">
- var $= jquery.noConflict();
-</script>
-
-
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../fancybox/lib/jquery-1.10.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -48,10 +43,12 @@
         #wrapper{
             width: 98%;
             margin:0 auto;
+            font-family: "Buxton Sketch";
         }
         #footer-holder{
             text-align: center;
         }
+
     </style>
 
 </head>
@@ -62,6 +59,7 @@
     <!-- MAIN WRAPPER -->
     <div id="wrapper">
 
+        <!--============================== NAVIGATION BAR =================================-->
         <!-- NAVIGATION MENU -->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -80,23 +78,30 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="#">Home <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Courses</a></li>
+                            <a href="#" id="linkHome">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#" id="linkCourses">Courses</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Students <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">STD 1A</a></li>
+                                <li><a href="#" id="linkListAnatoli">Anatoli</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">STD 3A</a></li>
+                                <li><a href="#" id="linkListSTD1A">STD 1A</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">ITMOM</a></li>
+                                <li><a href="#" id="linkListSTD3A">STD 3A</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">MIT</a></li>
+                                <li><a href="#" id="linkListITMOM">ITMOM</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" id="linkListMI">MI</a></li>
                                 <!--<li role="separator" class="divider"></li>-->
                                 <!--<li><a href="#">One more separated link</a></li>-->
                             </ul>
                         </li>
-                        <li><a href="#">Results</a></li>
+                        <li><a href="#" id="linkResults">Results</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="linkLogin">Login</a></li>
+                        <li><a href="#" id="linkRegister">Register</a></li>
+                        <li><a href="#" id="linkLogout">Logout</a></li>
                     </ul>
                     <!--<form class="navbar-form navbar-left">-->
                         <!--<div class="form-group">-->
@@ -121,23 +126,80 @@
             </div><!-- /.container-fluid -->
         </nav>
         <!-- END NAVIGATION MENU -->
+        <!--============================== NAVIGATION BAR =================================-->
+
+        <!--============================== MAIN SECTION =================================-->
+
+        <main>
+            <!-- MESSAGES HELPERS -->
+            <section id="loadingBox">Loading... Please wait!</section>
+            <section id="errorBox" onclick="$(this).hide()">Sorry, but something get's wrong! We will check this soon.</section>
+            <section id="infoBox" onclick="$(this).hide()">Info.....</section>
+            <!-- END MESSAGES HELPERS -->
+
+            <section id="viewHome">
+                <h1>Hello from Home</h1>
+            </section>
+            <section id="viewCourses">
+                <h1>Hello from Courses</h1>
+            </section>
+            <section id="viewLogin">
+                <h1>Hello from Login</h1>
+
+
+
+
+            </section>
+            <section id="viewRegister">
+                <h1>Hello from Register</h1>
+            </section>
+            <section id="viewListSpecialities">
+                <h1>Hello from Specialities</h1>
+            </section>
+            <section id="viewListStudents">
+                <h1>Hello from Students</h1>
+            </section>
+            <section id="viewCreateCourse">
+                <h1>Hello from Create course</h1>
+            </section>
+
+            <!--============================== FOOTER =================================-->
+            <footer>
+                <div id="footer-holder">
+                    <span style="font-family: Alsandra;">(C) Plovdiv University - DateTime.Now</span>
+                </div>
+
+            </footer>
+            <!--============================== END FOOTER =================================-->
+        </main>
+        <!--============================== MAIN SECTION =================================-->
+
+
+        <!--============================== FOOTER =================================-->
+        <footer>
+            <div id="footer-holder">
+                <span style="font-family: Alsandra;">(C) Plovdiv University - DateTime.Now</span>
+            </div>
+
+        </footer>
+        <!--============================== END FOOTER =================================-->
 
     </div>
     <!-- END MAIN WRAPPER -->
 
 
+<!--<div id="q">-->
+
+    <!--<a class="fancybox" rel="gallery1" href="images/neuron.jpg" title="Twilight Memories (doraartem)">-->
+        <!--<img src="images/neuron.jpg" alt="" />-->
+    <!--</a>-->
+    <!--<a class="fancybox" rel="gallery1" href="images/neuron.jpg" title="Electrical Power Lines and Pylons disappear over t.. (pautliubomir)">-->
+        <!--<img src="images/neuron.jpg" alt="" />-->
+    <!--</a>-->
+<!--</div>-->
 
 
 
-
-    <!--============================== FOOTER =================================-->
-    <footer>
-        <div id="footer-holder">
-            <span style="font-family: Alsandra;">(C) Plovdiv University - 2016</span>
-        </div>
-
-    </footer>
-    <!--============================== END FOOTER =================================-->
 
 
     <script>
