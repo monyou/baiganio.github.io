@@ -1,0 +1,22 @@
+#loadingBox, #infoBox, #errorBox{
+    display:none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+#loadingBox{
+    background: #4acaff;
+}
+#infoBox{
+    background: #393;
+}
+#errorBox{
+    background: #f50;
+    color:white;
+}
+
+main > section{
+    display:none;
+}
