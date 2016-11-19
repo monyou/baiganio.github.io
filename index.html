@@ -67,7 +67,7 @@ http://www.dyn-web.com/code/tooltips/
                 <a class="navbar-brand whoIsBehind" href="#">BAI GANIO <b>&#128527;</b></a>
             </div>
             <div class="navbar-collapse collapse" style="">
-                <ul class="nav navbar-nav nav-tabs-justified BeyondWonderland">
+                <ul class="nav navbar-nav BeyondWonderland">
                     <li>
                         <a href='#'>HOME</a>
                     </li>
@@ -97,7 +97,14 @@ http://www.dyn-web.com/code/tooltips/
                         </ul>
                     </li>
                     <li>
-                        <a href='#'>CONTACTS</a>
+                        <a href='#' class="whoIsBehind">Blog</a>
+                    </li>
+                    <li>
+                        <a href='#' class="whoIsBehind">External projects</a>
+                    </li>
+                    <li>
+                        <!--<a href='#'>CONTACTS & ACCOUNTS</a>-->
+                        <h1 id="title"></h1>
                     </li>
                 </ul>
 
@@ -283,6 +290,17 @@ http://www.dyn-web.com/code/tooltips/
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
+
+            if (!$.cookie("urlCookie")) {
+                var url = document.referrer;
+                var match = url.indexOf("localhost");
+                if (match != -1) {
+                    $.cookie("urlCookie", url);
+                    $("#title").html(url);
+                }
+            } else {
+                $("#title").html($.cookie("urlCookie"));
+            }
         });
     </script>
 </body>
