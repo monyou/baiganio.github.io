@@ -292,16 +292,7 @@ http://www.dyn-web.com/code/tooltips/
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
 
-            if (!$.cookie("urlCookie")) {
-                var url = document.referrer;
-                var match = url.indexOf("localhost");
-                if (match != -1) {
-                    $.cookie("urlCookie", url);
-                    $("#title").html(url);
-                }
-            } else {
-                $("#title").html($.cookie("urlCookie"));
-            }
+
         });
     </script>
 </body>
