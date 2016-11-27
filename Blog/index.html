@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog| Bai Ganio on Github.IO</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/side-navigation.css">
 </head>
 <body>
-Hello from my blog
+<!--============================== ANIMATED SIDE NAVIGATION =================================-->
+<div id="mySidenav" class="sidenav guildof">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">ABOUT</a>
+    <a href="#">SERVICES</a>
+    <a href="#">CLIENTS</a>
+    <a href="#">Contact</a>
+    <a href="../index.html">Back to baiganio.github.io</a>
+    <!--<div style="width: 80%; margin: 0 auto;">-->
+        <!--<img src="images/hidden-portals.jpg" id="portalsHolder" alt="NASA Discovers Hidden Portals In Earth’s Magnetic Field.">-->
+    <!--</div>-->
+</div>
+<!--============================== END ANIMATED SIDE NAVIGATION =================================-->
+
+
+<div id="main">
+    <div id="side-nav-menu">
+        <div class="menu-btn"><h2 class="hamburger" onclick="openNav()">☰</h2></div>
+    </div>
+</div>
+
+
+<!--============================== CUSTOM SCRIPTS =================================-->
+<script src="scripts/side-navigation.js"></script>
+
 </body>
 </html>

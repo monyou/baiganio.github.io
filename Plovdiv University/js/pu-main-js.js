@@ -8,39 +8,44 @@ const kinveyServiceBaseUrl = 'https://baas.kinvey.com/';
 
 
 /* HANDLE THE ERRORS - ONCE FOR THE CREDENTIALS, ONCE FOR THE GET AND POST REQUESTS */
-function showAJAXError (data, status) {
-    let errorMsg = 'Error: ' + JSON.stringify(data) + " <br/> " +
+function showAJAXErrorRegister (data, status) {
+    // let errorMsg = 'Error: ' + JSON.stringify(data) + " <br/> " +
         "Read this to know what's happening: User exist!!!Try another one.";
+    let errorMsg = "Read this to know what's happening: User exist!!!Try another one.";
+
+        showError(errorMsg);
+}
+function showAJAXErrorLogin(data, status) {
+    let errorMsg = 'Error: Maybe incorrect credentials! Try again!';
+    showError(errorMsg);
+}
+function showAJAXErrorLogout(data, status) {
+     let errorMsg = 'Error: ' + JSON.stringify(data) + " <br/> ";
+    // let errorMsg = 'Error: Something wrong happens. Call your Admin!!';
     showError(errorMsg);
 }
 function showError(msgText) {
-    $('#errorBox').text(msgText).show();
+    $('#errorBox').text(msgText).show();//.delay(2000).fadeOut(800);
 }
 function showInfo(msgText) {
-    $('#infoBox').text(msgText).show().delay(3000).fadeOut(800);
+    $('#infoBox').text(msgText).show().delay(2000).fadeOut(800);
 }
+/* END HANDLING THE ERRORS - ONCE FOR THE CREDENTIALS, ONCE FOR THE GET AND POST REQUESTS */
 
 function showView(viewID) {
     /* Reset all existing views */
     $("main > section").hide();
-
-    $("#" + viewID).show();
-}
-
-/* Choose what links to be seen when user is logged or not */
-function showHideNavLinks() {
-    let loggedIn = sessionStorage.authToken != null;
-
-    if(loggedIn){
-        $('#linkLogin').hide();
-        $('#linkRegister').hide();
-        $('#linkLogout').show();
-    }else{
-        $('#linkLogin').show();
-        $('#linkRegister').show();
-        $('#linkLogout').hide();
+    if(sessionStorage.authToken != null){
+        if(sessionStorage.userData.admin == "Yes"){
+            $('#viewSuperAdmin').show();
+        }
     }
-};
+    else{
+        $('#viewSuperAdmin').hide();
+    }
+    $("#" + viewID).show();
+
+}
 
 function showHomeView(){
     showView('viewHome');
@@ -48,81 +53,66 @@ function showHomeView(){
 function showLoginView(){
     showView("viewLogin");
 }
-function login() {
-    let loginData = {
-        facultyNumber : $('#loginFacultyNumber').val(),
-        password : $('#loginPassword').val()
-    };
-    // alert('IN LOGIN');
-    $.ajax({
-        method: "POST",
-        url:kinveyServiceBaseUrl + 'user/' + kinveyAppID + '/login',
-        data:loginData,
-        headers: {
-            "Authorization": "Basic " + btoa(kinveyAppID + ":" + kinveyAppSecret)
-        },
-        success: loginSuccess,
-        error: showAJAXError
-    });
-
-    function loginSuccess(data, status) {
-
-        sessionStorage.authToken = data._kmd.authtoken;
-        showListPostsView();
-        showHideNavLinks();
-
-        showInfo('Login successful');
-    }
-}
-
 function showRegisterView(){
     showView("viewRegister");
 }
-function register() {
-    let registerData = {
-        username : $('#registerFullName').val(),
-        password : $('#registerPassword').val(),
+function showAdminView() {
+    showView('viewAdmin')
+    $('#previewUser').text('');
 
-        facNumb : $('#registerFacultyNumber').val()
-    };
+    // $('#previewUser')
+    //     .append($('<div class="" id="postHolder">')
+    //         .append($('<h2 class="guildof"></h2>').text("Hi " + sessionStorage.userData))
+    //         // .append($('<h4 class="buxtonSketch"></h4>').text(book.Description))
+    //         // .append($("<img>", {class: 'postImg', src: book.ImgUrl}))
+    //         // .append($("<br>"))
+    //         // .append($("<br>"))
+    //         // .append($("<a>", { class: 'postUrl', href: book.ArticleUrl, target: "_blank"}).text("Read more..."))
+    //         .append($('<span style="float: right; font-family: Alsandra">').text("Delete..."))
+    //     );
+}
+function showSuperAdminView() {
+    showView('viewSuperAdmin')
+}
 
-    $.ajax({
-        method: "POST",
-        url:kinveyServiceBaseUrl + 'user/' + kinveyAppID + '/',
-        data:registerData,
-        headers: {
-            "Authorization": "Basic " + btoa(kinveyAppID + ":" + kinveyAppSecret)
-        },
-        success: registerSuccess,
-        error: showAJAXError
-    });
+/* Choose what links to be seen when user is logged or not */
+function showHideNavLinks() {
+    let loggedIn = sessionStorage.custToken != null;
 
-    function registerSuccess(data, status) {
+    if(loggedIn) {
+        $('#linkLogin').hide();
+        $('#linkRegister').hide();
+        $('#linkLogout').show();
 
-        sessionStorage.authToken = data._kmd.authtoken;
-        // showListPostsView();
-        showHideNavLinks();
-
-        showInfo('Register completed successfully.');
+        let isadmin = sessionStorage.admin;
+        if (isadmin === "Yes") {
+            // alert("TRUE");
+            $('#linkAdmin').show();
+            $('#linkSuperAdmin').text("Здравей, Super Admin " + sessionStorage.fullName + " :)").show();
+        } else {
+            $('#linkAdmin').text("Здравей, Admin " + sessionStorage.fullName + " :)").show();
+        }
+    }else {
+        $('#linkLogin').show();
+        $('#linkRegister').show();
+        $('#linkLogout').hide();
+        $('#linkAdmin').hide();
+        $('#linkSuperAdmin').hide();
     }
-}
+};
 
 
-function logout(){
-    sessionStorage.clear();
-   // alert('logout');
-    showHideNavLinks();
-    showHomeView();
-}
+
 
 /* When DOM is ready then this function will be called */
-
 $(function(){
     $("#linkHome").click(showHomeView);
     $("#linkLogin").click(showLoginView);
     $("#linkRegister").click(showRegisterView);
     $("#linkLogout").click(logout);
 
+    $("#linkAdmin").click(showAdminView);
+    $("#linkSuperAdmin").click(showSuperAdminView);
 
     /* Note that by default HTML forms submit their data as HTTP GET request.
      You should prevent this default action and replace it with JavaScript code.

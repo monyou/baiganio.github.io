@@ -54,12 +54,12 @@
             text-align: center;
         }
 
-        main{
-            /*background: url("images/header_contact.jpg");*/
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+        /*main{*/
+            /*!*background: url("images/header_contact.jpg");*!*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: cover;*/
+            /*background-position: center;*/
+        /*}*/
 
     </style>
 
@@ -118,6 +118,8 @@
                         </div>
                         <li><a href="#" id="linkLogin">Login</a></li>
                         <li><a href="#" id="linkRegister">Register</a></li>
+                        <li><a href="#" id="linkAdmin">Admin</a></li>
+                        <li><a href="#" id="linkSuperAdmin">Super Admin</a></li>
                         <li><a href="#" id="linkLogout">Logout</a></li>
                     </ul>
                     <!--<form class="navbar-form navbar-left">-->
@@ -149,61 +151,108 @@
 
         <main>
             <!-- MESSAGES HELPERS -->
-            <section id="loadingBox">Loading... Please wait!</section>
-            <section id="errorBox" onclick="$(this).hide()">Sorry, but something get's wrong! We will check this soon.</section>
-            <section id="infoBox" onclick="$(this).hide()">Info.....</section>
-            <!-- END MESSAGES HELPERS -->
+            <div id="helper">
+                <section id="loadingBox">Loading... Please wait!</section>
+                <section id="errorBox" onclick="$(this).hide()">Sorry, but something get's wrong! We will check this soon.</section>
+                <section id="infoBox" onclick="$(this).hide()">Info.....</section>
+            </div>
+            <!--/ END MESSAGES HELPERS -->
 
+            <!--============================== HOME VIEW =================================-->
             <section id="viewHome">
-                <h1>Hello from Home</h1>
-                <p>d</p>
-                <p>d</p>
-                <p>d</p>  <p>d</p>  <p>d</p>  <p>d</p>  <p>d</p>  <p>d</p>
+                <div class="bon4o">
+                    <img src="../Plovdiv University/images/idr.png" alt="">
+                </div>
+                <br>
+                <div style="text-align: center; border-radius: 50%;margin: 0 auto; height: 40px">
+                    <a class="" role="button">Learn more</a>
+                    <a target="_blank" href="http://www.themeinthebox.com/ourtheme/mountain-king-bootstrap-template/" class="" role="button">Download</a>
+                </div>
+
             </section>
+            <!--============================== HOME VIEW =================================-->
+
+            <!--============================== COURSES VIEW =================================-->
             <section id="viewCourses">
                 <h1>Hello from Courses</h1>
             </section>
+            <!--============================== COURSES VIEW =================================-->
+
+            <!--============================== LOGIN VIEW =================================-->
             <section id="viewLogin">
                 <h1>Hello from Login</h1>
                 <div></div>
                 <form action="" id="loginForm">
-                    <div>Fac.N:</div>
+                    <div>Fac.N#:</div>
                     <div>
                         <input type="text" id="loginFacultyNumber" required="true">
                     </div>
-                    <div>Password</div>
+                    <div>Password:</div>
                     <div>
-                        <input type="text" id="loginPassword" required="true">
+                        <input type="password" id="loginPassword" required="true">
                     </div>
                     <div>
                         <input type="submit" id="loginButton" value="Login">
                     </div>
                 </form>
             </section>
-
+            <!--============================== LOGIN VIEW =================================-->
+            <!--============================== REGISTER VIEW =================================-->
             <section id="viewRegister">
-                <h1>Hello from Register</h1>
-                <form action="" id="registerForm">
-                    <div>Full Name</div>
-                    <div>
-                        <input type="text" id="registerFullName" required="true">
-                    </div>
-                    <div>Faculty Number</div>
-                    <div>
-                        <input type="text" id="registerFacultyNumber" required="true">
-                    </div>
-                    <!--<div>-->
-                    <!--<input type="text" id="registerUsername" required="true">-->
-                    <!--</div>-->
-                    <div>Password</div>
-                    <div>
-                        <input type="text" id="registerPassword" required="true">
-                    </div>
-                    <div>
-                        <input type="submit" id="registerButton" value="Register">
-                    </div>
-                </form>
+               <div style="width: 90%; margin: 0 auto; border:1px solid black; text-align: center;">
+                   <h1>Hello from Register</h1>
+                   <form action="" id="registerForm">
+                       <div>F. N#5:</div>
+                       <div>
+                           <input type="text" pattern="[0-9]{10}" id="registerFacultyNumber" required="true">
+                       </div>
+                       <div>Password:</div>
+                       <div>
+                           <input type="password" id="registerPassword" required="true">
+                       </div>
+                       <div>Full Name:</div>
+                       <div>
+                           <input type="text" id="registerFullName" required="true">
+                       </div>
+                       <!--<div>-->
+                       <!--<input type="text" id="registerUsername" required="true">-->
+                       <!--</div>-->
+                       <br>
+                       <div>
+                           <input type="submit" id="registerButton" value="Register">
+                       </div>
+                   </form>
+               </div>
             </section>
+            <!--============================== REGISTER VIEW =================================-->
+
+            <!--============================== ADMIN VIEW =================================-->
+            <section id="viewAdmin">
+                HELLO FROM ADMIN!
+                <!--<div id="previewUser"></div>-->
+              <div id="" class="row">
+                  <div class="col-md-2">
+                      <div>
+                          <img id="user_img"
+                               height="120"
+                               width="110"
+                               style="border: solid" />
+                      </div>
+                      <br>
+                      <input title="Search for image" name="file" id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+                  </div>
+                  <div class="col-md-10"> <div id="imgTest" style="width: 10%;"></div></div>
+              </div>
+
+
+            </section>
+            <!--============================== ADMIN VIEW =================================-->
+
+            <!--============================== ADMIN VIEW =================================-->
+            <section id="viewSuperAdmin">
+                HELLO FROM SUPER ADMIN!
+            </section>
+            <!--============================== ADMIN VIEW =================================-->
 
             <section id="viewListSpecialities">
                 <h1>Hello from Specialities</h1>
@@ -214,18 +263,29 @@
             <section id="viewCreateCourse">
                 <h1>Hello from Create course</h1>
             </section>
-
-
         </main>
         <!--============================== MAIN SECTION =================================-->
 
+        <br/>
+        <br/>
         <!--============================== FOOTER =================================-->
         <footer>
             <div id="footer-holder">
                 <span style="font-family: Alsandra;">(C) Plovdiv University - DateTime.Now. All rights reserved.</span>
                 <p>Developed by Lyuben Kikov - part-time assistant at department Software Technologies.</p>
-            </div>
 
+                <div>
+                    <a href="https://www.facebook.com/profile.php?id=100000862476257" target="_blank">
+                        <img src="../images/social-icons/facebook.jpg" alt="Facebook" title="Facebook">
+                    </a>
+                    <a href="https://github.com/BaiGanio/baiganio.github.io/tree/master/Plovdiv%20University" target="_blank">
+                        <img src="../images/social-icons/octocat-small.png" alt="GitHub" title="Github">
+                    </a>
+                    <a href="#">
+                        <img src="../images/social-icons/google.jpg" alt="Google" title="Google">
+                    </a>
+                </div>
+            </div>
         </footer>
         <!--============================== END FOOTER =================================-->
 
@@ -273,6 +333,12 @@
     </script>
 
     <!--============================== CUSTOM SCRIPTS =================================-->
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/super-admin.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/create-publication.js"></script>
     <!--<script src="scripts/side-navigation.js"></script>-->
     <!--<script src="scripts/modal-images.js"></script>-->
 

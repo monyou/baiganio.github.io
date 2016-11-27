@@ -20,7 +20,7 @@ function openNav() {
         document.getElementById("mySidenav").style.width = "94%";
         // document.getElementById("main").style.marginLeft = "70%";
         // document.getElementById("footer-holder").style.marginLeft = "70%";
-        // document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
+         document.body.style.backgroundColor = "rgba(0,0,0,0.4)"
     }
     else if(maxwidth >= 320 && maxwidth <= 360){
         document.getElementById("mySidenav").style.width = "90%";

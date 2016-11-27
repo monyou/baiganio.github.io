@@ -1,8 +1,11 @@
+#helper{
+    margin: 20px;
+}
 #loadingBox, #infoBox, #errorBox{
     display:none;
-    padding: 5px 10px;
     border-radius: 3px;
     width: 80%;
+    padding: 20px;
     margin: 0 auto;
     text-align: center;
 }
@@ -19,4 +22,41 @@
 
 main > section{
     display:none;
+}
+#viewHome {
+    /*background-image: url('../images/Project-Management.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*height:350px;*/
+    /*height:110vh;*/
+}
+.bon4o{
+    width: 90%;
+
+}
+.bon4o img{
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jumbotron{
+    background: none !important;
+    text-align: center;
+}
+
+.jumbotron h1,
+.jumbotron h2,
+.jumbotron h3,
+.jumbotron h4,
+.jumbotron h5,
+.jumbotron h6,
+.jumbotron small
+{
+    color: #1E3261;
+}
+
+.jumbotron p
+{
+    color: #3c7be7;
+    vertical-align: bottom;
 }
