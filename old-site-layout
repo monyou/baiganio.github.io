@@ -1,0 +1,136 @@
+   <div style="height:70px;"></div>
+
+    <!--============================== Index Page Carousel =================================-->
+    <div id="carousel-wrapper">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                    <div style="background:url(images/ganio.jpg) center no-repeat; background-size:contain;" class="slider-size">
+                        <div class="carousel-caption" role="option">
+                            <a class="BeyondWonderland show-info" href="#" id="ganio-info">
+                                Who is Bai Ganio?
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div style="background:url(images/3.jpg) center center; background-size:contain;" class="slider-size">
+                        <div class="carousel-caption" role="option">
+                            <a class="BeyondWonderland show-info" href="#">
+                                "Power is nothing without control..."
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div style="background:url(images/4.jpg) center no-repeat; background-size:contain;" class="slider-size">
+                        <div class="carousel-caption" role="option">
+                            <a class="BeyondWonderland show-info" href="#">
+                                Heavy Duty &#128526; Apps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="item">-->
+                    <!--<div style="background:url(images/5.jpg) center no-repeat; background-size:contain;" class="slider-size">-->
+                        <!--<div class="carousel-caption" role="option">-->
+                            <!--<p>-->
+                                <!--Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.-->
+                                <!--<a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">-->
+                                    <!--Learn More-->
+                                <!--</a>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="item">
+                    <div style="background:url(images/motivation.jpg) center no-repeat; background-size:contain;" class="slider-size">
+                        <div class="carousel-caption" role="option">
+
+                                <a class="BeyondWonderland" href="#">
+                                    Need more motivation?
+                                </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div style="background:url(images/k2-mountain.jpg) center no-repeat; background-size:cover;" class="slider-size">
+                        <div class="carousel-caption" role="option">
+                            <p>
+                                Mountain KING Story.
+                                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                                    Learn More
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Wrapper for slides -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!--============================== End Index Page Carousel =================================-->
+
+    <br>
+
+    <!--============================== Main Content =================================-->
+    <div id="main-content">
+        <br>
+        <div id="bai-ganio">
+           <h1>
+               Bai Ganio is a fictional character & protagonist in
+               <br>
+               <a href="#" class="BulgariaModernaV3" data-toggle="tooltip" data-placement="top"
+                  title="Aleko Ivanitsov Konstantinov known under the alias 'Lucky', a Bulgarian writer, lawyer and a public man.
+               Born in the town of Svishtov on January 13th year of 1863.">
+                   Aleko Konstantinov's
+               </a>
+               series of satirical feuilletons.
+           </h1>
+           <hr class="custom-fancy">
+           <h3>
+               "Do not despise this simple, sly, pricey wretch,
+               he's brainchild of the harsh environment, victim of rough educators.
+               <br>
+               The evil is not within himself, but within the influence of the environment.
+               Bai Ganio is powerful, thoughtful, perceptive - mostly receptive!
+               <br>
+               Put him under the influence of a good leader, and you will see what a feats he is able to do.
+               <br>
+               Bai Ganio is manifested so far only with his primitive animal energy,
+               but he is keeping within a large pool of spiritual force,
+               that expects only a moral impulse to become a living force...".
+               <br>
+
+               <hr class="custom-fancy">
+              <span style="float: right"> - by the feuilleton "Bai Ganio in Russia" - A. Konstantinov</span>
+           </h3>
+       </div>
+        <br>
+        <br>
+    </div>
+    <!--============================== End Main Content =================================-->
+
+    <div style="height: 30px;"></div>
