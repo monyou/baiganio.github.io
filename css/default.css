@@ -26,13 +26,17 @@
     font-family: 'Guildof';
     src: url('../fonts/myfonts/guildof.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'ss_adec';
+    src: url('../fonts/myfonts/ss_adec.otf') format('truetype');
+}
 .AvdiraR {
     font-family: AvdiraR !important;
     font-size: 2em;
 }
 .BeyondWonderland {
     font-family: BeyondWonderland !important;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 .RuslanDisplay {
     font-family: RuslanDisplay !important;
@@ -49,7 +53,9 @@
     font-family: BulgariaModernaV3 !important;
     font-size: 1em;
 }
-
+.ss-adec{
+    font-family: ss_adec !important;
+}
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     color: black !important;
     background-color: rgb(255, 235, 59) !important;

@@ -9,7 +9,7 @@ Author URL: http://shapebootstrap.net
 *******Typography******
 **************************/
 body {
-  padding-top: 100px;
+  padding-top: 50px;
   background: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -224,7 +224,7 @@ ul.nostyle i {
   overflow: hidden;
 }
 #main-slider .item {
-  height: 558px;
+  height: 640px;
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -253,7 +253,7 @@ ul.nostyle i {
 #main-slider .owl-prev,
 #main-slider .owl-next {
   position: absolute;
-  top: 50%;
+  top: 42%;
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   font-size: 30px;
