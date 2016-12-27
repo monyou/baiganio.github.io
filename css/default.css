@@ -45,7 +45,7 @@
 .BernardoModaContrast {
     font-family: BernardoModaContrast !important;
     color: #6f11ca;
-    font-size:2em !important;
+    font-size:2em;
     text-shadow: 2px 4px 6px #808080,
     20px -15px 85px rgba(255,255,255,0.3);
 }
@@ -106,4 +106,18 @@ hr.custom-fancy:before {
 }
 .whoIsBehindYe:hover{
     color: #4acaff !important;
+}
+
+.handyClock{
+    box-shadow: 10px 10px 10px #888888;
+    /*width: 12%;*/
+    font-size:1em;
+    text-align: center;
+    border: 1px solid black !important;
+    /*border: none !important;*/
+}
+
+#custFooter{
+    text-align: center;
+    padding: 20px;
 }
