@@ -30,6 +30,7 @@
 
     <!--==============================for Facebook=================================-->
     <meta property="og:url" content="https://www.baiganio.github.io" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Develop your skill and ideas." />
     <meta property="og:image" content="https://www.baiganio.github.io/images/404.png" />
     <meta property="og:description" content="The easiest way to lear and practise in the field of the nowadays software technologies..." />
@@ -88,7 +89,16 @@
     <!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
 
 </head>
+
 <body id="home" class="homepage">
+<!--<div-->
+        <!--class="fb-like"-->
+        <!--data-share="true"-->
+        <!--data-width="450"-->
+        <!--data-show-faces="true">-->
+<!--</div>-->
+
+
 
 <style>
     .container1 {
@@ -183,7 +193,7 @@
     </nav>
     <!--============================== End Navigation Bar Fixed 2 Top =================================-->
 </header><!--/header-->
-
+<button id="shareBtn" class="btn btn-success">Share</button>
     <div class="">
         <div id="card">
             <div class="front">
@@ -961,7 +971,14 @@
                 version    : 'v2.8'
             });
         };
-
+        document.getElementById('shareBtn').onclick = function() {
+//            alert("ya");
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: 'https://www.baiganio.github.io/',
+            }, function(response){});
+        };
         (function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
@@ -993,6 +1010,9 @@
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
+
+
+
 
         });
         function handyClock(){
