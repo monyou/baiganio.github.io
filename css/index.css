@@ -46,12 +46,26 @@
 .soc-icons>div>a{
     margin: 20px;
 }
+
+@media (min-width: 320px){
+    #clock{
+        width: 54%;
+    }
+}
 @media (min-width: 768px){
     .nav-tabs-justified>li>a {
         border-bottom: 0px !important;
     }
     .BulgariaModernaV3 {
         font-size: 3em !important;
+    }
+    #clock{
+        width: 22%;
+    }
+}
+@media (min-width: 1024px){
+    #clock{
+        width: 14%;
     }
 }
 @media (max-width: 360px){
@@ -62,3 +76,6 @@
         font-size: 2em !important;
     }
 }
+
+
+
