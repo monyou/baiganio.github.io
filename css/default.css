@@ -121,3 +121,7 @@ hr.custom-fancy:before {
     text-align: center;
     padding: 20px;
 }
+
+#shareBtn{
+    color: #4acaff !important;
+}
