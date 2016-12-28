@@ -10,3 +10,19 @@ $('#ganio-info').click(function () {
 });
 
 
+$('.flip4o').click(function () {
+    //        alert("here");
+    $('#card').addClass('flipped');
+    $("section").hide();
+    $("#header").hide();
+    $(".back").show();
+    $('body').css("padding-top", "0px");
+});
+$('#arrLft').click(function () {
+    //        alert("here");
+    $('#card').removeClass('flipped');
+    $("section").show();
+    $("#header").show();
+    $(".back").hide();
+    $('body').css("padding-top","50px");
+});

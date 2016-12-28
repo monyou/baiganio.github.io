@@ -43,19 +43,27 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
-    <!-- Custom Css Files -->
+    <!-- Multi Css Files -->
     <link href="multi-template-css/animate.min.css" rel="stylesheet">
     <link href="multi-template-css/owl.carousel.css" rel="stylesheet">
     <link href="multi-template-css/owl.transitions.css" rel="stylesheet">
     <link href="multi-template-css/prettyPhoto.css" rel="stylesheet">
     <link href="multi-template-css/main.css" rel="stylesheet">
     <link href="multi-template-css/responsive.css" rel="stylesheet">
+
+    <!-- Custom Css Files -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/morphing-menu.css">
+    <link rel="stylesheet" href="css/flip-card-functionality.css">
     <link rel="stylesheet" href="css/cuts-jquery-eupopup.css">
 
-    <!--[if lt IE 9]>
-    <script src="multi-template-js/html5shiv.js"></script>
-    <script src="multi-template-js/respond.min.js"></script>
-    <![endif]-->
+
+
+    <!--&lt;!&ndash;[if lt IE 9]>-->
+    <!--<script src="multi-template-js/html5shiv.js"></script>-->
+    <!--<script src="multi-template-js/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
 
     <!--&lt;!&ndash; Add mousewheel plugin (this is optional) &ndash;&gt;-->
     <!--<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>-->
@@ -72,10 +80,6 @@
     <!--<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />-->
     <!--<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>-->
 
-    <!-- Custom Css Files -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/default.css">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,157 +91,7 @@
 
 <body id="home" class="homepage">
 
-    <style>
-        .container1 {
-            position: relative;
-        }
-        #card {
-            width: 100%;
-            height: 100%;
-            /*position: absolute;*/
-            transform-style: preserve-3d;
-            transition: transform 1s;
-            transform-origin: right center;
-        }
-        #card > div {
-            margin: 0;
-            display: block;
-            /*position: absolute;*/
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-
-    #card .back{
-        display: none;
-    }
-        .back {
-
-            background: #00a01e !important;
-            transform: rotateY( 180deg );
-        }
-        #card.flipped {
-            transform: translateX( -100% ) rotateY( -180deg );
-        }
-
-    </style>
-
-    <style class="cp-pen-styles">
-
-
-        .open {
-            /*position: fixed;*/
-            /*top: 40px;*/
-            /*right: 40px;*/
-            width: 50px;
-            height: 50px;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.2s linear;
-        }
-
-        .open:hover { opacity: 0.8; }
-
-        .open span {
-            display: block;
-            float: left;
-            clear: both;
-            height: 5px;
-            width: 25px;
-            border-radius: 40px;
-            background-color: #fff;
-            position: absolute;
-            right: 15px;
-            top: -4px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .open span:nth-child(1) {
-            margin-top: 10px;
-            z-index: 9;
-        }
-
-        .open span:nth-child(2) { margin-top: 25px; }
-
-        .open span:nth-child(3) { margin-top: 40px; }
-
-        .sub-menu {
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            height: 0;
-            width: 0;
-            right: 0;
-            top: 0;
-            position: absolute;
-            background-color: rgba(38, 84, 133, 0.54);
-            border-radius: 50%;
-            z-index: 18;
-            overflow: hidden;
-        }
-
-        .sub-menu li {
-            display: block;
-            float: right;
-            clear: both;
-            height: auto;
-            margin-right: -160px;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .sub-menu li:first-child { margin-top: 180px; }
-
-        .sub-menu li:nth-child(1) { -webkit-transition-delay: 0.05s; }
-
-        .sub-menu li:nth-child(2) { -webkit-transition-delay: 0.10s; }
-
-        .sub-menu li:nth-child(3) { -webkit-transition-delay: 0.15s; }
-
-        .sub-menu li:nth-child(4) { -webkit-transition-delay: 0.20s; }
-
-        .sub-menu li:nth-child(5) { -webkit-transition-delay: 0.25s; }
-
-        .sub-menu li a {
-            color: #fff;
-            font-family: 'Lato', Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            width: 100%;
-            display: block;
-            float: left;
-            line-height: 40px;
-        }
-
-        .oppenned .sub-menu {
-            opacity: 1;
-            height: 400px;
-            width: 400px;
-        }
-
-        .oppenned span:nth-child(2) { overflow: visible; }
-
-        .oppenned span:nth-child(1),
-        .oppenned span:nth-child(3) {
-            z-index: 100;
-            transform: rotate(45deg);
-        }
-
-        .oppenned span:nth-child(1) { transform: rotate(45deg) translateY(12px) translateX(12px); }
-
-        .oppenned span:nth-child(2) {
-            height: 400px;
-            width: 400px;
-            right: -160px;
-            top: -160px;
-            border-radius: 50%;
-            background-color: rgba(38, 84, 133, 0.54);
-        }
-
-        .oppenned span:nth-child(3) { transform: rotate(-45deg) translateY(-10px) translateX(10px); }
-
-        .oppenned li { margin-right: 168px; }
-    </style>
-
-
-
+    <!--============================== Header =================================-->
     <header id="header">
         <!--============================== Navigation Bar Fixed 2 Top =================================-->
         <nav id="main-menu" class="navbar navbar-inverse navbar-fixed-top BeyondWonderland"  role="banner">
@@ -307,8 +161,11 @@
         </nav>
         <!--============================== End Navigation Bar Fixed 2 Top =================================-->
     </header><!--/header-->
+    <!--============================== End Header =================================-->
 
+    <!--============================== Flipped Content =================================-->
     <div id="card">
+        <!--============================== Flipped Main Content =================================-->
         <div class="front">
 
             <section id="main-slider">
@@ -997,8 +854,11 @@
                     </div>
                 </div>
             </section><!--/#bottom-->
-        </div>
 
+        </div>
+        <!--============================== End Flipped Main Content =================================-->
+
+        <!--============================== Empty Content To Be Filled =================================-->
         <div class="back">
             <h1>myahaha</h1>
             <h1>myahaha</h1>
@@ -1012,30 +872,9 @@
             <img id="arrLft" class="arr" src="images/arrLft.png" alt="Flip To Front Side" title="Flip To Front Side"
                  style="width: 5%;"/>
         </div>
+        <!--============================== End Empty Content To Be Filled =================================-->
     </div>
-
-    <script>
-    //    $("#flip").click(function () {
-    //        // console.log("toggleClass('flipped');");
-    //        $('.card').removeClass('flipped');
-    //    });
-        $('.flip4o').click(function () {
-    //        alert("here");
-            $('#card').addClass('flipped');
-            $("section").hide();
-            $("#header").hide();
-            $(".back").show();
-            $('body').css("padding-top", "0px");
-        });
-        $('#arrLft').click(function () {
-    //        alert("here");
-        $('#card').removeClass('flipped');
-        $("section").show();
-        $("#header").show();
-        $(".back").hide();
-        $('body').css("padding-top","50px");
-    });
-    </script>
+    <!--============================== End Flipped Content =================================-->
 
     <!--============================== Footer Content =================================-->
     <section id="custFooter">
@@ -1073,9 +912,9 @@
 
     <div style="height: 30px;"></div>
 
-    <!--============================== Coockie declaration =================================-->
+    <!--============================== Cookie declaration =================================-->
     <div class="eupopup eupopup-bottom"></div>
-    <!--============================== End Coockie declaration =================================-->
+    <!--============================== End Cookie declaration =================================-->
 
 
 
@@ -1086,8 +925,13 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom JavaScript Files -->
+    <script src="js/index.js"></script>
+    <script src="js/morphing-menu.js"></script>
+    <script src="js/handy-clock.js"></script>
     <script src="js/cust-jquery-eu-cookie-law-popup.js"></script>
-    <!--<script src="js/index.js"></script>-->
+    <script type="text/javascript" src="js/scroll-to-top.js"></script>
+
+    <!-- Multi Template JavaScript Files -->
     <script src="multi-template-js/owl.carousel.min.js"></script>
     <script src="multi-template-js/mousescroll.js"></script>
     <script src="multi-template-js/smoothscroll.js"></script>
@@ -1096,31 +940,8 @@
     <script src="multi-template-js/jquery.inview.min.js"></script>
     <script src="multi-template-js/wow.min.js"></script>
     <script src="multi-template-js/main.js"></script>
-    <script type="text/javascript" src="js/scroll-to-top.js"></script>
+    <!-- Facebook -->
     <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-
-        function handyClock(){
-            let timeNow = new Date();
-            let hours = timeNow.getHours();
-            let minutes = timeNow.getMinutes();
-            let seconds = timeNow.getSeconds();
-            let year = timeNow.getUTCFullYear();
-
-            if(minutes < 10){
-                minutes = "0" + minutes;
-            }
-            if(seconds<10){
-                seconds = "0" + seconds;
-            }
-            document.getElementById("clock").value = "" + hours + ":" + minutes + ":" + seconds + " " + year;
-        }
-
-        setInterval('handyClock()', 1000);
-
-        <!------------------------------------------------------- Facebook -------------------------------------------------------->
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '1880188968882018',
@@ -1143,23 +964,6 @@
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-
-    <script>
-        $(document).ready(function() {
-            $(document).delegate('.open', 'click', function(event){
-                $(this).addClass('oppenned');
-                event.stopPropagation();
-            })
-            $(document).delegate('body', 'click', function(event) {
-                $('.open').removeClass('oppenned');
-            })
-            $(document).delegate('.cls', 'click', function(event){
-                $('.open').removeClass('oppenned');
-                event.stopPropagation();
-            });
-        });
     </script>
 
 </body>
