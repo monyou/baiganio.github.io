@@ -50,10 +50,11 @@
 
 .sub-menu li {
     display: block;
-    float: right;
+    /*float: right;*/
+    text-align: center;
     clear: both;
     height: auto;
-    margin-right: -160px;
+    /*margin-right: -160px;*/
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -71,12 +72,18 @@
 
 .sub-menu li a {
     color: #fff;
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-family: Guildof;
     font-size: 16px;
     width: 100%;
     display: block;
-    float: left;
-    line-height: 40px;
+    /*float: left;*/
+    /*line-height: 40px;*/
+}
+.sub-menu li div {
+    color: whitesmoke;
+    font-family: Guildof;
+    margin: 20px;
+    width: 75%;
 }
 
 .oppenned .sub-menu {
@@ -106,4 +113,6 @@
 
 .oppenned span:nth-child(3) { transform: rotate(-45deg) translateY(-10px) translateX(10px); }
 
-.oppenned li { margin-right: 168px; }
+/*.oppenned li {*/
+    /*margin-right: 168px;*/
+/*}*/
