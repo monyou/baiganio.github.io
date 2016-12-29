@@ -6,51 +6,88 @@
     <link rel="stylesheet" href="css/login-register.css">
 
     <style>
-
+        .owl-prev{
+            position: absolute;
+            top: 42%;
+            background-color: rgba(112, 224, 22, 0.4);
+            color: black !important;
+            font-size: 30px;
+            display: inline-block;
+            margin-top: -35px;
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            text-align: center;
+            border-radius: 100px;
+            z-index: 5;
+            -webkit-transition: background-color 400ms;
+            transition: background-color 400ms;
+            font-family: "Curlz MT" !important;
+        }
+        .owl-prev:hover{
+            cursor: pointer;
+            background-color: #2a95be !important;
+        }
+        .owl-prev a{
+            text-decoration: none;
+        }
     </style>
+    <script src="js/handy-clock.js"></script>
 
 </head>
 <body>
-<!-- START LOGIN CONTENT -->
-<section id="viewLogin">
-    <br>
-   <div style='text-align: center; font-family: "Curlz MT" !important;'>
-       <h1 class="" style="color: #c0a16b; font-size: 1.8em"><b>Login</b></h1>
-       <h3>
-          * Please notice that if you don't have account you will be not able to use this functionality.
-       </h3>
-   </div>
-    <hr />
-
-    <br>
-    <!-- START FORM -->
-    <div class="login-form-1">
-        <!-- START: register-form -->
-        <div id="login-form" class="text-left">
-            <div class="main-login-form">
-                <form  id="loginForm">
-                    <div class="login-group">
-                        <!--Username-->
-                        <div class="form-group">
-                            <input type="text" id="loginUsername" placeholder="Username" required="true">
-                        </div>
-                        <!--Password-->
-                        <div class="form-group">
-                            <input type="password" id="loginPassword" placeholder="Password" required="true">
-                        </div>
-                        <!--Button GO-->
-                        <div class="form-group">
-                            <input type="submit" class="login-button" value="GO" />
-                        </div>
-                    </div>
-                </form>
-            </div>
+    <!-- START LOGIN CONTENT -->
+    <section id="viewLogin">
+        <br>
+        <div style='text-align: center; font-family: "Curlz MT" !important;'>
+           <h1 class="" style="color: #c0a16b; font-size: 1.8em"><b>Login</b></h1>
+           <h3>
+              * Please notice that if you don't have account you will not be able to use this functionality.
+           </h3>
         </div>
-        <!-- END: register-form -->
-    </div>
-    <!-- END FORM -->
+        <hr />
+        <br>
+        <!-- START FORM -->
+        <div class="login-form-1">
+            <!-- START: register-form -->
+            <div id="login-form" class="text-left">
+                <div class="main-login-form">
+                    <form  id="loginForm">
+                        <div class="login-group">
+                            <!--Username-->
+                            <div class="form-group">
+                                <input type="text" id="loginUsername" placeholder="Username" required="true">
+                            </div>
+                            <!--Password-->
+                            <div class="form-group">
+                                <input type="password" id="loginPassword" placeholder="Password" required="true">
+                            </div>
+                            <!--Button GO-->
+                            <div class="form-group">
+                                <input type="submit" class="login-button" value="GO" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END: register-form -->
+        </div>
+        <!-- END FORM -->
+        <br>
+        <div class="owl-prev">
+            <a href="index.html" title="Back">&#8592;</a>
+            Back
+        </div>
+    </section>
+    <!-- END LOGIN CONTENT -->
 
-</section>
-<!-- END LOGIN CONTENT -->
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <!-- SHOW CURRENT TIME -->
+    <input style="text-align:center" type="text" id="clock"/>
+    <!-- END SHOW CURRENT TIME -->
 </body>
 </html>
