@@ -41,8 +41,28 @@
 #bai-ganio > h1 > a:hover{
     text-decoration: none;
 }
-
-
+#infoBox{
+    text-align: center;
+    /*display: none;*/
+    font-family: "Curlz MT" !important;
+    background-color: deepskyblue;
+    font-size: 2em;
+}
+#linkLogout{
+    display: none;
+}
+#linkLogout > a{
+    color: #4cff00 !important;
+}
+#linkLogout > a:hover{
+    color: #ffff00 !important;
+}
+#userMsg{
+    color: #ffff00 !important;
+}
+#userMsg:hover{
+    color: #4cff00 !important;
+}
 .soc-icons>div>a{
     margin: 20px;
 }

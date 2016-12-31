@@ -31,11 +31,40 @@
         .owl-prev a{
             text-decoration: none;
         }
+
+        #errorBox{
+            text-align: center;
+            /*display: none;*/
+            font-family: "Curlz MT" !important;
+            color: red;
+        }
+        #infoBox{
+            text-align: center;
+            /*display: none;*/
+            font-family: "Curlz MT" !important;
+            background-color: deepskyblue;
+            font-size: 2em;
+        }
+        #facebookLogin{
+            font-family: "Curlz MT" !important;
+        }
+
     </style>
+
     <script src="js/handy-clock.js"></script>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 <body>
+
+
+<br>
+<!--<h1 id="infoBox"></h1>-->
+<div id="infoBox" style="display: none">
+    Login successful. You will be redirected to home page after <span id="lblCount"></span>&nbsp;seconds.
+</div>
     <!-- START LOGIN CONTENT -->
     <section id="viewLogin">
         <br>
@@ -45,34 +74,45 @@
               * Please notice that if you don't have account you will not be able to use this functionality.
            </h3>
         </div>
+
+
         <hr />
         <br>
-        <!-- START FORM -->
-        <div class="login-form-1">
-            <!-- START: register-form -->
-            <div id="login-form" class="text-left">
-                <div class="main-login-form">
-                    <form  id="loginForm">
-                        <div class="login-group">
-                            <!--Username-->
-                            <div class="form-group">
-                                <input type="text" id="loginUsername" placeholder="Username" required="true">
-                            </div>
-                            <!--Password-->
-                            <div class="form-group">
-                                <input type="password" id="loginPassword" placeholder="Password" required="true">
-                            </div>
-                            <!--Button GO-->
-                            <div class="form-group">
-                                <input type="submit" class="login-button" value="GO" />
-                            </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div><h4  id="errorBox"></h4></div>
+                <!-- START FORM -->
+                <div class="login-form-1">
+                    <!-- START: register-form -->
+                    <div id="login-form" class="text-left">
+                        <div class="main-login-form">
+                            <form  id="loginForm">
+                                <div class="login-group">
+                                    <!--Username-->
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="loginUsername" placeholder="Username">
+                                    </div>
+                                    <!--Password-->
+                                    <div class="form-group">
+                                        <input type="password" name="pass" id="loginPassword" placeholder="Password">
+                                    </div>
+                                    <!--Button GO-->
+                                    <div class="form-group">
+                                        <input type="submit" id="loginBtn" class="login-button" value="GO" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+                    <!-- END: register-form -->
                 </div>
+                <!-- END FORM -->
             </div>
-            <!-- END: register-form -->
+            <div class="col-md-4" id="facebookLogin">
+                Login with Facebook instead
+            </div>
         </div>
-        <!-- END FORM -->
+
         <br>
         <div class="owl-prev">
             <a href="index.html" title="Back">&#8592;</a>
@@ -89,5 +129,144 @@
     <!-- SHOW CURRENT TIME -->
     <input style="text-align:center" type="text" id="clock"/>
     <!-- END SHOW CURRENT TIME -->
+
+
+    <script>
+        /* This is the right way to attach event handlers. Right after the DOM is loaded. */
+        $(document).ready(function () {
+
+            const kinveyBaseUrl = "https://baas.kinvey.com/";
+            const kinveyAppKey = "kid_rynqxLyXl";
+            const kinveyAppSecret =
+                "5dc09f77cbbc432eb220961609a8d489";
+            const kinveyAppAuthHeaders = {
+                'Authorization': "Basic " +
+                btoa(kinveyAppKey + ":" + kinveyAppSecret),
+            };
+
+            // Bind the info / error boxes: hide on click
+            $("#infoBox, #errorBox").click(function () {
+                $(this).fadeOut();
+            });
+
+            // Attach AJAX "loading" event listener
+            $(document).on({
+                ajaxStart: function () {
+                    $("#loadingBox").show()
+                },
+                ajaxStop: function () {
+                    $("#loadingBox").hide()
+                }
+            });
+
+            // Bind the form submit actions. Handle form.submit() not button.click(). Otherwise validation fill be bypassed.
+            $("#loginForm").submit(loginUser);
+
+            /* Disable default submit for all forms */
+            $("form").submit(function (e) {
+                e.preventDefault()
+            });
+
+            function handleAjaxError(response) {
+                // alert(response);
+                let errorMsg = JSON.stringify(response);
+                if (response.readyState === 0) {
+                    errorMsg = "Cannot connect due to network error.";
+                }
+                if (response.responseJSON && response.responseJSON.description) {
+                    errorMsg = response.responseJSON.description;
+                }
+
+                showError(errorMsg);
+            }
+
+            function showError(errorMsg) {
+                $('#errorBox').text("*Error: " + errorMsg);
+                $('#errorBox').show();
+                setTimeout(function () {
+                    $('#errorBox').fadeOut();
+                }, 3000);
+            }
+
+            function showInfo(message) {
+                $('#infoBox').text(message);
+                $('#infoBox').show();
+                setTimeout(function () {
+                    $('#infoBox').fadeOut();
+                }, 3000);
+            }
+
+            function saveAuthInSession(userInfo) {
+                let userAuth = userInfo._kmd.authtoken;
+                sessionStorage.setItem('authToken', userAuth);
+                let userId = userInfo._id;
+                sessionStorage.setItem('userId', userId);
+                let username = userInfo.username;
+                sessionStorage.setItem('userName', username);
+            }
+
+            function getKinveyUserAuthHeaders() {
+                return {
+                    'Authorization': "Kinvey " +
+                    sessionStorage.getItem('authToken'),
+                };
+            }
+
+            /******************** Here are the main actions of the app *******************************/
+
+            function loginUser() {
+                let usern = $('#loginForm input[name=username]').val();
+                let passw = $('#loginForm input[name=pass]').val();
+                let userData = {
+                    username: usern,
+                    password: passw
+                };
+
+                /* Test here */
+                console.dir(userData);
+                $.ajax({
+                    method: "POST",
+                    url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
+                    headers: kinveyAppAuthHeaders,
+                    data: userData,
+                    success: loginSuccess,
+                    error: handleAjaxError
+                });
+
+                function loginSuccess(userInfo) {
+                    saveAuthInSession(userInfo);
+                    $("#viewLogin").hide();
+
+                    //Redirect to home page
+                    let seconds = 5;
+                    $("#infoBox").show();
+                    $("#lblCount").html(seconds);
+                    setInterval(function () {
+                        seconds--;
+                        $("#lblCount").html(seconds);
+                        if (seconds == 0) {
+                            $("#infoBox").hide();
+
+                            /* Development */
+                            window.location = "http://localhost:63342/baiganio.github.io/index.html";
+                            /* Production */
+//                            window.location = "https://baiganio.github.io";
+                        }
+                    }, 1000);
+
+
+//                    showInfo('Login successful. Redirecting to home page...');
+//                    console.dir(userInfo);
+                }
+            }
+
+        });
+
+
+    </script>
+
+
+
+
 </body>
 </html>

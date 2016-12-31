@@ -89,7 +89,7 @@
 
 </head>
 
-<body id="home" class="homepage">
+<body id="home" class="homepage" onload="startAppLogic()">
 
     <!--============================== Header =================================-->
     <header id="header">
@@ -102,12 +102,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand whoIsBehind" href="#">BAI GANIO <b>&#128527;</b></a>
+                    <!--<a class="navbar-brand whoIsBehind flip4o" href="#">BAI GANIO? <b>&#128527;</b></a>-->
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+
+                        <li> <a class="whoIsBehind flip4o" href="#">BAI GANIO? <b>&#128527;</b></a></li>
                         <li class="scroll"><a href="#home">Back to top</a></li>
-                        <li><a href='#' class="whoIsBehind">Who's Bai Ganio?</a></li>
+                        <!--<li><a href='#' class="whoIsBehind">Who's Bai Ganio?</a></li>-->
                         <!--<li class="scroll"><a class="whoIsBehindYe" href="#features">Features</a></li>-->
                         <!--<li class="scroll"><a class="whoIsBehindYe" href="#services">Services</a></li>-->
                         <li class="scroll"><a class="whoIsBehindYe" href="#portfolio">Portfolio</a></li>
@@ -119,7 +121,7 @@
                         <li class="scroll"><a class="whoIsBehindYe" href="#get-in-touch">Contacts</a></li>
                         <li class=""><a class="whoIsBehindYe" href="space-university/index.html">Space University</a></li>
                         <li class=""><a id="shareBtn" class="whoIsBehindYe" href="#">Share on Facebook</a></li>
-                        <li>
+                        <li id="admin">
                             <div class="open"> <span class="cls"></span> <span>
                                 <ul class="sub-menu" style="text-align: center">
                                     <!--<li><br></li>-->
@@ -137,6 +139,10 @@
                                 </span> <span class="cls"></span>
                             </div>
                         </li>
+                        <li id="user">
+                            <a href="admin.html" id="userMsg"></a>
+                        </li>
+                        <li id="linkLogout" ><a href="#">Logout</a></li>
                         <!--<li>-->
                         <!--<a href='http://baiganio.apphb.com/' target="_blank">Bai Ganio on AppHarbor</a>-->
                         <!--</li>-->
@@ -167,7 +173,7 @@
         <!--============================== End Navigation Bar Fixed 2 Top =================================-->
     </header><!--/header-->
     <!--============================== End Header =================================-->
-
+    <section id="infoBox"></section>
     <!--============================== Flipped Content =================================-->
     <div id="card">
         <!--============================== Flipped Main Content =================================-->
@@ -175,16 +181,18 @@
 
             <section id="main-slider">
                 <div class="owl-carousel">
-                    <div class="item" style="background-image: url('images/1.jpg');">
+                    <div class="item" style="background-image: url('images/happy_new_year_2017.jpg');">
                         <div class="slider-inner">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="carousel-content">
-                                            <h2 class="ss-adec"><span>Multi</span> is the best Onepage html template</h2>
-                                            <p class="ss-adec">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna incididunt ut labore aliqua. </p>
+                                            <!--<h2 class="ss-adec"><span>Multi</span> is the best Onepage html template</h2>-->
+                                            <!--<p class="ss-adec">Lorem ipsum dolor sit amet, consectetur adipisicing elit, -->
+                                                <!--sed do eiusmod tempor incididunt ut labore et  dolore magna incididunt ut labore aliqua. -->
+                                            <!--</p>-->
                                             <!--<a class="btn btn-primary btn-lg" href="#">Read More</a>-->
-                                            <button class="btn-primary flip4o">Flip</button>
+                                            <!--<button class="btn-primary flip4o">Flip</button>-->
                                         </div>
                                     </div>
                                 </div>
@@ -287,9 +295,21 @@
             <section id="cta2">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>Bai Ganio on GitHub IO</span> is a creative Single page application using the JavaScript, jQuery... to give you the ultimate user experience.</h2>
-                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Mauris pretium auctor quam. Vestibulum et nunc id nisi fringilla <br />iaculis. Mauris pretium auctor quam.</p>
-                        <!--<p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">Free Download</a></p>-->
+                        <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <span>Bai Ganio on GitHub IO</span>
+                            is a creative Single page application using the JavaScript(EC6), jQuery, AJAX...
+                            or even - Bootstrap, GitHub pages, Kinvey, Google spreadsheet,
+                            Facebook OAuth 2.0 workflow & much more -  to give you the ultimate user experience.</h2>
+                        <h4 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                            Notice that all functionality is completely free. All instruments needed
+                            for creating this site can be found on the page of the manufacturer.
+                            Fell free to upgrade even more. <b>;)   </b>
+                        </h4>
+                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                            <a class="btn btn-primary btn-lg" href="#">
+                                Download original template for free.
+                            </a>
+                        </p>
 
 
                         <img class="img-responsive wow fadeIn" src="multi-template-images/cta2/cta2-img.png" alt="" data-wow-duration="300ms" data-wow-delay="300ms">
@@ -823,7 +843,33 @@
             </section><!--/#get-in-touch-->
 
             <section id="contact">
-                <div id="google-map" style="height:650px" data-latitude="52.365629" data-longitude="4.871331"></div>
+                        <style>
+                            #map {
+                                height: 650px;
+                                width: 100%;
+                            }
+                        </style>
+                        <div id="map"></div>
+
+                        <script>
+                            function initMap() {
+                                var uluru = {lat: 42.135408, lng: 24.745290};
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 4,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyDD1WgTWpwP5bWaLC8z3ynidSbwE8-R4&callback=initMap">
+                        </script>
+
+
+
                 <div class="container-wrapper">
                     <div class="container">
                         <div class="row">
@@ -858,7 +904,8 @@
                         </div>
                     </div>
                 </div>
-            </section><!--/#bottom-->
+
+            </section><!--/#contact-->
 
         </div>
         <!--============================== End Flipped Main Content =================================-->

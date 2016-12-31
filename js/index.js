@@ -26,3 +26,48 @@ $('#arrLft').click(function () {
     $(".back").hide();
     $('body').css("padding-top","50px");
 });
+
+/* Take IP address */
+// $(document).ready(function () {
+//     $.getJSON("http://jsonip.com/?callback=?", function (data) {
+//         console.log(data);
+//         alert(data.ip);
+//     });
+// });
+
+function startAppLogic() {
+    let userID = sessionStorage.getItem("userId");
+    $("#linkLogout").click(logoutUser);
+
+    if(userID){
+        let userName = sessionStorage.getItem("userName");
+        $('#userMsg').text("Welcome, " + userName + "!");
+        $("#admin").hide();
+        $("#loggedInUser").show();
+        $("#linkLogout").show();
+    }
+    else{
+        $("#admin").show();
+        $("#loggedInUser").hide();
+        $("#linkLogout").hide();
+    }
+
+    function logoutUser() {
+        sessionStorage.clear();
+        $("#user").hide();
+        $("#linkLogout").hide();
+        $("#admin").show();
+        $('#userMsg').text("");
+        showInfo("Logout successful.");
+
+        function showInfo(message) {
+            $('#infoBox').text(message);
+            $('#infoBox').show();
+            setTimeout(function () {
+                $('#infoBox').fadeOut();
+            }, 3000);
+        }
+
+    }
+
+}
