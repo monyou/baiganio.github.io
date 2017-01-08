@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test page</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+</head>
+<body>
+<input type="button" id="btn" value="Get all publications">
+<input type="button" id="btnClear" value="Clear">
+<ul id="ulEmployees"></ul>
+
+
+
+<script>
+    $('document').ready(function () {
+        alert("Тука съм, бай Любене.");
+
+        let ulEmployees = $('#ulEmployees');
+        $.ajax({
+            method: "GET",
+            url:"http://techcorp-webapi.apphb.com/api/publications",
+            dataType:"json",
+            success: function (data) {
+                ulEmployees.empty();
+                $.each(data, function(index, value){
+                    ulEmployees.append('<li>' + value.ID + '</li>');
+                    ulEmployees.append('<li>' + value.Title + '</li>');
+                })
+            },
+            error: function (error) {
+                console.dir(error);
+            }
+        });
+    });
+</script>
+</body>
+</html>
