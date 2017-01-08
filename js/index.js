@@ -2,6 +2,16 @@
  * Created by Republic Of Gamers on 7/16/2016.
  */
 
+$(window).on('load', function() { // makes sure the whole site is loaded
+    $('#status').fadeOut("slow"); // will first fade out the loading animation
+    $('#preloader').fadeOut('slow'); // will fade out the white DIV that covers the website.
+    setTimeout(showBody,5000);
+
+    function showBody(){
+        $('body').css({'overflow':'visible'});
+    }
+});
+
 $('#ganio-info').click(function () {
     document.getElementById('main-content').style.display = 'inline-block';
     document.getElementById('bai-ganio').style.display = 'block';
@@ -34,6 +44,7 @@ $('#arrLft').click(function () {
 //         alert(data.ip);
 //     });
 // });
+
 
 function startAppLogic() {
     let userID = sessionStorage.getItem("userId");
