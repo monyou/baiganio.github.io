@@ -2,11 +2,15 @@
  * Created by Republic Of Gamers on 7/16/2016.
  */
 
+/* Create loading animation */
 $(window).on('load', function() { // makes sure the whole site is loaded
-    $('#status').fadeOut("slow"); // will first fade out the loading animation
-    $('#preloader').fadeOut('slow'); // will fade out the white DIV that covers the website.
-    setTimeout(showBody,5000);
-
+    setTimeout(function () {
+        $('#status').fadeOut("slow");
+    }, 2500); // will first fade out the loading animation
+    $('#preloader').fadeOut(); // will fade out the white DIV that covers the website.
+    // $('#status').fadeOut("slow");
+    // $('body').css({'overflow':'visible'});
+    setTimeout(showBody,500);
     function showBody(){
         $('body').css({'overflow':'visible'});
     }
