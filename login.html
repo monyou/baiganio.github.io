@@ -53,8 +53,8 @@
 
     <script src="js/handy-clock.js"></script>
     <script src="js/jquery-3.1.0.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -75,12 +75,11 @@
            </h3>
         </div>
 
-
         <hr />
         <br>
         <div class="row">
             <div class="col-md-8">
-                <div><h4  id="errorBox"></h4></div>
+                <div><h4 id="errorBox"></h4></div>
                 <!-- START FORM -->
                 <div class="login-form-1">
                     <!-- START: register-form -->
@@ -134,6 +133,41 @@
     <script>
         /* This is the right way to attach event handlers. Right after the DOM is loaded. */
         $(document).ready(function () {
+
+            let userIP, city, zipCode, country, countryCode, latitude, longitude, regionName = "";
+
+            /* Take IP address */
+            $.getJSON("http://jsonip.com/?callback=?", function (data) {
+//                console.log(data);
+//                alert(data.ip);
+                userIP = data.ip;
+            });
+
+            /* Take location info */
+            let requestUrl = "http://ip-api.com/json";
+
+            $.ajax({
+                url: requestUrl,
+                type: 'GET',
+                success: function(json)
+                {
+                    city = json.city;
+                    zipCode: json.zip,
+                    country = json.country;
+                    countryCode = json.countryCode;
+                    latitude = json.lat;
+                    longitude = json.lon;
+                    regionName = json.regionName;
+//                    console.log("My city is: " + );
+//                    console.log("My country is: " + json.country);
+                },
+                error: function(err)
+                {
+                    console.log("Request failed, error= " + err);
+                }
+            });
+
+
 
             const kinveyBaseUrl = "https://baas.kinvey.com/";
             const kinveyAppKey = "kid_rynqxLyXl";
@@ -214,7 +248,37 @@
 
             /******************** Here are the main actions of the app *******************************/
 
+            function insertLoginInfo(){
+                let userId = sessionStorage.getItem('userId');
+                let username = sessionStorage.getItem('userName');
+                let userLogin = {
+                    userID: userId,
+                    username: username,
+                    userIP: userIP,
+                    city: city,
+                    region: regionName,
+                    country: country,
+                    latitude: latitude,
+                    longitude: longitude
+                };
+
+                $.ajax({
+                    method: "POST",
+                    url: kinveyBaseUrl + "appdata/" + kinveyAppKey + "/user-logins",
+                    headers: getKinveyUserAuthHeaders(),
+                    data: userLogin,
+                    success: insertLoginInfoSuccess,
+                    error: handleAjaxError
+                });
+
+                function insertLoginInfoSuccess(data) {
+                    alert("Created");
+                    console.dir(data);
+                }
+            }
+
             function loginUser() {
+
                 let usern = $('#loginForm input[name=username]').val();
                 let passw = $('#loginForm input[name=pass]').val();
                 let userData = {
@@ -223,7 +287,7 @@
                 };
 
                 /* Test here */
-                console.dir(userData);
+              //  console.dir(userData);
                 $.ajax({
                     method: "POST",
                     url: kinveyBaseUrl + "user/" + kinveyAppKey + "/login",
@@ -254,7 +318,7 @@
                         }
                     }, 1000);
 
-
+                    insertLoginInfo();
 //                    showInfo('Login successful. Redirecting to home page...');
 //                    console.dir(userInfo);
                 }

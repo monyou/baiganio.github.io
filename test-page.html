@@ -15,6 +15,25 @@
 
 <script>
     $('document').ready(function () {
+
+        var requestUrl = "http://ip-api.com/json";
+
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: function(json)
+            {
+                console.log("My city is: " + json.city);
+                console.log("My country is: " + json.country);
+            },
+            error: function(err)
+            {
+                console.log("Request failed, error= " + err);
+            }
+        });
+
+
+
         //alert("Тука съм, бай Любене.");
 
         var ulEmployees = $('#ulEmployees');
@@ -40,19 +59,6 @@
                 }
             });
         });
-
-
-//        $.ajax({
-//            crossOrigin: true,
-//            url: url,
-//            success: function(data) {
-//                console.log(data);
-//            }
-//        });
-
-
-
-
     });
 </script>
 </body>

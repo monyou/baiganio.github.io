@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+
+<!--<form action="" method="POST" enctype="multipart/form-data">-->
+    <!--<input type='file' id="imageInput" name="imageInput" accept="image/*"/>-->
+<!--</form>-->
+<hr>
+<hr>
+
+
+
+<div>
+    <img id="user_img"
+         height="100"
+         width="90"
+         style="border: solid" />
+</div>
+<br>
+<div>
+    <input type="file" title="search image" name="file"  onchange="show(this)" />
+</div>
+
+<script>
+    $('#imageInput').change(function(){
+
+
+        let frm = new FormData();
+        frm.append('imageInput', input.files[0]);
+        $.ajax({
+            method: 'POST',
+            address: 'https://baiganio.github.io/images/demo-folder/',
+            data: frm,
+            contentType: false,
+            processData: false,
+            cache: false
+        });
+    });
+
+    function show(input) {
+        alert (input.files[0]);
+        if (input.files && input.files[0]) {
+            let filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#user_img').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

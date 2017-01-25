@@ -16,6 +16,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
     }
 });
 
+
+/* Old layout content */
 $('#ganio-info').click(function () {
     document.getElementById('main-content').style.display = 'inline-block';
     document.getElementById('bai-ganio').style.display = 'block';
@@ -23,7 +25,7 @@ $('#ganio-info').click(function () {
     $('#bai-ganio').css('margin', '0 auto');
 });
 
-
+/* Flip card functionality */
 $('.flip4o').click(function () {
     //        alert("here");
     $('#card').addClass('flipped');
@@ -41,16 +43,12 @@ $('#arrLft').click(function () {
     $('body').css("padding-top","50px");
 });
 
-/* Take IP address */
-// $(document).ready(function () {
-//     $.getJSON("http://jsonip.com/?callback=?", function (data) {
-//         console.log(data);
-//         alert(data.ip);
-//     });
-// });
 
 
+
+/* MAIN APP LOGIC */
 function startAppLogic() {
+
     let userID = sessionStorage.getItem("userId");
     $("#linkLogout").click(logoutUser);
 
