@@ -8,9 +8,7 @@
 <body>
 
 
-<!--<form action="" method="POST" enctype="multipart/form-data">-->
-    <!--<input type='file' id="imageInput" name="imageInput" accept="image/*"/>-->
-<!--</form>-->
+
 <hr>
 <hr>
 
@@ -28,20 +26,7 @@
 </div>
 
 <script>
-    $('#imageInput').change(function(){
 
-
-        let frm = new FormData();
-        frm.append('imageInput', input.files[0]);
-        $.ajax({
-            method: 'POST',
-            address: 'https://baiganio.github.io/images/demo-folder/',
-            data: frm,
-            contentType: false,
-            processData: false,
-            cache: false
-        });
-    });
 
     function show(input) {
         alert (input.files[0]);
@@ -51,6 +36,16 @@
                 $('#user_img').attr('src', e.target.result);
             }
             filerdr.readAsDataURL(input.files[0]);
+
+            $.ajax({
+                method: 'POST',
+                address: 'https://baiganio.github.io/images/demo-folder/',
+                data: frm,
+                contentType: false,
+                processData: false,
+                cache: false
+            });
+
         }
     }
 
