@@ -24,8 +24,8 @@
                 crossOrigin: true,
                 method: "GET",
                 //url: "http://localhost:20430/api/publications",
-                url: "http://techcopr-webapi.apphb.com/api/publications?callback=ABC",
-                dataType: "jsonp",
+                url: "http://techcopr-webapi.apphb.com/api/publications",
+                dataType: "json",
                 success: function (data) {
                     ulEmployees.empty();
                     $.each(data,
