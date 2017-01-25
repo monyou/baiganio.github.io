@@ -21,6 +21,7 @@
 
         $('#btn').click(function() {
             $.ajax({
+                crossOrigin: true,
                 method: "GET",
                 //url: "http://localhost:20430/api/publications",
                 url: "http://techcopr-webapi.apphb.com/api/publications?callback=ABC",
@@ -34,11 +35,22 @@
                         });
                 },
                 error: function (data, status) {
-                    var errorMsg = 'Error: ' + JSON.stringify(data);
+                    let errorMsg = 'Error: ' + JSON.stringify(data);
                     alert(errorMsg);
                 }
             });
         });
+
+
+//        $.ajax({
+//            crossOrigin: true,
+//            url: url,
+//            success: function(data) {
+//                console.log(data);
+//            }
+//        });
+
+
 
 
     });

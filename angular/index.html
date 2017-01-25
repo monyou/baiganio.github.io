@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="colorDemo">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <!--<script src="my-js.js"></script>-->
+
+    <style>
+        body{
+            width: 86%;
+            margin: 0 auto;
+        }
+        .block{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-top: 5px;
+            border: 1px solid greenyellow;
+        }
+    </style>
+
+
+</head>
+<body ng-controller="ColorControllerDEmo as currentObj">
+    <div ng-repeat="curBlock in currentObj.blocks" class="block" ng-style="{'background-color':block.color}">
+
+    </div>
+
+
+    <script>
+       let app =  angular.module('colorDemo',[]);
+       app.controller('ColorControllerDEmo', ['$http', function ($http) {
+            let currentObj = this;
+            currentObj.blocks = [];
+
+            for(let i = 0; i < 200; i++){
+                let curBlock = {
+                    updateColor : updateColor
+                };
+                curBlock.updateColor(curBlock);
+                currentObj.blocks.push(curBlock);
+            }
+
+            currentObj.blocks.forEach(function (curBlock) {
+
+                let interval = Math.floor((Math.random() * 5000) + 1);
+                setInterval(function () {
+                    curBlock.updateColor(curBlock);
+                }, interval);
+            });
+
+            function updateColor(obj) {
+                $http({
+                    method:'GET',
+                    dataType: 'jsonp',
+                    url: 'http://techcorp-webapi.apphb.com/api/color'
+                }).then(
+                    function (response) {
+                        obj.color = response.data;
+                    }
+                );
+            }
+
+
+        }]);
+    </script>
+
+</body>
+</html>

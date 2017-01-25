@@ -1,6 +1,3 @@
-/**
- * Created by Lyuben Kikov on 28-Dec-16.
- */
 
 $(document).ready(function() {
     $(document).delegate('.open', 'click', function(event){
