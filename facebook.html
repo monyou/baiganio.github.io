@@ -104,19 +104,53 @@
 
 
         function handleKinveyData(response){
-            let obj = {
-
-                    'responseStatus' : response.status,
-                    'accessToken': response.authResponse.accessToken
+            let obj =
 //                {
 //                        accessToken: response.accessToken,
 //                        expiresIn: response.expiresIn,
 //                        signedRequest:response.signedRequest,
 //                        userID:response.userID
 //                    }
+
+            {
+                "_socialIdentity":
+                {
+                    "facebook":
+                    {
+                        "access_token":response.authResponse.accessToken,
+                        "expires": response.authResponse.expiresIn
+                    }
+                }
             };
 
+
             alert('My custom obj = ' + obj.accessToken);
+
+
+            const kinveyBaseUrl = "https://baas.kinvey.com/";
+            const kinveyAppKey = "kid_rynqxLyXl";
+            const kinveyAppSecret =
+                "5dc09f77cbbc432eb220961609a8d489";
+            const kinveyAppAuthHeaders = {
+                'Authorization': "Basic " +
+                btoa(kinveyAppKey + ":" + kinveyAppSecret),
+            };
+
+
+            $.ajax({
+                method: "POST",
+                url:kinveyBaseUrl + 'user/' + kinveyAppKey + '/',
+                data:JSON.stringify(obj),
+                headers: {
+                    "Authorization": "Basic " + kinveyAppAuthHeaders
+                },
+                success: alert('Done!'),
+                error: alert('Fail!')
+            });
+
+
+
+
         }
 
 
