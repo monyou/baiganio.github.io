@@ -116,9 +116,10 @@ input[type="text"], input[type="email"], input[type="password"] {
     color: #999999;
 }
 .login-form-1 .form-group {
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
+    margin: 5px;
     border-bottom: 2px solid #efefef;
-    padding-right: 20px;
+    /*padding: 10px;*/
     position: relative;
 }
 .login-form-1 .form-group:last-child {
@@ -137,16 +138,16 @@ input[type="text"], input[type="email"], input[type="password"] {
 /*=== 5. Login Button ===*/
 .login-form-1 .login-button {
     font-family: "Curlz MT" !important;
-    position: absolute;
-    right: -25px;
-    top: 50%;
+    /*position: absolute;*/
+    /*right: -25px;*/
+    /*top: 50%;*/
     background: rgba(112, 224, 22, 0.4) !important;
     /* color: #999999; */
     font-size: 1.6em;
     padding: 10px 0;
     width: 80px;
     height: 80px;
-    margin-top: -25px;
+    margin: 0 auto;
     border: 2px solid rgba(111, 86, 86, 0.64);
     border-radius: 50%;
     -moz-transition: all ease-in-out 500ms;
@@ -161,6 +162,14 @@ input[type="text"], input[type="email"], input[type="password"] {
     -o-transform: rotate(720deg);
     -webkit-transform: rotate(720deg);
     transform: rotate(720deg);
+}
+#backBtn:hover{
+    color: #555555;
+    -moz-transform: rotate(-720deg);
+    -ms-transform: rotate(-720deg);
+    -o-transform: rotate(-720deg);
+    -webkit-transform: rotate(-720deg);
+    transform: rotate(-720deg);
 }
 /*.login-form-1 .login-button.clicked {*/
     /*color: #555555;*/

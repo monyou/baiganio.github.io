@@ -73,8 +73,6 @@
     };
 
     // Load the SDK asynchronously
-
-
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -82,16 +80,29 @@
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1880188968882018";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
-        });
-    }
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function testAPI() {
+//            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+//                console.log('Successful login for: ' + response.name);
+
+                function getFacebookUserAuthHeaders() {
+                    return {
+                        'responseStatus' : response.status,
+                        'authResponse': {
+                            accessToken: response.accessToken,
+                            expiresIn: response.expiresIn,
+                            signedRequest:response.signedRequest,
+                            userID:response.userID
+                        }
+                    };
+                }
+
+                let obj = getFacebookUserAuthHeaders();
+                document.getElementById('status').innerHTML = obj.accessToken;
+            });
+        }
 </script>
 
 <!--

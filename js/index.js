@@ -34,6 +34,15 @@ $('.flip4o').click(function () {
     $(".back").show();
     $('body').css("padding-top", "0px");
 });
+
+/* Flip blogs functionality */
+$('.flipBlogs').click(function () {
+    //        alert("here");
+    $('#blogs-card').addClass('flipped');
+    $(".blog-back").show();
+    $('body').css("padding-top", "0px");
+});
+
 $('#arrLft').click(function () {
     //        alert("here");
     $('#card').removeClass('flipped');

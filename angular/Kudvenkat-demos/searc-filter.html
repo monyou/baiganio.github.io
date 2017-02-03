@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/angular.min.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myModule">
+<br>
+<div ng-controller="myController" style="width: 86%; margin:0 auto;">
+    /* Filter with city */
+Search: <input type="text" placeholder="Search employee" ng-model="searchText.city">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="employee in employees | filter:searchText">
+            <td>{{employee.name | uppercase}}</td>
+            <td>{{employee.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+            <td>{{employee.gender | lowercase}}</td>
+            <td>{{employee.salary | number}}</td>
+            <td>{{employee.city}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<script>
+
+    let app = angular
+        .module('myModule', [])
+        .controller('myController', function ($scope) {
+            let employees = [
+                {name:"Bugs Bunny", dateOfBirth:new Date("November 23, 1902"), gender:"Rabbit", salary: 55000, city:"Aksakovo"},
+                {name:"Daffy Duck", dateOfBirth:new Date("November 23, 1901"), gender:"Duck", salary: 60000, city:"New York"},
+                {name:"Tazmanian Devil", dateOfBirth:new Date("November 23, 1900"), gender:"Male", salary: 95000.788, city:"Sidney"},
+                {name:"Любен Киков", dateOfBirth:new Date("June 19, 1984"), gender:"Male", salary: 60000.788, city:"Раковски"},
+                {name:"Буги Барабата", dateOfBirth:new Date("April 13, 1980"), gender:"Male", salary: 12000.788, city:"На кънда в дивия"}
+            ];
+
+            $scope.employees = employees;
+            $scope.sortColumn = "name";
+        });
+</script>
+
+
+</body>
+</html>
