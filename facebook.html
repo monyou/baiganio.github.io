@@ -100,7 +100,11 @@
                 }
 
                 let obj = getFacebookUserAuthHeaders();
-                document.getElementById('status').innerHTML = obj.accessToken;
+
+                alert(obj);
+
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
             });
         }
 </script>
