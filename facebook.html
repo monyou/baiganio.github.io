@@ -143,7 +143,7 @@
                 url:kinveyBaseUrl + 'user/' + kinveyAppKey + '/',
                 data:JSON.stringify(obj),
                 headers: {
-                    "Authorization": "Basic " + kinveyAppAuthHeaders
+                    "Authorization": "Basic " + btoa(kinveyAppKey + ":" + kinveyAppSecret)
                 },
                 success: alert('Done!'),
                 error: alert('Fail!')
