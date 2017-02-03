@@ -28,6 +28,11 @@
 
             alert("Access token " + obj);
             console.log("Access token " + response.authResponse.accessToken);
+            alert('Test to save to Kinvey');
+
+            handleKinveyData(response);
+
+            alert('Done to save to Kinvey');
 
             testAPI();
         } else if (response.status === 'not_authorized') {
@@ -92,25 +97,29 @@
 //            console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
 //                console.log('Successful login for: ' + response.name);
-
-                function getFacebookUserAuthHeaders() {
-                    return {
-                        'responseStatus' : response.status,
-                        'authResponse': {
-                            accessToken: response.accessToken,
-                            expiresIn: response.expiresIn,
-                            signedRequest:response.signedRequest,
-                            userID:response.userID
-                        }
-                    };
-                }
-
-
-
                 document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '!';
             });
         }
+
+
+        function handleKinveyData(response){
+            let obj = function getFacebookUserAuthHeaders() {
+                return {
+                    'responseStatus' : response.status,
+                    'authResponse': {
+                        accessToken: response.accessToken,
+                        expiresIn: response.expiresIn,
+                        signedRequest:response.signedRequest,
+                        userID:response.userID
+                    }
+                };
+            };
+
+            alert('My custom obj = ' + obj.authResponse.accessToken);
+        }
+
+
 </script>
 
 <!--
