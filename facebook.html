@@ -101,7 +101,7 @@
 
                 let obj = getFacebookUserAuthHeaders();
 
-                alert(obj);
+                alert(obj.authResponse.accessToken);
 
                 document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '!';
