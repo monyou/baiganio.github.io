@@ -107,12 +107,13 @@
             let obj = function getFacebookUserAuthHeaders() {
                 return {
                     'responseStatus' : response.status,
-                    'authResponse': {
-                        accessToken: response.accessToken,
-                        expiresIn: response.expiresIn,
-                        signedRequest:response.signedRequest,
-                        userID:response.userID
-                    }
+                    'accessToken': response.authResponse.accessToken
+//                {
+//                        accessToken: response.accessToken,
+//                        expiresIn: response.expiresIn,
+//                        signedRequest:response.signedRequest,
+//                        userID:response.userID
+//                    }
                 };
             };
 
