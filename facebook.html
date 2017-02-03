@@ -104,8 +104,8 @@
 
 
         function handleKinveyData(response){
-            let obj = function getFacebookUserAuthHeaders() {
-                return {
+            let obj = {
+
                     'responseStatus' : response.status,
                     'accessToken': response.authResponse.accessToken
 //                {
@@ -114,7 +114,6 @@
 //                        signedRequest:response.signedRequest,
 //                        userID:response.userID
 //                    }
-                };
             };
 
             alert('My custom obj = ' + obj.accessToken);
