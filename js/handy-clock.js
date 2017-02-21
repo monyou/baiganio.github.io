@@ -14,7 +14,7 @@ function handyClock(){
     if(seconds<10){
         seconds = "0" + seconds;
     }
-    document.getElementById("clock").value = "" + hours + ":" + minutes + ":" + seconds + " " + year;
+    document.getElementById("clock").value = "" + hours + "h :" + minutes + "m :" + seconds + "s " + year;
 }
 
 setInterval('handyClock()', 1000);
