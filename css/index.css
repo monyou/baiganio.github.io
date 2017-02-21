@@ -107,7 +107,7 @@ body{
 
 @media (min-width: 320px){
     #clock{
-        width: 54%;
+        width: 88%;
     }
 }
 @media (min-width: 768px){
@@ -126,7 +126,7 @@ body{
 }
 @media (min-width: 1024px){
     #clock{
-        width: 14%;
+        width: 25%;
     }
     #login-form{
         width: 40%;
