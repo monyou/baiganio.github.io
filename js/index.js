@@ -62,23 +62,27 @@ function startAppLogic() {
     $("#linkLogout").click(logoutUser);
 
     if(userID){
+        $('#loginLnk').text("");
+        $("#linkLogin").hide();
         let userName = sessionStorage.getItem("userName");
         $('#userMsg').text("Welcome, " + userName + "!");
-        $("#admin").hide();
         $("#loggedInUser").show();
         $("#linkLogout").show();
     }
     else{
-        $("#admin").show();
+        $('#loginLnk').text("Login");
+        $("#linkLogin").show();
         $("#loggedInUser").hide();
         $("#linkLogout").hide();
     }
 
     function logoutUser() {
+        $('#loginLnk').text("Login");
+        $("#linkLogin").show();
         sessionStorage.clear();
         $("#user").hide();
         $("#linkLogout").hide();
-        $("#admin").show();
+
         $('#userMsg').text("");
         showInfo("Logout successful.");
 

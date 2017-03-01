@@ -24,7 +24,7 @@ body{
     /* centers the loading animation horizontally one the screen */
     /*top: 50%;*/
     /* centers the loading animation vertically one the screen */
-    background: url("../images/gears.gif" )no-repeat center center fixed;
+
     /*-webkit-background-size: cover;*/
     /*-moz-background-size: cover;*/
     /*-o-background-size: cover;*/
@@ -61,12 +61,13 @@ body{
 .carousel-caption > a:hover{
     color: #ffff00;
 }
+
 #main-content {
     font-family: BuxtonSketch;
     height: 680px;
     display: none;
     font-size: 1.8em !important;
-    background: url("../images/frame.png") no-repeat center;
+    /*background: url("../images/frame.png") no-repeat center;*/
     -webkit-background-size: 80%;
     background-size: 85%;
 }
@@ -145,4 +146,8 @@ body{
 }
 
 
-
+#courses {
+    background: url("../images/loading3.gif") no-repeat;
+    background-size: cover;
+    padding: 50px;
+}
