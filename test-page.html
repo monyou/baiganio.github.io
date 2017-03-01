@@ -7,9 +7,72 @@
 
 </head>
 <body>
-<input type="button" id="btn" value="Get all publications">
-<input type="button" id="btnClear" value="Clear">
-<ul id="ulEmployees"></ul>
+<input id="imgInput" type="file"  name="file" />
+<img id="imagePreview" src="" alt="Item Image" width="96" height="80"/>
+<input id="Button1" type="button" value="save image"  onclick="saveimage();"/>
+
+<p id="q"></p>
+<script>
+    $(document).ready(function () {
+        $("#imgInput").change(function () {
+
+            readURL(this);
+
+        });
+
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('#imagePreview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+
+        }
+    }
+
+    function saveimage() {
+        var images = $('#imagePreview').attr('src');
+        var ImageSave = images.replace("data:image/jpeg;base64,", "");
+        var submitval = JSON.stringify({
+            UserId:"5f6c5fdc-2f64-4aff-b657-245b91c6c1ae",
+            DateSubmitted:"23-Feb-2017",
+            ReadValue:"12345678",
+            PhotoUrl:"",
+            PhotoRawData: ImageSave
+
+        });
+        var images = $('#imagePreview').attr('src');
+        var ImageSave = images.replace("data:image/jpeg;base64,", "");
+        $('#q').innerText = ImageSave;
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            datatype: "json",
+            data: submitval,
+            url: "http://localhost:8281/api/meterservice/AddElectricityRead",
+            success: function (data) {
+                //code for success
+            }
+        });
+    }
+</script>
+
+<!--http://localhost:8281/api/meterservice/AddElectricityRead-->
+
+
+
+
+
+
+<!--<input type="button" id="btn" value="Get all publications">-->
+<!--<input type="button" id="btnClear" value="Clear">-->
+<!--<ul id="ulEmployees"></ul>-->
 
 
 
