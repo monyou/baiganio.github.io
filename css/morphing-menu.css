@@ -88,7 +88,7 @@
     color: whitesmoke;
     font-family: Guildof;
     margin: 0 auto;
-    width: 75%;
+    width: 62%;
 }
 
 .oppenned .sub-menu {
@@ -110,7 +110,7 @@
 .oppenned span:nth-child(2) {
     height: 400px;
     width: 400px;
-    right: -160px;
+    right: -80px;
     top: -160px;
     border-radius: 50%;
     background-color: rgba(38, 84, 133, 0.54);
