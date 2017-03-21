@@ -147,7 +147,7 @@ body{
 
 
 #courses {
-    background: url("../images/loading3.gif") no-repeat;
+    /*background: url("../images/loading3.gif") no-repeat;*/
     background-size: cover;
     padding: 50px;
 }
