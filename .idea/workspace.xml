@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06271996-29fd-481e-bbb8-7b798a19351e" name="Default" comment="Back to top">
+    <list default="true" id="06271996-29fd-481e-bbb8-7b798a19351e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/production/index.html" afterPath="$PROJECT_DIR$/admin/production/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="516" column="60" lean-forward="false" selection-start-line="516" selection-start-column="60" selection-end-line="516" selection-end-column="60" />
+            <state relative-caret-position="481">
+              <caret line="509" column="18" lean-forward="false" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -95,7 +93,7 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
+            <state relative-caret-position="3575">
               <caret line="149" column="58" lean-forward="false" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="58" />
               <folding>
                 <element signature="e#1817#1962#0" expanded="false" />
@@ -218,6 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -233,7 +232,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,14 +417,9 @@
       <workItem from="1490051769106" duration="29000" />
       <workItem from="1490051906794" duration="71000" />
       <workItem from="1490052084749" duration="20000" />
-      <workItem from="1490052124183" duration="6131000" />
-    </task>
-    <task id="LOCAL-00019" summary="Test facebook app id5">
-      <created>1482873079910</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1482873079910</updated>
+      <workItem from="1490052124183" duration="6186000" />
+      <workItem from="1490058459322" duration="356000" />
+      <workItem from="1490108677019" duration="115000" />
     </task>
     <task id="LOCAL-00020" summary="Fixed some css styles and cleared Facebook share button">
       <created>1482877651429</created>
@@ -764,11 +757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488408392089</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Added information about the DB apps with EF course">
+      <created>1490058295451</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1490058295453</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199484000" />
+    <option name="totallyTimeSpent" value="200010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="0" width="1942" height="1042" extended-state="0" />
@@ -821,8 +821,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Demo folder added2" />
-    <MESSAGE value="Test some facebook login stuffs" />
     <MESSAGE value="Test some facebook login stuffs2" />
     <MESSAGE value="Test some facebook login stuffs3" />
     <MESSAGE value="Test some facebook login stuffs4" />
@@ -846,7 +844,9 @@
     <MESSAGE value="Removed old and unnecessary stuffs" />
     <MESSAGE value="Added few quotes" />
     <MESSAGE value="Back to top" />
-    <option name="LAST_COMMIT_MESSAGE" value="Back to top" />
+    <MESSAGE value="Added information about the DB apps with EF course" />
+    <MESSAGE value="Added information about the DB apps with EF course again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added information about the DB apps with EF course again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1123,7 +1123,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
+        <state relative-caret-position="3575">
           <caret line="149" column="58" lean-forward="false" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="58" />
           <folding>
             <element signature="e#1817#1962#0" expanded="false" />
@@ -1133,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="516" column="60" lean-forward="false" selection-start-line="516" selection-start-column="60" selection-end-line="516" selection-end-column="60" />
+        <state relative-caret-position="481">
+          <caret line="509" column="18" lean-forward="false" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
