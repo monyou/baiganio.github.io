@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06271996-29fd-481e-bbb8-7b798a19351e" name="Default" comment="">
+    <list default="true" id="06271996-29fd-481e-bbb8-7b798a19351e" name="Default" comment="Added information about the DB apps with EF course again">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="509" column="18" lean-forward="false" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
+            <state relative-caret-position="356">
+              <caret line="504" column="26" lean-forward="true" selection-start-line="504" selection-start-column="26" selection-end-line="504" selection-end-column="26" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -90,11 +90,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/multi-template-css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6933">
+              <caret line="516" column="1" lean-forward="false" selection-start-line="516" selection-start-column="1" selection-end-line="516" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3575">
-              <caret line="149" column="58" lean-forward="false" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="58" />
+            <state relative-caret-position="555">
+              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="2" selection-end-line="152" selection-end-column="3" />
               <folding>
                 <element signature="e#1817#1962#0" expanded="false" />
               </folding>
@@ -176,8 +186,8 @@
         <option value="$PROJECT_DIR$/css/morphing-menu.css" />
         <option value="$PROJECT_DIR$/admin/production/index.html" />
         <option value="$PROJECT_DIR$/test-page.html" />
-        <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/index.css" />
       </list>
     </option>
   </component>
@@ -227,6 +237,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="baiganio.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baiganio.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baiganio.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,14 +443,7 @@
       <workItem from="1490052084749" duration="20000" />
       <workItem from="1490052124183" duration="6186000" />
       <workItem from="1490058459322" duration="356000" />
-      <workItem from="1490108677019" duration="115000" />
-    </task>
-    <task id="LOCAL-00020" summary="Fixed some css styles and cleared Facebook share button">
-      <created>1482877651429</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1482877651429</updated>
+      <workItem from="1490108677019" duration="271000" />
     </task>
     <task id="LOCAL-00021" summary="Added Login and register functionality">
       <created>1482926037100</created>
@@ -764,11 +781,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490058295453</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Added information about the DB apps with EF course again">
+      <created>1490108792871</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1490108792871</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200010000" />
+    <option name="totallyTimeSpent" value="200166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="0" width="1942" height="1042" extended-state="0" />
@@ -1051,13 +1075,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/multi-template-css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12900">
-          <caret line="516" column="1" lean-forward="false" selection-start-line="516" selection-start-column="1" selection-end-line="516" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/multi-template-js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
@@ -1121,20 +1138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3575">
-          <caret line="149" column="58" lean-forward="false" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="58" />
-          <folding>
-            <element signature="e#1817#1962#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="509" column="18" lean-forward="false" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
+        <state relative-caret-position="356">
+          <caret line="504" column="26" lean-forward="true" selection-start-line="504" selection-start-column="26" selection-end-line="504" selection-end-column="26" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1194,6 +1201,24 @@
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#11;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#12;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#15;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/multi-template-css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6933">
+          <caret line="516" column="1" lean-forward="false" selection-start-line="516" selection-start-column="1" selection-end-line="516" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="2" selection-end-line="152" selection-end-column="3" />
+          <folding>
+            <element signature="e#1817#1962#0" expanded="false" />
           </folding>
         </state>
       </provider>
