@@ -30,6 +30,19 @@
     font-family: 'ss_adec';
     src: url('../fonts/myfonts/ss_adec.otf') format('truetype');
 }
+@font-face {
+    font-family: 'goudy';
+    src: url('../fonts/myfonts/GoudyThirty-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'marianna';
+    src: url('../fonts/myfonts/marianna_lkikov.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'castro';
+    src: url('../fonts/myfonts/Castro.ttf') format('truetype');
+}
+marianna_lkikov.ttf
 .AvdiraR {
     font-family: AvdiraR !important;
     font-size: 2em;
@@ -56,6 +69,14 @@
 .ss-adec{
     font-family: ss_adec !important;
 }
+
+.guildof{
+    font-family: Guildof !important;
+}
+.goudy{
+    font-family: goudy !important;
+}
+
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     color: black !important;
     background-color: rgb(255, 235, 59) !important;
