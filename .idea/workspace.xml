@@ -24,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="585" column="117" lean-forward="false" selection-start-line="585" selection-start-column="117" selection-end-line="585" selection-end-column="117" />
+            <state relative-caret-position="351">
+              <caret line="545" column="39" lean-forward="true" selection-start-line="545" selection-start-column="39" selection-end-line="548" selection-end-column="48" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -453,14 +453,8 @@
       <workItem from="1490109639395" duration="2195000" />
       <workItem from="1490189731474" duration="236000" />
       <workItem from="1491054543962" duration="88000" />
-      <workItem from="1491658921917" duration="75000" />
-    </task>
-    <task id="LOCAL-00026" summary="It's time to go to bed! ;)">
-      <created>1482974985556</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1482974985556</updated>
+      <workItem from="1491658921917" duration="125000" />
+      <workItem from="1491659110454" duration="14000" />
     </task>
     <task id="LOCAL-00027" summary="Added register page">
       <created>1483005323411</created>
@@ -798,11 +792,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490189796143</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="New link fot Git">
+      <created>1491659018610</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1491659018611</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203331000" />
+    <option name="totallyTimeSpent" value="203395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -855,7 +856,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nothing new" />
     <MESSAGE value="Nothing new 2" />
     <MESSAGE value="Nothing new 22" />
     <MESSAGE value="Nothing new final" />
@@ -880,7 +880,8 @@
     <MESSAGE value="Why GitHub doesn't work?" />
     <MESSAGE value="Lets see some updated content" />
     <MESSAGE value="Remove some unnecessary info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove some unnecessary info" />
+    <MESSAGE value="New link fot Git" />
+    <option name="LAST_COMMIT_MESSAGE" value="New link fot Git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1144,8 +1145,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="585" column="117" lean-forward="false" selection-start-line="585" selection-start-column="117" selection-end-line="585" selection-end-column="117" />
+        <state relative-caret-position="351">
+          <caret line="545" column="39" lean-forward="true" selection-start-line="545" selection-start-column="39" selection-end-line="548" selection-end-column="48" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
