@@ -24,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="596" column="40" lean-forward="true" selection-start-line="596" selection-start-column="40" selection-end-line="596" selection-end-column="40" />
+            <state relative-caret-position="376">
+              <caret line="585" column="117" lean-forward="false" selection-start-line="585" selection-start-column="117" selection-end-line="585" selection-end-column="117" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -53,6 +53,7 @@
                 <element signature="n#style#0;n#h5#1;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#2;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#3;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#4;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#h4#7;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#section#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -224,6 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,7 +255,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,14 +451,9 @@
       <workItem from="1490058459322" duration="356000" />
       <workItem from="1490108677019" duration="842000" />
       <workItem from="1490109639395" duration="2195000" />
-      <workItem from="1490189731474" duration="34000" />
-    </task>
-    <task id="LOCAL-00025" summary="Styled 403 nd 404 pages. Updated login form">
-      <created>1482973028247</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1482973028247</updated>
+      <workItem from="1490189731474" duration="236000" />
+      <workItem from="1491054543962" duration="88000" />
+      <workItem from="1491658921917" duration="75000" />
     </task>
     <task id="LOCAL-00026" summary="It's time to go to bed! ;)">
       <created>1482974985556</created>
@@ -795,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490110917375</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Remove some unnecessary info">
+      <created>1490189796142</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1490189796143</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202966000" />
+    <option name="totallyTimeSpent" value="203331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -852,7 +855,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test some facebook login stuffs final" />
     <MESSAGE value="Nothing new" />
     <MESSAGE value="Nothing new 2" />
     <MESSAGE value="Nothing new 22" />
@@ -877,7 +879,8 @@
     <MESSAGE value="Removed some css stuffs" />
     <MESSAGE value="Why GitHub doesn't work?" />
     <MESSAGE value="Lets see some updated content" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lets see some updated content" />
+    <MESSAGE value="Remove some unnecessary info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove some unnecessary info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1141,8 +1144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="596" column="40" lean-forward="true" selection-start-line="596" selection-start-column="40" selection-end-line="596" selection-end-column="40" />
+        <state relative-caret-position="376">
+          <caret line="585" column="117" lean-forward="false" selection-start-line="585" selection-start-column="117" selection-end-line="585" selection-end-column="117" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1170,6 +1173,7 @@
             <element signature="n#style#0;n#h5#1;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#2;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#3;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#4;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#h4#7;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#6;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#section#6;n#body#0;n#html#0;n#!!top" expanded="false" />
