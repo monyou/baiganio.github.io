@@ -1,26 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    <span class="Guildof">{{title}}</span>
-  </h1>
-  <img width="300" src="../assets/images/Ganio.jpg">
-</div>
 <!--============================== HIDDEN SIDE NAV =================================-->
-<app-hidden-side-nav></app-hidden-side-nav>
+<!-- <app-hidden-side-nav></app-hidden-side-nav> -->
 <!--============================== END HIDDEN SIDE NAV =================================-->
 
 <!--============================== MAIN SECTION =================================-->
-
+<div id="main">
+  <div class="row">
   <!--============================== SIDEBAR =================================-->
-  <app-sidebar></app-sidebar>
+    <div class="col-md-3" id="side-nav-menu">
+      <app-sidebar></app-sidebar>
+    </div> 
   <!--============================== END SIDEBAR =================================-->
-
   <!--============================== END MAIN CONTENT =================================-->
-  <app-main-content></app-main-content>
-  <!--============================== END MAIN SECTION =================================-->
-
-<!--============================== MAIN CONTENT =================================-->
-
+    <div class="col-md-9" id="main-page-content">
+      <app-main-content></app-main-content>
+    </div>
+  <!--============================== END MAIN CONTENT =================================-->
+  </div>
+</div>
+<!--============================== END MAIN SECTION =================================-->
 <!--============================== FOOTER =================================-->
 <app-footer></app-footer>
 <!--============================== END FOOTER =================================-->
