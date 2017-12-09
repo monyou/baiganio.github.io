@@ -4,9 +4,3 @@
 #sectionWrapper img{
     width: 70%;
 }
-#sectionWrapper a{
-    text-decoration: none;
-}
-#sectionWrapper a:hover{
-    color: #d58512;
-}
