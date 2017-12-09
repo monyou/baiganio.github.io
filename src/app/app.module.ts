@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HiddenSideNavComponent } from './hidden-side-nav/hidden-side-nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MainContentComponent } from './main-content/main-content.component';
     FooterComponent,
     HiddenSideNavComponent,
     SidebarComponent,
-    MainContentComponent
+    MainContentComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule

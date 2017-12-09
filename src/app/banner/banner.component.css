@@ -1,0 +1,9 @@
+#banner{
+    text-align: center;
+}
+#banner a{
+    text-decoration: none;
+}
+#banner a:hover{
+    color: #d58512;
+}
