@@ -1,3 +1,4 @@
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -9,7 +10,23 @@ import { HiddenSideNavComponent } from './hidden-side-nav/hidden-side-nav.compon
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { BannerComponent } from './banner/banner.component';
-import { WowSliderComponent } from './utils/wow-slider/wow-slider.component';
+import { ErrorComponent } from './utils/error/error.component';
+
+const appRoutes: Routes = [
+  // { path: 'crisis-center', component: CrisisListComponent },
+  // { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'home',
+    component: FooterComponent
+    // data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  { path: '**', component: ErrorComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +35,14 @@ import { WowSliderComponent } from './utils/wow-slider/wow-slider.component';
     SidebarComponent,
     MainContentComponent,
     BannerComponent,
-    WowSliderComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    CarouselModule.forRoot()
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
