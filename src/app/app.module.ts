@@ -15,7 +15,7 @@ import { ErrorComponent } from './utils/error/error.component';
 const appRoutes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
   // { path: 'hero/:id',      component: HeroDetailComponent },  
-  { path: '', component: AppComponent },
+  // { path: '', component: AppComponent },
   { path: '**', component: ErrorComponent }
 ];
 
