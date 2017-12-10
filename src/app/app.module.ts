@@ -14,16 +14,8 @@ import { ErrorComponent } from './utils/error/error.component';
 
 const appRoutes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
-  // { path: 'hero/:id',      component: HeroDetailComponent },
-  {
-    path: 'home',
-    component: FooterComponent
-    // data: { title: 'Heroes List' }
-  },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // { path: 'hero/:id',      component: HeroDetailComponent },  
+  { path: '', component: AppComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -39,10 +31,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot( appRoutes, { enableTracing: true } ) // <-- debugging purposes only 
   ],
   providers: [],
   bootstrap: [AppComponent]
