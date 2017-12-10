@@ -1,10 +1,15 @@
-# baiganio.github.io
+# baiganio
+## Test environment:  baiganio.azurewebsites.net
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+## Development server on lacal machine
 
-## Development server
+Run `npm install`.
 
-Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve -o` for a dev server. 
+
+Navigate to `http://localhost:4200/`. 
+
+The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -12,8 +17,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. `-prod` flag is for a production build.
 * ng build --prod --base-href "https://baiganio.github.io/baiganio.github.io/
+
+For repositories with included gh-pages you need to execute the following command.
+This will upload files from the `dist/` directory right into gh-pages.
 * ngh -m "Some self-explaining message."
 
 ## Running unit tests
