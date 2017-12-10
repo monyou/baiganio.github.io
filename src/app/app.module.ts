@@ -12,12 +12,12 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { BannerComponent } from './banner/banner.component';
 import { ErrorComponent } from './utils/error/error.component';
 
-const appRoutes: Routes = [
-  // { path: 'crisis-center', component: CrisisListComponent },
-  // { path: 'hero/:id',      component: HeroDetailComponent },  
-  // { path: '', component: AppComponent },
-  { path: '**', component: ErrorComponent }
-];
+// const appRoutes: Routes = [
+//   // { path: 'crisis-center', component: CrisisListComponent },
+//   // { path: 'hero/:id',      component: HeroDetailComponent },  
+//   // { path: '', component: AppComponent },
+//   { path: '**', component: ErrorComponent }
+// ];
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ const appRoutes: Routes = [
     ErrorComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot( appRoutes, { enableTracing: true } ) // <-- debugging purposes only 
+    BrowserModule
+    // RouterModule.forRoot( appRoutes, { enableTracing: true } ) // <-- debugging purposes only 
   ],
   providers: [],
   bootstrap: [AppComponent]
