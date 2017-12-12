@@ -12,11 +12,6 @@ Step 2 :
 
 -----------------------------------------------------
 
-And then launch the app in your browser for testing with: 
-
-ng serve -o
------------------------------------------------------
-
 Step 3 :
 
 - In case it's not install yet: `npm i -g angular-cli-ghpages`
