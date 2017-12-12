@@ -2,7 +2,7 @@
 
 Step 1 :
 – Make sure you have installed Node.js® and npm
-- Demo @ [# baiganio.github.io](https://github.com/angular-buch/angular-cli-ghpages)
+- Demo @ [https://github.com/angular-buch/angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages)
 
 -----------------------------------------------------
 
