@@ -10,6 +10,7 @@ Step 1 :
 - Demo @ [https://github.com/angular-buch/angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages)
 
 Step 2 :
+- Clone the project and run `npm install`
 - Launch the app in your browser for testing with `ng serve -o`
 
 Step 3 :
