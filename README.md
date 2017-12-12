@@ -8,7 +8,6 @@
 Step 1 :
 – Make sure you have installed Node.js® and npm
 - Demo @ [https://github.com/angular-buch/angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages)
------------------------------------------------------
 Step 2 :
 - Launch the app in your browser for testing with `ng serve -o`
 -----------------------------------------------------
