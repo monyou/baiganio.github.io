@@ -1,9 +1,10 @@
-
 - Official site -> [https://baiganio.github.io/](http://baiganio.github.io/)
 - Official IDS -> comming soon....
 - Dev version -> [http://baiganio.azurewebsites.net/](http://baiganio.azurewebsites.net/)
 - Dev Identity Server -> [http://ids4core11.azurewebsites.net/](http://ids4core11.azurewebsites.net/)
 - Dev IDS endpoint -> [http://ids4core11.azurewebsites.net/.well-known/openid-configuration](http://ids4core11.azurewebsites.net/.well-known/openid-configuration)
+
+- IDS repo -> [https://github.com/BaiGanio/IDS4Core11](https://github.com/BaiGanio/IDS4Core11)
 -----------------------------------------------------
 Step 1 :
 – Make sure you have installed Node.js® and npm
