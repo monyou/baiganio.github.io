@@ -1,3 +1,34 @@
 <p>
-  sidebar works!
+  <a id="shrink-menu" href="#">Expand Menu</a>
 </p>
+<aside class="sidebar">
+  <div class="logo">
+      <a href="javascript:void(0)" onclick="closeNav()">
+          <img src="../assets/images/Ganio.jpg" alt="logo" id="logo" >
+      </a>
+      <p class="Guildof" style="font-size:1.5em;"><b>baiganio.github.io</b></p>
+      <a href="#" onclick="openNav()">
+          <img src="../assets/images/menu-icon.png" class="sidebar-menu" alt="" style="width:25%" />
+      </a>
+  </div>
+  <hr>
+  <br>
+  <nav class="page-navigation Guildof">
+      <a routerLink="/" class="single-menu-element-link">
+        home
+      </a>
+      <a routerLink="/main-content" class="single-menu-element-link">
+        main-content
+      </a>
+      <a routerLink="/fake" class="single-menu-element-link">
+         fake
+      </a>
+      <div id="recent-posts" class="Alsandra">
+          <a href="#" id="linkListPosts" class="single-menu-element-link">
+              <h1>Recent posts</h1>
+          </a>
+          <hr>
+          <div id="post-title"></div>
+      </div>
+  </nav>
+</aside>

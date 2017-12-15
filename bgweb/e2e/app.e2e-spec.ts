@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('bgweb App', () => {
+describe('baiganio.github.io App', () => {
   let page: AppPage;
 
   beforeEach(() => {
