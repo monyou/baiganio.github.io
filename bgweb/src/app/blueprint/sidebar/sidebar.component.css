@@ -46,16 +46,11 @@
   .page-navigation>a {
     color: black;
     font-size: 2em;
-    text-decoration: none;
     display: block;
   }
   
-  .page-navigation>a:hover {
-    color: #2e6da4;
-  }
-  
-  #post-title {
-    font-size: 1.6em !important;
-    text-align: left !important;
-    color: black;
+  .page-navigation a:hover {
+    color: #7ed112;
+    cursor: pointer;
+    text-decoration: none;
   }

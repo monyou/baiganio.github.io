@@ -24,3 +24,11 @@
 .TheMonkiesAteMySoul{
     font-family: TheMonkiesAteMySoul;
 }
+
+/* This will allow main-section components to be aligned all at once. */
+.sectionWrapper{
+    width: 100%;
+}
+.sectionWrapper img{
+    width: 70%;
+}
