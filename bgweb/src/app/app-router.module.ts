@@ -8,16 +8,12 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
 	{
-		path: 'home',
-		component: LandingPageComponent
-	},
-	{
 		path: 'fake',
 		component: FakeComponent
 	},
 	{
 		path: '**',
-		component: NotFoundComponent
+		component: LandingPageComponent
 	}
 ];
 
