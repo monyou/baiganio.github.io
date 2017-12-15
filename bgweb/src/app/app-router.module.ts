@@ -14,11 +14,12 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: LandingPageComponent
-    },
+	},
 	{
 		path: 'fake',
 		component: FakeComponent
-    }
+	}
+	// { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
