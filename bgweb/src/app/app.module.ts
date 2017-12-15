@@ -8,6 +8,7 @@ import { MainSectionComponent } from './blueprint/main-section/main-section.comp
 import { SidebarComponent } from './blueprint/sidebar/sidebar.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { FakeComponent } from './pages/fake/fake.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FakeComponent } from './pages/fake/fake.component';
     MainSectionComponent,
     SidebarComponent,
     LandingPageComponent,
-    FakeComponent
+    FakeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
