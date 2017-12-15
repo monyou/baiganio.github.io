@@ -9,6 +9,7 @@ import { SidebarComponent } from './blueprint/sidebar/sidebar.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { FakeComponent } from './pages/fake/fake.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SidebarHiddenComponent } from './blueprint/sidebar-hidden/sidebar-hidden.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     SidebarComponent,
     LandingPageComponent,
     FakeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarHiddenComponent
   ],
   imports: [
     BrowserModule,

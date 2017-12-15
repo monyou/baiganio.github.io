@@ -43,10 +43,11 @@
     font-size: 2em;
     text-decoration: none;
   }
-  .page-navigation>a {
+  .page-navigation > a {
     color: black;
     font-size: 2em;
     display: block;
+    text-decoration: none;
   }
   
   .page-navigation a:hover {
