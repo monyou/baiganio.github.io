@@ -25,6 +25,8 @@
     font-family: TheMonkiesAteMySoul;
 }
 
+.number-font{font-family: Alsandra;}
+
 /* This will allow main-section components to be aligned all at once. */
 .sectionWrapper{
     width: 100%;

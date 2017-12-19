@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FakeComponent } from './pages/fake/fake.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
 	{
@@ -19,6 +20,14 @@ const routes: Routes = [
 	{
 		path: 'fake',
 		component: FakeComponent
+	},
+	{
+		path: 'login',
+		component: LoginComponent
+	},
+	{
+		path: 'register',
+		component: RegisterComponent
 	},
 	{
 		path: '**',

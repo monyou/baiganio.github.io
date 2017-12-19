@@ -1,0 +1,46 @@
+ <!-- START LOGIN CONTENT -->
+ <section id="viewLogin">
+    <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>login</b></h1>
+    <h4 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Use a local account to log in</b></h4>
+    <!-- <hr /> -->
+    <!-- START TEST ACCOUNT VIEW -->
+    <!-- <app-test-account></app-test-account> -->
+    <!-- END TEST ACCOUNT VIEW -->
+    <hr><br><br>
+    <!-- START FORM -->
+    <div class="login-form-1">
+            <div id="login-form" class="text-left">
+                    <div class="main-login-form">
+                        <form action="POST"  id="loginForm">
+                            <div class="login-group">
+                                <!--Username-->
+                                <div class="form-group">
+                                    <input type="text"  id="loginUsername" placeholder="Username" required="true">
+                                </div>
+                                <!--Password-->
+                                <div class="form-group">
+                                    <input type="password" id="loginPassword" placeholder="Password" required="true">
+                                </div>
+                                <!--Button GO-->
+                                <div class="form-group">
+                                    <input type="submit" id="login-button" value="GO" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    <!-- END FORM -->
+
+    <br><br><br><br><br><hr>
+    <h3>
+        <a routerLink="/register">Register as a new user</a> 
+        || 
+        <a routerLink="/forgotten-password">Forgot your password?</a>
+        ||
+        <a routerLink="/forgotten-password">Use another service to log in</a>
+    </h3>
+<hr>
+<!-- <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Use another service to log in.</b></h1> -->
+</section>
+<!-- END LOGIN CONTENT -->
