@@ -24,7 +24,7 @@
         <!-- START: register-form -->
         <div id="register-form" class="text-left">
             <div class="main-login-form">
-                <form action="POST" id="registerForm">
+                <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveform.value)">
                     <div class="login-group">
                         <!--Username-->
                         <div class="form-group">

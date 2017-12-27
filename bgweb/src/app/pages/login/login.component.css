@@ -1,0 +1,19 @@
+.alert {
+  background: rgb(231, 9, 9);
+  padding: 7px;
+  font-size: 2em;
+  color:whitesmoke;
+  display: inline-block;
+  animation: 2s alertAnimation forward;
+}
+
+@keyframes alertAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

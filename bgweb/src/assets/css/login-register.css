@@ -64,7 +64,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 /*=== Buttons ===*/
-#login-button, #register-button {
+.login-button, #register-button {
     position: absolute;
     right: -25px;
     top: 50%;
@@ -82,7 +82,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     -webkit-transition: all ease-in-out 500ms;
     transition: all ease-in-out 500ms;
 }
-#login-button:hover, #register-button:hover {
+.login-button:hover, #register-button:hover {
     color: #b13737;
     background:greenyellow;
     -moz-transform: rotate(720deg);
