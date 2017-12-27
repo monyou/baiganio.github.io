@@ -1,9 +1,13 @@
- <!-- START REGISTRATION CONTENT -->
- <section id="viewRegister">
-    <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Register</b></h1>
-    <h4 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Create a new account</b></h4>
-    <hr />
-    <!-- <h3 class="qtar" style="font-size: 2.5em">
+<!-- START REGISTRATION CONTENT -->
+<section id="viewRegister">
+  <h1 class="theMonkiesAteMySoul" style="color: #c0a16b">
+    <b>Register</b>
+  </h1>
+  <h4 class="theMonkiesAteMySoul" style="color: #c0a16b">
+    <b>Create a new account</b>
+  </h4>
+  <hr />
+  <!-- <h3 class="qtar" style="font-size: 2.5em">
         Just type something stupid:
         <br>
         <span style="color: red">john</span> for user
@@ -18,44 +22,54 @@
         <br>
         :)
     </h3> -->
-    <br><br>
-    <!-- START FORM -->
-    <div class="register-form-1">
-        <!-- START: register-form -->
-        <div id="register-form" class="text-left">
-            <div class="main-login-form">
-                <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveform.value)">
-                    <div class="login-group">
-                        <!--Username-->
-                        <div class="form-group">
-                            <input type="text" id="registerUsername" placeholder="Username"  required="true">
-                        </div>
-                        <!--Email-->
-                        <div class="form-group">
-                            <input type="email" id="registerEmail" placeholder="Email">
-                        </div>
-                        <!--Password-->
-                        <div class="form-group">
-                            <input type="password" id="registerPassword" placeholder="Password"  required="true">
-                        </div>
-                        <!--Confirm Password-->
-                        <div class="form-group">
-                            <input type="password" id="registerConfirmPassword" placeholder="Confirm Password">
-                        </div>
-
-                        <!--Button GO-->
-                        <div class="form-group">
-                            <input type="submit" id="register-button" value="GO" />
-                        </div>
-                    </div>
-                </form>
+  <br>
+  <br>
+  <!-- START FORM -->
+  <div class="register-form-1">
+    <!-- START: register-form -->
+    <div id="register-form" class="text-left">
+      <div class="main-login-form">
+        <!-- <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveform.value)"> -->
+        <form>
+          <div class="login-group">
+            <!--Username-->
+            <div class="form-group">
+              <input type="text" id="registerUsername" placeholder="Username" required="true">
             </div>
-        </div>
-        <!-- END: register-form -->
-    </div>
-    <!-- END FORM -->   
-    <br><br><br><br><br><hr>
+            <!--Email-->
+            <div class="form-group">
+              <input type="email" id="registerEmail" placeholder="Email">
+            </div>
+            <!--Password-->
+            <div class="form-group">
+              <input type="password" id="registerPassword" placeholder="Password" required="true">
+            </div>
+            <!--Confirm Password-->
+            <div class="form-group">
+              <input type="password" id="registerConfirmPassword" placeholder="Confirm Password">
+            </div>
 
-<!-- END REGISTRATION CONTENT --> <hr>
-<h3>Already have an account? Click <a routerLink="/login">here!</a></h3>
+            <!--Button GO-->
+            <div class="form-group">
+              <input type="submit" id="register-button" value="GO" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END: register-form -->
+  </div>
+  <!-- END FORM -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
+
+  <!-- END REGISTRATION CONTENT -->
+  <hr>
+  <h3>Already have an account? Click
+    <a routerLink="/login">here!</a>
+  </h3>
 </section>
