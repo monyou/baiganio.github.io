@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app-router.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainSectionComponent } from './blueprint/main-section/main-section.component';
