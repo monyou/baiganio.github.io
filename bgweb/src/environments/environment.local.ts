@@ -4,25 +4,31 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-	production: false,
-	envName: 'local',
-	appUrl: 'http://localhost:5003/',
-	apiUrl: 'http://localhost:8281/api/',
-	idsUrl: 'http://localhost:5004/',
-	backofficeUrl: 'http://localhost:9117/',
+    production: false,
+    envName: 'local',
+    appUrl: 'http://localhost:5001/',
+    apiUrl: 'http://localhost:5003/api/',
+    // idsUrl: 'http://localhost:5000/',
+    idsUrl: 'https://ids4core20.azurewebsites.net/',
 
-	IPCheckingServiceUrl: 'https://freegeoip.net/json/',
+    IPCheckingServiceUrl: 'https://freegeoip.net/json/',
 
-	identityServerCredentials: {
-		client_id: 'bg-webapp-test',
-		client_secret: 'bg-webapp-test-secret',
-		scope: 'scope.bg-webapp-test',
-		grant_type: 'client_credentials'
-	},
-	identityServerCredentialsUser: {
-		client_id: 'webapp_user',
-		client_secret: '',
-		scope: 'ApiGateway',
-		grant_type: 'password'
-	}
+    identityServerClientCredentials: {
+        client_id: 'bgweb-app',
+        client_secret: '8526cfb2-472b-4c40-b704-51d0dbf9edc3',
+        scope: 'scope.bgapi',
+        grant_type: 'client_credentials'
+    },
+    identityServerUserCredentials: {
+        client_id: 'bgweb-user',
+        client_secret: '8eb2c29f-c0f9-4020-a165-aaf54333aba3t',
+        scope: 'scope.bgapi',
+        grant_type: 'password'
+    },
+    apiKey: 'still-waiting',
+    routesRequiringUserToken: [
+        '/dashboard',
+        '/profile',
+        '/admin'
+    ]
 };
