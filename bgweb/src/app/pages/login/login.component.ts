@@ -14,7 +14,7 @@ export class LoginComponent {
   loginSubmit: any; // property for the submitted form
   username: string = '';
   password: string = '';
-  usernameAlert: string = 'This field is required.'
+  usernameAlert: string = 'This field is required.';
 
   constructor(private formBuilder: FormBuilder) {
     this.reactiveForm = formBuilder.group({
@@ -32,7 +32,7 @@ export class LoginComponent {
 
   sendLoginRequest(loginSubmit) {
     this.username = loginSubmit.username;
-    this.password = loginSubmit.password
+    this.password = loginSubmit.password;
   }
 
 
