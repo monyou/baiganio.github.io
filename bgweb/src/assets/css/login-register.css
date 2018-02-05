@@ -64,7 +64,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 /*=== Buttons ===*/
-.login-button, #register-button {
+.login-button, .register-button {
     position: absolute;
     right: -25px;
     top: 50%;
@@ -82,7 +82,20 @@ input[type="text"], input[type="email"], input[type="password"] {
     -webkit-transition: all ease-in-out 500ms;
     transition: all ease-in-out 500ms;
 }
-.login-button:hover, #register-button:hover {
+
+
+
+.login-button:enabled, .register-button:enabled {
+    color: whitesmoke;
+    background:rgb(52, 199, 243);
+    /* -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg); */
+}
+
+.login-button:enabled:hover, .register-button:enabled:hover {
     color: #b13737;
     background:greenyellow;
     -moz-transform: rotate(720deg);
@@ -92,3 +105,22 @@ input[type="text"], input[type="email"], input[type="password"] {
     transform: rotate(720deg);
 }
 
+.alert {
+    background: rgb(231, 9, 9);
+    padding: 7px;
+    font-size: 2em;
+    color:whitesmoke;
+    display: inline-block;
+    animation: 2s alertAnimation forward;
+  }
+  
+  @keyframes alertAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

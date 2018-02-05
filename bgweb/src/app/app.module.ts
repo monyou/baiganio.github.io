@@ -17,6 +17,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { FakeComponent } from './pages/fake/fake.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { InitialUsersService } from './app-services/initial-users/initial-users.service';
+import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FooterComponent,
     BannerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    InitialUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [InitialUsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -28,6 +29,10 @@ const routes: Routes = [
 	{
 		path: 'register',
 		component: RegisterComponent
+	},
+	{
+		path: 'initialusers',
+		component: InitialUsersComponent
 	},
 	{
 		path: '**',

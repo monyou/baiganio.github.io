@@ -45,7 +45,7 @@ export class UserDataService {
   }
   
   getClientAccessToken(): Observable<Response> {
-		const idsCredentials = environment.identityServerCredentials;
+		const idsCredentials = environment.identityServerClientCredentials;
 
 		const params = new URLSearchParams();
 		params.set('client_id', idsCredentials.client_id);

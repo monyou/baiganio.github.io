@@ -1,3 +1,4 @@
+import { LoginEntry } from './loginEntry.model';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -11,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
   reactiveForm: FormGroup;
-  loginSubmit: any; // property for the submitted form
+  loginSubmit = new LoginEntry(); // property for the submitted form
   username: string = '';
   password: string = '';
   usernameAlert: string = 'This field is required.';

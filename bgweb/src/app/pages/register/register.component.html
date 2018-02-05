@@ -29,31 +29,50 @@
     <!-- START: register-form -->
     <div id="register-form" class="text-left">
       <div class="main-login-form">
-        <!-- <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveform.value)"> -->
-        <form>
-          <div class="login-group">
-            <!--Username-->
-            <div class="form-group">
-              <input type="text" id="registerUsername" placeholder="Username" required="true">
-            </div>
-            <!--Email-->
-            <div class="form-group">
-              <input type="email" id="registerEmail" placeholder="Email">
-            </div>
-            <!--Password-->
-            <div class="form-group">
-              <input type="password" id="registerPassword" placeholder="Password" required="true">
-            </div>
-            <!--Confirm Password-->
-            <div class="form-group">
-              <input type="password" id="registerConfirmPassword" placeholder="Confirm Password">
-            </div>
+        <form [formGroup]="reactiveForm" (ngSubmit)="sendRegisterRequest(reactiveForm.value)">
+            <div class="form-container">
 
-            <!--Button GO-->
-            <div class="form-group">
-              <input type="submit" id="register-button" value="GO" />
-            </div>
-          </div>
+                <!--Username-->
+                <div class="alert" *ngIf="!reactiveForm.controls['username'].valid && reactiveForm.controls['username'].touched">
+                    {{usernameAlert}}
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Username" formControlName="username">
+                </div>
+
+                <!--Email-->
+                <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
+                    {{usernameAlert}}
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="email" formControlName="email">
+                </div>
+
+                <!--Password-->
+                <div class="alert" *ngIf="!reactiveForm.controls['password'].valid && reactiveForm.controls['password'].touched">
+                    The password must be at least <span class='number-font'>6</span> characters long.
+                </div>
+                <div class="form-group">
+                  <input type="password"  placeholder="Password" formControlName="password">
+                </div>
+
+                <!--Password-->
+                <!-- <div class="alert" *ngIf="!reactiveForm.controls['password'].valid && reactiveForm.controls['password'].touched">
+                    The password must be at least <span class='number-font'>6</span> characters long.
+                </div>
+                <div class="form-group">
+                  <input type="password"  placeholder="confirm password" formControlName="confirm-password">
+                </div> -->
+    
+                <!-- <label for="validCheckbox"> Min of 3 chars</label>
+                <input type="checkbox" name="validCheckbox" formControllName="validCheckbox" value="1">On -->
+    
+                <!--Button GO-->
+                <div class="form-group">
+                  <input type="submit" class="register-button" value="GO" [disabled]="!reactiveForm.valid"/>
+                </div>
+                
+              </div>
         </form>
       </div>
     </div>
@@ -72,4 +91,13 @@
   <h3>Already have an account? Click
     <a routerLink="/login">here!</a>
   </h3>
+
+  <div class="alert alert-success col-md-offset-4 col-md-4" *ngIf="completedRegistration" i18n>
+    You will receive a confirmation email on the provided email address.
+  </div>
+  
+  <!-- <div *ngIf="loadingMessage" class="modal fade show in manual-backdrop" tabindex="-1" role="dialog" id="loadingModal" data-backdrop="static" data-keyboard="false">
+    <app-in-progress [progressText]="loadingMessage" [progressPercent]="100" [loaderType]="'circle'"></app-in-progress>
+  </div> -->
+
 </section>

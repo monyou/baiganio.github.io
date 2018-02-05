@@ -6,17 +6,17 @@
 export const environment = {
     production: false,
     envName: 'local',
-    appUrl: 'http://localhost:5001/',
-    apiUrl: 'http://localhost:5003/api/',
+    appUrl: 'http://localhost:5003/',
+    apiUrl: 'http://localhost:5001/api/',
     // idsUrl: 'http://localhost:5000/',
     idsUrl: 'https://ids4core20.azurewebsites.net/',
 
     IPCheckingServiceUrl: 'https://freegeoip.net/json/',
 
     identityServerClientCredentials: {
-        client_id: 'bgweb-app',
-        client_secret: '8526cfb2-472b-4c40-b704-51d0dbf9edc3',
-        scope: 'scope.bgapi',
+        client_id: 'bgapi-free',
+        client_secret: 'bgapi-free-secret',
+        scope: 'scope.bgapi-free',
         grant_type: 'client_credentials'
     },
     identityServerUserCredentials: {

@@ -1,0 +1,26 @@
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h3 style="font-family:'Garamond'; font-size:2.6em;">This data is fetched from <b>https://bgapi.azurewebsites.net/api/initialusers</b></h3>
+ 
+<br>
+
+  <table class='initUsers'>
+    <tr>
+      <th style="width:30%">Usernames</th>
+      <th>Email</th>
+      <th>Is confirmed</th>
+      <th>Lead source</th>
+      <th>other</th>
+      <th>other</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.isEmailConfirmed}}</td>
+      <td>{{user.leadSource}}</td>
+      <td><i class="fa fa-remove"></i></td>
+      <td><i class="fa fa-check"></i></td>
+    </tr>
+  </table>
