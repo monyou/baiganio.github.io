@@ -15,16 +15,16 @@ export const environment = {
 
     identityServerClientCredentials: {
         client_id: 'bgapi-free',
-        client_secret: 'bgapi-free-secret',
+        client_secret: 'bgapi-free-seret',
         scope: 'scope.bgapi-free',
         grant_type: 'client_credentials'
     },
-    identityServerUserCredentials: {
-        client_id: 'bgweb-user',
-        client_secret: '8eb2c29f-c0f9-4020-a165-aaf54333aba3t',
-        scope: 'scope.bgapi',
-        grant_type: 'password'
-    },
+    // identityServerUserCredentials: {
+    //     client_id: 'bgweb-user',
+    //     client_secret: '8eb2c29f-c0f9-4020-a165-aaf54333aba3t',
+    //     scope: 'scope.bgapi',
+    //     grant_type: 'password'
+    // },
     apiKey: 'still-waiting',
     routesRequiringUserToken: [
         '/dashboard',

@@ -25,7 +25,7 @@
   <br>
   <br>
   <!-- START FORM -->
-  <div class="register-form-1">
+  <div class="register-form-1" *ngIf="!completedRegistration; else someInfo">
     <!-- START: register-form -->
     <div id="register-form" class="text-left">
       <div class="main-login-form">
@@ -79,6 +79,17 @@
     <!-- END: register-form -->
   </div>
   <!-- END FORM -->
+
+<!-- START someInfo FORM -->
+<ng-template #someInfo>
+  <div class="container">
+    <div class="row">
+      <h1>Браус уе, бачЪ. Ти се регистрира уе!</h1>
+    </div>
+  </div>
+</ng-template>
+<!-- END someInfo FORM -->
+
   <br>
   <br>
   <br>
@@ -92,9 +103,9 @@
     <a routerLink="/login">here!</a>
   </h3>
 
-  <div class="alert alert-success col-md-offset-4 col-md-4" *ngIf="completedRegistration" i18n>
+  <!-- <div class="alert alert-success col-md-offset-4 col-md-4" *ngIf="completedRegistration" i18n>
     You will receive a confirmation email on the provided email address.
-  </div>
+  </div> -->
   
   <!-- <div *ngIf="loadingMessage" class="modal fade show in manual-backdrop" tabindex="-1" role="dialog" id="loadingModal" data-backdrop="static" data-keyboard="false">
     <app-in-progress [progressText]="loadingMessage" [progressPercent]="100" [loaderType]="'circle'"></app-in-progress>

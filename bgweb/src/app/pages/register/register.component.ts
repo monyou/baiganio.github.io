@@ -1,9 +1,16 @@
-// import { HeaderService } from './../../app-services/header/header.service';
-import { RegisterEntry } from './registerEntry.model';
+import { Http, Response, RequestOptions, Headers, Request, RequestMethod } from '@angular/http';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { HeaderService } from './../../app-services/header/header.service';
+import { UserViewService } from './../../core/user/services/userview/userview.service';
+
+import { RegisterEntry } from './registerEntry.model';
+import { UserDataService } from '../../core/user/services/userdata/user-data.service';
+
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-register',
@@ -12,16 +19,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
-  registerEntry = new RegisterEntry();
+  registerSubmit = new RegisterEntry();
   loadingMessage;
-  // acceptTerms = false;
-	// displayError = '';
-	completedRegistration;
-	// backendValidationErrors;
-	// showEmailInfo = false;
+  acceptTerms = false;
+  completedRegistration: boolean = false;
   usernameAlert: string = 'This field is required.';
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
+    private http: Http, private userDataService: UserDataService, private headerService: HeaderService,
+    private userViewService: UserViewService) {
     this.reactiveForm = formBuilder.group({
       'username': [
         null,
@@ -44,34 +50,26 @@ export class RegisterComponent implements OnInit {
   }
   
   ngOnInit() {
-		// this.headerService.userToken = '';
+		this.headerService.userToken = '';
 	}
 
-  sendRegisterRequest(registerEntry){
+  sendRegisterRequest(registerSubmit){   
 
-		this.loadingMessage = 'Loading dudes...'; // this.locale.validatingSignupData;
-console.log(this.loadingMessage);
-		// this.backendService.registerUser(registerEntry).subscribe(
-    //   response => {
-    //     this.loadingMessage = '';
-    //   },
-    //   error => this.errorHandlerService.handleRequestError(
-    //     error, 
-    //     this.handleError, 
-    //     [this, false], 
-    //     null, 
-    //     this.retryFunction, 
-    //     [fullRegistration]
-    //   ),
-    //   () => {
-    //     this.completedRegistration = true;
+    this.userDataService.registerUser(registerSubmit).subscribe(
+      response => {
+        this.loadingMessage = '';
+        this.completedRegistration = true;
+      },
+      //error => this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
+      () => {
+        this.completedRegistration = true;
 
-    //     if (this.utilityService.isLocalStorageNameSupported()) {
-    //       localStorage.removeItem('signupData');
-    //     }
-    //     this.router.navigate(['/timeline'], { queryParams: { initialLoading: true } });
-    //   }
-    // );
+        // if (this.utilityService.isLocalStorageNameSupported()) {
+        //   localStorage.removeItem('signupData');
+        // }
+        // this.router.navigate(['/timeline'], { queryParams: { initialLoading: true } });
+      }
+    );
 	}
 
 

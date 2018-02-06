@@ -1,6 +1,5 @@
 import { InitialUsersService } from './../../app-services/initial-users/initial-users.service';
 import { Component, OnInit } from '@angular/core';
-import { UserDomain } from '../../app-domains/user/user-domain.model';
 
 @Component({
   selector: 'app-initial-users',
@@ -17,7 +16,7 @@ export class InitialUsersComponent implements OnInit {
     this.initUserService.getInitialUsers()
       .subscribe((initUsers: any[]) => {
         this.users  = initUsers;   
-        console.log(this.users);
+        //console.log(this.users);
       })
       
   }

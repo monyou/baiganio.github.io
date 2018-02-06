@@ -11,6 +11,7 @@ import { SidebarComponent } from './blueprint/sidebar/sidebar.component';
 import { SidebarHiddenComponent } from './blueprint/sidebar-hidden/sidebar-hidden.component';
 import { FooterComponent } from './blueprint/footer/footer.component';
 import { BannerComponent } from './blueprint/banner/banner.component';
+import { HeaderService } from './app-services/header/header.service';
 
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -19,6 +20,8 @@ import { FakeComponent } from './pages/fake/fake.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InitialUsersService } from './app-services/initial-users/initial-users.service';
 import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
+import { UserViewService } from './core/user/services/userview/userview.service';
+import { UserDataService } from './core/user/services/userdata/user-data.service';
 
 
 @NgModule({
@@ -43,7 +46,7 @@ import { InitialUsersComponent } from './pages/initial-users/initial-users.compo
     HttpModule,
     AppRoutingModule
   ],
-  providers: [InitialUsersService],
+  providers: [InitialUsersService, UserViewService, UserDataService, HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
-
-import { UserService } from './../../app-services/user/user.service';
+import { UserViewService } from '../../core/user/services/userview/userview.service';
 
 
 @Injectable()
@@ -16,7 +15,7 @@ export class HeaderService {
 		this._userToken = token.access_token;
 	}
 
-	constructor(private userService: UserService) {
+	constructor(private userViewService: UserViewService) {
 		// this._userToken = undefined;
 		// if (this.utilityService.isLocalStorageNameSupported()) {
 		// 	this._userToken = localStorage.getItem('user_token');
@@ -29,8 +28,7 @@ export class HeaderService {
 		// if (this.utilityService.isLocalStorageNameSupported()) {
 		// 	localStorage.removeItem('user_token');
     // }
-    localStorage.removeItem('user_token');
-		this.userService.logout();
+		this.userViewService.logout();
 	}
 
 	setUserTokenAndRemember(token) {
@@ -38,8 +36,7 @@ export class HeaderService {
 		this._userToken = token.access_token;
 		// if (this.utilityService.isLocalStorageNameSupported()) {
 		// 	localStorage.setItem('user_token', token.access_token);
-    // }
-    localStorage.setItem('user_token', token.access_token);
+    // };
 	}
 
 	getSimpleHeaders(useUserToken?): Headers {
