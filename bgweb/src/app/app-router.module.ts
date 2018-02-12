@@ -7,6 +7,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CourseComponent } from './pages/course/course.component';
+import { PostComponent } from './pages/post/post.component';
 
 const routes: Routes = [
 	{
@@ -33,6 +35,14 @@ const routes: Routes = [
 	{
 		path: 'initialusers',
 		component: InitialUsersComponent
+	},
+	{
+		path: 'course',
+		component: CourseComponent
+	},
+	{
+		path: 'posts',
+		component: PostComponent
 	},
 	{
 		path: '**',

@@ -22,6 +22,10 @@ import { FakeComponent } from './pages/fake/fake.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
 import { UserViewService } from './core/services/userview/userview.service';
+import { CourseService } from './core/services/course/course.service';
+import { CourseComponent } from './pages/course/course.component';
+import { PostService } from './core/services/posts/post.service';
+import { PostComponent } from './pages/post/post.component';
 
 
 @NgModule({
@@ -37,7 +41,9 @@ import { UserViewService } from './core/services/userview/userview.service';
     BannerComponent,
     LoginComponent,
     RegisterComponent,
-    InitialUsersComponent
+    InitialUsersComponent,
+    CourseComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,7 @@ import { UserViewService } from './core/services/userview/userview.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [InitialUsersService, UserViewService, HeaderService, BackendService, UserViewService],
+  providers: [InitialUsersService, UserViewService, HeaderService, BackendService, UserViewService, CourseService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
