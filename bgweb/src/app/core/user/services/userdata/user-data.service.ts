@@ -63,9 +63,4 @@ export class UserDataService {
   registerUser(data): Observable<Response> {
 		return this.backendRequest('post', 'account/register', data);
 	}
-
-
-
-
-
 }

@@ -15,8 +15,8 @@ export const environment = {
 
     identityServerClientCredentials: {
         client_id: 'bgapi-free',
-        client_secret: 'bgapi-free-seret',
-        scope: 'scope.bgapi-free',
+        client_secret: 'bgapi-free-secret',
+        scope: 'scope.bgapi',
         grant_type: 'client_credentials'
     },
     // identityServerUserCredentials: {

@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 export class InitialUsersService {
 
   //apiUrl = 'http://localhost:5001/api/InitialUsers';
-  apiUrl = 'https://bgapi.azurewebsites.net/api/initialusers';
+  apiUrl = 'https://bgapi.azurewebsites.net/api/InitialUsers';
 
   constructor(private http: Http) { }
 

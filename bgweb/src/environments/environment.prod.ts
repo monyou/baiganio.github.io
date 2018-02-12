@@ -9,9 +9,9 @@ export const environment = {
 	IPCheckingServiceUrl: 'https://freegeoip.net/json/',
 
 	identityServerClientCredentials: {
-		client_id: 'bgapi-free',
-		client_secret: 'bgapi-free-seret',
-		scope: 'scope.bgapi-free',
+		client_id: 'bgweb-app',
+		client_secret: '8526cfb2-472b-4c40-b704-51d0dbf9edc3',
+		scope: 'scope.bgapi',
 		grant_type: 'client_credentials'
 	},
 	identityServerUserCredentials: {
