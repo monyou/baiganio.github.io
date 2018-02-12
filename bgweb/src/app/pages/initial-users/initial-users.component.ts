@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InitialUsersService } from '../../core/services/initial-users/initial-users.service';
+import { UserViewModel } from '../../core/models/user-view-model.module';
 
 @Component({
   selector: 'app-initial-users',
@@ -8,17 +9,16 @@ import { InitialUsersService } from '../../core/services/initial-users/initial-u
 })
 export class InitialUsersComponent implements OnInit {
 
-  users = [];
+  users: UserViewModel[];
 
   constructor(public initUserService: InitialUsersService) { }
 
   ngOnInit() {
-    this.initUserService.getInitialUsers()
-      .subscribe((initUsers: any[]) => {
+    this.initUserService
+    .getInitialUsers()
+    .subscribe((initUsers: UserViewModel[]) => {
         this.users  = initUsers;   
-        //console.log(this.users);
-      })
-      
+    })
   }
 
 }

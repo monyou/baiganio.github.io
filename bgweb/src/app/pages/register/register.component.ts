@@ -18,7 +18,7 @@ import { BackendService } from './../../core/services/backend/backend.service';
 })
 export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
-  registerSubmit = new RegisterEntry();
+  registerEntry = new RegisterEntry();
   loadingMessage;
   acceptTerms = false;
   completedRegistration: boolean = false;
@@ -52,9 +52,9 @@ export class RegisterComponent implements OnInit {
 		this.headerService.userToken = '';
 	}
 
-  sendRegisterRequest(registerSubmit){   
+  sendRegisterRequest(registerEntry){   
 
-    this.userDataService.registerUser(registerSubmit).subscribe(
+    this.userDataService.registerUser(registerEntry).subscribe(
       response => {
         this.loadingMessage = '';
         this.completedRegistration = true;
