@@ -1,20 +1,20 @@
-import { UserView } from './../../models/userView.module';
 import { Injectable } from '@angular/core';
+import { UserViewModel } from '../../models/user-view-model.module';
 
 @Injectable()
 export class UserViewService {
-  userView = new UserView();
+  userView = new UserViewModel();
   constructor() { }
 
   	setUserData(data): void {
 		this.userView = data;
 	}
 
-	getUserData(): UserView {
+	getUserData(): UserViewModel {
 		return this.userView;
 	}
 
 	logout(): void {
-		this.userView = new UserView();
+		this.userView = new UserViewModel();
 	}	
 }

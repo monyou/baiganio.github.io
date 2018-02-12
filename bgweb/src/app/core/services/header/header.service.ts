@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
-import { UserViewService } from '../../core/user/services/userview/userview.service';
+import { UserViewService } from '../userview/userview.service';
 
 
 @Injectable()

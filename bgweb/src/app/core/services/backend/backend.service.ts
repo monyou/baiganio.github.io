@@ -6,12 +6,12 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { environment } from './../../../../environments/environment.prod';
 import { UserViewService } from './../userview/userview.service';
-import { HeaderService } from './../../../../app-services/header/header.service';
-import { environment } from './../../../../../environments/environment';
+import { HeaderService } from '../header/header.service';
 
 @Injectable()
-export class UserDataService {
+export class BackendService {
 
   constructor(private http: Http, private headerService: HeaderService,
     private userViewService: UserViewService) { }

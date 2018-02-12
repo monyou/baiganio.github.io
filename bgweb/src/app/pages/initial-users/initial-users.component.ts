@@ -1,5 +1,5 @@
-import { InitialUsersService } from './../../app-services/initial-users/initial-users.service';
 import { Component, OnInit } from '@angular/core';
+import { InitialUsersService } from '../../core/services/initial-users/initial-users.service';
 
 @Component({
   selector: 'app-initial-users',

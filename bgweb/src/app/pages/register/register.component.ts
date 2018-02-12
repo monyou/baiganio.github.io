@@ -4,13 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { HeaderService } from './../../app-services/header/header.service';
-import { UserViewService } from './../../core/user/services/userview/userview.service';
-
-import { RegisterEntry } from './registerEntry.model';
-import { UserDataService } from '../../core/user/services/userdata/user-data.service';
+import { RegisterEntry } from './registerEntry.model';;
 
 import * as _ from 'lodash';
+import { HeaderService } from '../../core/services/header/header.service';
+import { UserViewService } from '../../core/services/userview/userview.service';
+import { BackendService } from './../../core/services/backend/backend.service';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +25,7 @@ export class RegisterComponent implements OnInit {
   usernameAlert: string = 'This field is required.';
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
-    private http: Http, private userDataService: UserDataService, private headerService: HeaderService,
+    private http: Http, private userDataService: BackendService, private headerService: HeaderService,
     private userViewService: UserViewService) {
     this.reactiveForm = formBuilder.group({
       'username': [
