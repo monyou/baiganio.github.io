@@ -2,13 +2,13 @@ import { InitialUsersComponent } from './pages/initial-users/initial-users.compo
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FakeComponent } from './pages/fake/fake.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CourseComponent } from './pages/course/course.component';
 import { PostComponent } from './pages/post/post.component';
+import { MainSectionComponent } from './blueprint/main-section/main-section.component';
 
 const routes: Routes = [
 	{
@@ -19,10 +19,6 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: LandingPageComponent
-	},
-	{
-		path: 'fake',
-		component: FakeComponent
 	},
 	{
 		path: 'login',

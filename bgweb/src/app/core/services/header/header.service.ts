@@ -16,27 +16,17 @@ export class HeaderService {
 	}
 
 	constructor(private userViewService: UserViewService) {
-		// this._userToken = undefined;
-		// if (this.utilityService.isLocalStorageNameSupported()) {
-		// 	this._userToken = localStorage.getItem('user_token');
-    // }
-    this._userToken = localStorage.getItem('user_token');
+    	this._userToken = localStorage.getItem('user_token');
 	}
 
 	clearUserToken() {
 		this._userToken = '';
-		// if (this.utilityService.isLocalStorageNameSupported()) {
-		// 	localStorage.removeItem('user_token');
-    // }
 		this.userViewService.logout();
 	}
 
 	setUserTokenAndRemember(token) {
 		this.clearUserToken();
 		this._userToken = token.access_token;
-		// if (this.utilityService.isLocalStorageNameSupported()) {
-		// 	localStorage.setItem('user_token', token.access_token);
-    // };
 	}
 
 	getSimpleHeaders(useUserToken?): Headers {
