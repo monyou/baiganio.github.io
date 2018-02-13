@@ -8,7 +8,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CourseComponent } from './pages/course/course.component';
 import { PostComponent } from './pages/post/post.component';
-import { MainSectionComponent } from './blueprint/main-section/main-section.component';
 
 const routes: Routes = [
 	{
