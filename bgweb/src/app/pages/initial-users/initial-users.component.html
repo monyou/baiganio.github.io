@@ -1,8 +1,10 @@
-
+<ngx-spinner bdOpacity = 0.9 bdColor = "#333" size = "large" color = "#fff" type = "ball-climbing-dot" ></ngx-spinner>
 <h3 style="font-family:'Garamond'; font-size:2.6em;">This data is fetched from <b>https://bgapi.azurewebsites.net/api/initialusers</b></h3>
  <h2>& requires client access token ;)</h2>
 <br>
 
+<div class="my-container">
+  <!-- <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true  }"></ngx-loading> -->
   <table class='initTable'>
     <tr>
       <th>Usernames</th>
@@ -21,3 +23,4 @@
       <td><i class="fa fa-check"></i></td>
     </tr>
   </table>
+</div>
