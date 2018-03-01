@@ -5,6 +5,7 @@
 @font-face { font-family: "Lobster"; src: url("./assets/fonts/Lobster.otf"); }
 @font-face { font-family: "Qtarabianregular"; src: url("./assets/fonts/qtarabianregular.ttf"); }
 @font-face { font-family: "TheMonkiesAteMySoul"; src: url("./assets/fonts/TheMonkiesAteMySoul.ttf"); }
+@font-face { font-family: "GaramondRegular"; src: url("./assets/fonts/eb-garamond/EBGaramond08-Regular.ttf"); }
 
 .Alsandra{
     font-family: Alsandra;
@@ -24,8 +25,11 @@
 .TheMonkiesAteMySoul{
     font-family: TheMonkiesAteMySoul;
 }
+.GaramondRegular{
+    font-family: Garamond;
+}
 
-.initUsers{font-family:'Garamond'; font-size:2.0em;}
+.initUsers{font-family:'GaramondRegular'; font-size:2.0em;}
 
 /* This will allow main-section components to be aligned all at once. */
 .sectionWrapper{
