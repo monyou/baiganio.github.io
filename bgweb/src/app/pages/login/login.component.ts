@@ -15,7 +15,7 @@ export class LoginComponent {
   loginSubmit = new LoginEntry(); // property for the submitted form
   username: string = '';
   password: string = '';
-  usernameAlert: string = 'This field is required.';
+  formAlert: string = 'this field is required';
 
   constructor(private formBuilder: FormBuilder) {
     this.reactiveForm = formBuilder.group({
@@ -25,7 +25,7 @@ export class LoginComponent {
       ],
       'password': [
         null,
-        Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(50)])
+        Validators.compose([Validators.required])
       ],
       'validCheckbox': ''
     });

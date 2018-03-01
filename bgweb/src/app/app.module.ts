@@ -25,6 +25,8 @@ import { CourseService } from './core/services/course/course.service';
 import { CourseComponent } from './pages/course/course.component';
 import { PostService } from './core/services/posts/post.service';
 import { PostComponent } from './pages/post/post.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { ConfirmComponent } from './pages/confirm/confirm.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { PostComponent } from './pages/post/post.component';
     RegisterComponent,
     InitialUsersComponent,
     CourseComponent,
-    PostComponent
+    PostComponent,
+    WelcomeComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

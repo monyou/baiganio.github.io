@@ -1,3 +1,5 @@
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { ConfirmComponent } from './pages/confirm/confirm.component';
 import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -38,6 +40,14 @@ const routes: Routes = [
 	{
 		path: 'posts',
 		component: PostComponent
+	},
+	{
+		path: 'confirm',
+		component: ConfirmComponent
+	},
+	{
+		path: 'welcome',
+		component: WelcomeComponent
 	},
 	{
 		path: '**',
