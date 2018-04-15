@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoadingModule, ANIMATION_TYPES  } from 'ngx-loading';
 
 import { NavbarComponent } from './blueprint/navbar/navbar.component';
 import { FooterComponent } from './blueprint/footer/footer.component';
@@ -42,6 +43,7 @@ import { ConfirmationComponent } from './pages/_partials/confirmation/confirmati
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    LoadingModule
   ],
   providers: [HeaderService, BackendService, CourseService],
   bootstrap: [AppComponent]

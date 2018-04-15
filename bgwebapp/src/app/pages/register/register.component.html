@@ -56,21 +56,22 @@
     <h3>Already have an account? Click
       <a routerLink="/login">here!</a>
     </h3>
-  </div>
+  </div> 
   
-  
-    <!-- START someInfo FORM -->
-    <ng-template #someInfo>
-      <div style="text-align: center;">
-        <h1 class="" style="color: #c0a16b; padding:60px;">
-            <b>We are happy to see you on board.</b> 
-            <img class="myImg" src="../assets/images/bd2.gif"  alt="Picture from my collection." />
-        </h1>
-        <h3 class="" style="color: #c0a16b">
-            Please check your email for confirmation link!
-        </h3>
-      </div>
-    </ng-template>
-    <!-- END someInfo FORM -->
-  </section>
+  <!-- START someInfo FORM -->
+  <ng-template #someInfo>
+    <div style="text-align: center;">
+      <h1 class="" style="color: #c0a16b; padding:60px;">
+          <b>We are happy to see you on board.</b> 
+          <img class="myImg" src="../assets/images/bd2.gif"  alt="Picture from my collection." />
+      </h1>
+      <h3 class="" style="color: #c0a16b">
+          Please check your email for confirmation link!
+      </h3>
+    </div>
+  </ng-template>
+  <!-- END someInfo FORM -->
+
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+</section>
   

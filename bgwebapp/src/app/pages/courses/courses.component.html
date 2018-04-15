@@ -5,22 +5,26 @@
  
 <br>
 
-  <table class='initTable'>
-    <tr>
-      <th>Name</th>
-      <th><b>Teacher Name</b></th>
-      <th>Description</th>
-      <th>Start/End date</th>
-      <th>other</th>
-    </tr>
-    <tr *ngFor="let course of courses">
-      <td>{{course.name}}</td>
-      <td><b>{{course.teacherName}}</b></td>
-      <td>{{course.description}}</td>
-      <td>{{course.startDate}} <br> {{course.endDate}}</td>
-      <td>
-      <i class="fa fa-remove"></i>
-      <i class="fa fa-check"></i>
-      </td>
-    </tr>
-  </table>
+<table class='initTable'>
+  <tr>
+    <th>Name</th>
+    <th><b>Teacher Name</b></th>
+    <th>Description</th>
+    <th>Start/End date</th>
+    <th>other</th>
+  </tr>
+  <tr *ngFor="let course of courses">
+    <td>{{course.name}}</td>
+    <td><b>{{course.teacherName}}</b></td>
+    <td>{{course.description}}</td>
+    <td>{{course.startDate}} <br> {{course.endDate}}</td>
+    <td>
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-check"></i>
+    </td>
+  </tr>
+</table>
+<!-- <ngx-loading [show]="loading" [config]="{ animationType: ANIMATION_TYPES.rectangleBounce,
+  backdropBackgroundColour: 'rgba(255,255,255,0.3)', backdropBorderRadius: '10px',
+  primaryColour: '#ffffhh', secondaryColour: '#cccccc', tertiaryColour: '#ffffcc' }"></ngx-loading> -->
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px'}"></ngx-loading>

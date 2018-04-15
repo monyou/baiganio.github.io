@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   completedRegistration = false;
   emailAlert = 'This field is required.';
   passwordAlert = 'The password must be at least 6 characters long.';
-
+  loading = false;
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
     private http: Http, private backendService: BackendService, private headerService: HeaderService) {
     this.reactiveForm = formBuilder.group({
@@ -42,16 +42,18 @@ export class RegisterComponent implements OnInit {
     this.headerService.userToken = '';
   }
 
-  sendRegisterRequest(registerEntry){
+  sendRegisterRequest(registerEntry) {
+    this.loading = true;
     this.backendService.registerUser(registerEntry).subscribe(
       response => {
         this.loadingMessage = '';
         this.completedRegistration = true;
+        this.loading = false;
       },
       //error => this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
       () => {
         this.completedRegistration = true;
-
+        this.loading = false;
         // if (this.utilityService.isLocalStorageNameSupported()) {
         //   localStorage.removeItem('signupData');
         // }
