@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { AppComponent } from './app.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CoursesComponent } from './pages/courses/courses.component';
+import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
 
 const routes: Routes = [
 	{
@@ -22,14 +26,18 @@ const routes: Routes = [
 		path: 'register',
 		component: RegisterComponent
 	},
+	{
+		path: 'confirmation/:token',
+		component: ConfirmationComponent
+	},
 	// {
 	// 	path: 'initialusers',
 	// 	component: InitialUsersComponent
 	// },
-	// {
-	// 	path: 'course',
-	// 	component: CourseComponent
-	// },
+	{
+		path: 'courses',
+		component: CoursesComponent
+	},
 	// {
 	// 	path: 'posts',
 	// 	component: PostComponent
@@ -42,9 +50,10 @@ const routes: Routes = [
 	// 	path: 'welcome',
 	// 	component: WelcomeComponent
 	// },
+	{ path: '', component: AppComponent },
 	{
 		path: '**',
-		component: LandingPageComponent
+		component: NotFoundComponent
 	}
 ];
 

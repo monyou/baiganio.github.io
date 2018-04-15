@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { URLSearchParams, Http, Response, Headers, RequestOptions } from '@angular/http';
+import { URLSearchParams, Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 import { HeaderService } from '../header/header.service';
-import { environment } from '../../../../environments/environment.prod';
-
+import { environment } from '../../../../environments/environment';
 @Injectable()
 export class BackendService {
 

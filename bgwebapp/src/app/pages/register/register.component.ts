@@ -21,15 +21,12 @@ export class RegisterComponent implements OnInit {
   loadingMessage;
   acceptTerms = false;
   completedRegistration = false;
-  usernameAlert = 'This field is required.';
+  emailAlert = 'This field is required.';
+  passwordAlert = 'The password must be at least 6 characters long.';
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
     private http: Http, private backendService: BackendService, private headerService: HeaderService) {
     this.reactiveForm = formBuilder.group({
-      'username': [
-        null,
-        Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(50)])
-      ],
       'email': [
         null,
         Validators.compose([Validators.email])
@@ -37,12 +34,7 @@ export class RegisterComponent implements OnInit {
       'password': [
         null,
         Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(50)])
-      ],
-      // 'confirm-password': [
-      //   null,
-      //   Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(50)])
-      // ],
-      'validCheckbox': ''
+      ]
     });
   }
 
