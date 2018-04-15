@@ -50,10 +50,9 @@ const routes: Routes = [
 	// 	path: 'welcome',
 	// 	component: WelcomeComponent
 	// },
-	{ path: '', component: AppComponent },
 	{
 		path: '**',
-		component: NotFoundComponent
+		component: LandingPageComponent
 	}
 ];
 
