@@ -24,7 +24,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .login-form-1, .register-form-1{
-    width: 45%;
+    width: 28%;
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
