@@ -22,6 +22,8 @@ export const environment = {
     // },
     apiKey: 'still-waiting',
     routesRequiringUserToken: [
+        '/manage',
+        '/account',
         '/dashboard',
         '/profile',
         '/admin'

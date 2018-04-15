@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { LogInComponent } from './pages/log-in/log-in.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
 	{
@@ -16,11 +16,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'login',
-		component: LogInComponent
+		component: LoginComponent
 	},
 	{
-		path: 'signup',
-		component: SignUpComponent
+		path: 'register',
+		component: RegisterComponent
 	},
 	// {
 	// 	path: 'initialusers',
