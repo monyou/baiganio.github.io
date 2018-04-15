@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
-import { UserViewService } from '../userview/userview.service';
+import { UserService } from '../user/user.service';
 
 
 @Injectable()
@@ -15,7 +15,7 @@ export class HeaderService {
 		this._userToken = token.access_token;
 	}
 
-	constructor(private userViewService: UserViewService) {
+	constructor(private userViewService: UserService) {
     	this._userToken = localStorage.getItem('user_token');
 	}
 

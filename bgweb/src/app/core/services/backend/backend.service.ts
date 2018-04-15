@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams, Http, Response, Headers, RequestOptions } from '@angular/http';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { environment } from './../../../../environments/environment.prod';
-import { UserViewService } from './../userview/userview.service';
 import { HeaderService } from '../header/header.service';
 
 @Injectable()
@@ -34,7 +33,7 @@ export class BackendService {
   private baseBackendRequest(requestType, requestTarget, requestData?, useUserToken?): Observable<Response> {
     if (requestType === 'post') {
       return this.http.post(
-        environment.apiUrl + requestTarget, 
+        environment.apiUrl + requestTarget,
         requestData,
         { headers: this.headerService.getContentHeaders(useUserToken) }
       );

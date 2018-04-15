@@ -20,13 +20,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InitialUsersComponent } from './pages/initial-users/initial-users.component';
-import { UserViewService } from './core/services/userview/userview.service';
 import { CourseService } from './core/services/course/course.service';
 import { CourseComponent } from './pages/course/course.component';
 import { PostService } from './core/services/posts/post.service';
 import { PostComponent } from './pages/post/post.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ConfirmComponent } from './pages/confirm/confirm.component';
+import { UserService } from './core/services/user/user.service';
 
 
 @NgModule({
@@ -61,7 +61,7 @@ import { ConfirmComponent } from './pages/confirm/confirm.component';
       tertiaryColour: '#ffffff'
   })
   ],
-  providers: [InitialUsersService, UserViewService, HeaderService, BackendService, UserViewService, CourseService, PostService],
+  providers: [InitialUsersService, HeaderService, BackendService, CourseService, PostService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

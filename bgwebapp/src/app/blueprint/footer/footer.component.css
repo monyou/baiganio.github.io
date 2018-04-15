@@ -1,0 +1,25 @@
+#footer-holder{
+    font-size: 1.4em;
+    text-align: center;
+    padding: 100px;
+    background: #132125 url(../../../assets/images/banner/binary-globe.jpg) no-repeat 0 0;
+    background-size: auto auto;
+    background-size: cover;
+}
+#footer-holder a{
+    text-decoration: none;
+}
+#footer-holder img {
+    width: 3%;
+}
+#footer-holder img:hover {
+    width: 4%;
+}
+#footer-holder p {
+    font-family: Guildof;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+#clock{
+    width:12em;
+}

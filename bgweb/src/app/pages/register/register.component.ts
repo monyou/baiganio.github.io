@@ -8,8 +8,8 @@ import { RegisterEntry } from './registerEntry.model';;
 
 import * as _ from 'lodash';
 import { HeaderService } from '../../core/services/header/header.service';
-import { UserViewService } from '../../core/services/userview/userview.service';
-import { BackendService } from './../../core/services/backend/backend.service';
+import { UserService } from '../../core/services/user/user.service';
+import { BackendService } from '../../core/services/backend/backend.service';
 
 @Component({
   selector: 'app-register',
@@ -21,12 +21,11 @@ export class RegisterComponent implements OnInit {
   registerEntry = new RegisterEntry();
   loadingMessage;
   acceptTerms = false;
-  completedRegistration: boolean = false;
-  usernameAlert: string = 'This field is required.';
+  completedRegistration = false;
+  usernameAlert = 'This field is required.';
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
-    private http: Http, private userDataService: BackendService, private headerService: HeaderService,
-    private userViewService: UserViewService) {
+    private http: Http, private userService: UserService, private backendService: BackendService, private headerService: HeaderService) {
     this.reactiveForm = formBuilder.group({
       'username': [
         null,
@@ -47,14 +46,13 @@ export class RegisterComponent implements OnInit {
       'validCheckbox': ''
     });
   }
-  
+
   ngOnInit() {
-		this.headerService.userToken = '';
-	}
+    this.headerService.userToken = '';
+  }
 
-  sendRegisterRequest(registerEntry){   
-
-    this.userDataService.registerUser(registerEntry).subscribe(
+  sendRegisterRequest(registerEntry){
+    this.backendService.registerUser(registerEntry).subscribe(
       response => {
         this.loadingMessage = '';
         this.completedRegistration = true;
@@ -69,7 +67,7 @@ export class RegisterComponent implements OnInit {
         // this.router.navigate(['/timeline'], { queryParams: { initialLoading: true } });
       }
     );
-	}
+  }
 
 
 
