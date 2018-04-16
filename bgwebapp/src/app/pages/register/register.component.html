@@ -18,9 +18,12 @@
             <form [formGroup]="reactiveForm" (ngSubmit)="sendRegisterRequest(reactiveForm.value)">
                 <div class="form-container">
                     <!--Email-->
+                    <div class="alert" *ngIf="registrationFail">
+                        {{takenEmailAlert}}
+                    </div>
                     <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
                         {{emailAlert}}
-                    </div>
+                    </div>                    
                     <div class="form-group">
                       <input type="text" placeholder="email" formControlName="email">
                     </div>

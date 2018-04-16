@@ -16,13 +16,13 @@
           <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveForm.value)">
             <div class="form-container">
   
-              <!--Username-->
-              <div class="alert" *ngIf="!reactiveForm.controls['username'].valid && reactiveForm.controls['username'].touched">
-                  {{formAlert}}
-              </div>
-              <div class="form-group">
-                <input type="text" placeholder="email" formControlName="email">
-              </div>
+              <!--Email-->
+              <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
+                {{formAlert}}
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="email" formControlName="email">
+            </div>
   
               <!--Password-->
               <div class="alert" *ngIf="!reactiveForm.controls['password'].valid && reactiveForm.controls['password'].touched">

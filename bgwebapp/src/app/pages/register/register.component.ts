@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit {
   loadingMessage;
   acceptTerms = false;
   completedRegistration = false;
+  registrationFail: boolean;
+  takenEmailAlert: any;
   emailAlert = 'This field is required.';
   passwordAlert = 'The password must be at least 6 characters long.';
   loading = false;
@@ -50,7 +52,11 @@ export class RegisterComponent implements OnInit {
         this.completedRegistration = true;
         this.loading = false;
       },
-      //error => this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
+      error => {
+        this.loading = false;
+        this.registrationFail = true;
+        this.takenEmailAlert = error._body = error._body.replace(/"/g, ''); },
+       // this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
       () => {
         this.completedRegistration = true;
         this.loading = false;

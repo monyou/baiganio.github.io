@@ -62,6 +62,13 @@ export class BackendService {
     return this.backendRequest('post', 'account/register', data);
   }
 
+  validateEmail(token: string): Observable<Response> {    
+		const data = {
+			ValidationCode: token
+		};
+		return this.backendRequest('get', 'account/ValidateEmail', data);
+	}
+
   private getUserIP(): Observable<Response> {
     return this.http.get(environment.IPCheckingServiceUrl);
   }
