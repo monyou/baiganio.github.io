@@ -21,6 +21,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CourseService } from './core/services/course/course.service';
 import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
+import { CourseListComponent } from './pages/courses/course-list/course-list.component';
+import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
+import { CourseItemComponent } from './pages/courses/course-list/course-item/course-item.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { ConfirmationComponent } from './pages/_partials/confirmation/confirmati
     RegisterComponent,
     NotFoundComponent,
     CoursesComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    CourseListComponent,
+    CourseDetailComponent,
+    CourseItemComponent
   ],
   imports: [
     BrowserModule,

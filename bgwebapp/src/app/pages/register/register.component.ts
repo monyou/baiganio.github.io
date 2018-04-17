@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { RegisterEntry } from './registerEntry.model';;
+import { RegisterEntry } from './registerEntry.model';
 
 import * as _ from 'lodash';
 import { HeaderService } from '../../core/services/header/header.service';
@@ -55,7 +55,8 @@ export class RegisterComponent implements OnInit {
       error => {
         this.loading = false;
         this.registrationFail = true;
-        this.takenEmailAlert = error._body = error._body.replace(/"/g, ''); },
+        this.takenEmailAlert = error._body = error._body.replace(/"/g, ''); 
+      },
        // this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
       () => {
         this.completedRegistration = true;

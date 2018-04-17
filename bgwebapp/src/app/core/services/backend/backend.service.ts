@@ -62,14 +62,31 @@ export class BackendService {
     return this.backendRequest('post', 'account/register', data);
   }
 
-  validateEmail(token: string): Observable<Response> {    
-		const data = {
-			ValidationCode: token
-		};
-		return this.backendRequest('get', 'account/ValidateEmail', data);
-	}
+  validateEmail(token: string): Observable<Response> {
+    const data = {
+      ValidationCode: token
+    };
+    return this.backendRequest('get', 'account/ValidateEmail', data);
+  }
 
   private getUserIP(): Observable<Response> {
     return this.http.get(environment.IPCheckingServiceUrl);
   }
+
+  getUserAccessToken(email, password): Observable<Response> {
+    const idsCredentials = environment.identityServerUserCredentials;
+    const encodedEmail = email; // encodeURIComponent();
+
+    const params = new URLSearchParams();
+    params.set('client_id', idsCredentials.client_id);
+    params.set('client_secret', idsCredentials.client_secret);
+    params.set('scope', idsCredentials.scope);
+    params.set('grant_type', idsCredentials.grant_type);
+    params.set('username', encodedEmail);
+    params.set('password', password);
+
+    return this.http.post(environment.idsUrl + 'connect/token', params,
+      { headers: this.headerService.getFormURLEncodedHeaders() });
+  }
+
 }

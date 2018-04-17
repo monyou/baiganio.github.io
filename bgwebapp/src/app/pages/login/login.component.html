@@ -14,8 +14,7 @@
       <div id="login-form" class="text-left">
         <div class="main-login-form">
           <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveForm.value)">
-            <div class="form-container">
-  
+            <div class="form-container">  
               <!--Email-->
               <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
                 {{formAlert}}
