@@ -25,6 +25,8 @@ import { CourseListComponent } from './pages/courses/course-list/course-list.com
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 import { CourseItemComponent } from './pages/courses/course-list/course-item/course-item.component';
 import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';
+import { AccountComponent } from './pages/account/account.component';
+import { AccessDeniedComponent } from './pages/_partials/access-denied/access-denied.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';
     CourseListComponent,
     CourseDetailComponent,
     CourseItemComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AccountComponent,
+    AccessDeniedComponent
   ],
   imports: [
     BrowserModule,

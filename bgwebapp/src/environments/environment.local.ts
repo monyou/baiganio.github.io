@@ -9,14 +9,14 @@ export const environment = {
     IPCheckingServiceUrl: 'http://ipinfo.io',
 
     identityServerClientCredentials: {
-        client_id: 'bgwebapp-client',
-        client_secret: '8526cfb2-472b-4c40-b704-51d0dbf9edc3',
+        client_id: 'bgwebapp-free',
+        client_secret: 'bgwebapp-free-secret',
         scope: 'scope.bgapi',
         grant_type: 'client_credentials'
     },
     identityServerUserCredentials: {
-        client_id: 'bgwebapp-user',
-        client_secret: '8eb2c29f-c0f9-4020-a165-aaf54333aba3t',
+        client_id: 'bgwebapp-free-user',
+        client_secret: 'bgwebapp-user-free-secret',
         scope: 'scope.bgapi',
         grant_type: 'password'
     },

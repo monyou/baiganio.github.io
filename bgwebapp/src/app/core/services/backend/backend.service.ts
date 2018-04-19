@@ -73,6 +73,10 @@ export class BackendService {
   return this.http.post(environment.IPCheckingServiceUrl, { headers: this.headerService.getFormURLEncodedHeaders()});
   }
 
+  getCurrentUser(): Observable<Response> {
+		return this.backendRequest('get', 'account/GetByToken', null, true);
+	}
+
   getUserAccessToken(email, password): Observable<Response> {
     const idsCredentials = environment.identityServerUserCredentials;
     const encodedEmail = email; // encodeURIComponent();

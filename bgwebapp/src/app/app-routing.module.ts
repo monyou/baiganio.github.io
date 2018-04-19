@@ -8,6 +8,8 @@ import { NotFoundComponent } from './pages/_partials/not-found/not-found.compone
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
 import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';
+import { AccountComponent } from './pages/account/account.component';
+import { AccessDeniedComponent } from './pages/_partials/access-denied/access-denied.component';
 
 const routes: Routes = [
 	{
@@ -31,10 +33,14 @@ const routes: Routes = [
 		path: 'confirmation/:token',
 		component: ConfirmationComponent
 	},
-	// {
-	// 	path: 'initialusers',
-	// 	component: InitialUsersComponent
-	// },
+	{
+		path: '403',
+		component: AccessDeniedComponent
+	},
+	{
+		path: '404',
+		component: NotFoundComponent
+	},
 	{
 		path: 'courses',
 		component: CoursesComponent
@@ -43,17 +49,17 @@ const routes: Routes = [
 	// 	path: 'posts',
 	// 	component: PostComponent
 	// },
-	// {
-	// 	path: 'confirm',
-	// 	component: ConfirmComponent
-	// },
+	{
+		path: 'account',
+		component: AccountComponent
+	},
 	{
 		path: 'welcome',
 		component: WelcomeComponent
 	},
 	{
 		path: '**',
-		component: LandingPageComponent
+		component: NotFoundComponent
 	}
 ];
 

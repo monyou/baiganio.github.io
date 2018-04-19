@@ -18,6 +18,7 @@ export class LoginComponent {
   password = '';
   formAlert = 'This field is required';
   loginAlert: any;
+  loginFail = false;
   loading = false;
 
   constructor(
@@ -40,28 +41,32 @@ export class LoginComponent {
     });
   }
 
+  ngOninit(){
+    if (this.headerService.userToken) {     
+      console.log(this.headerService.userToken); 
+			this.router.navigate(['/account']);
+		}
+  }
+
+
   sendLoginRequest(loginSubmit) {
-    this.email = loginSubmit.email;
-    console.log(this.email);
     this.loading = true;
     let authToken;
     // this.retryFunction = this.onLoginClicked.bind(this);
-    this.backendService.getUserAccessToken(this.email, loginSubmit.password)
+    this.backendService.getUserAccessToken(loginSubmit.email, loginSubmit.password)
       .subscribe(
         response => authToken = response.json(),
         // error => this.errorHandlerService.handleRequestError(error, this.handleError, [this], null, this.retryFunction),
         error => {
           this.loading = false;
-          this.loginAlert = error._body = error._body.replace(/"/g, '');
+          this.loginAlert = error.json().error_description;
+          this.loginFail = true;
         },
         () => this.handleSuccess(authToken)
       );
-    console.log("Submitted");
-    
   }
 
   handleSuccess(authToken): void {
-    console.log(authToken);
     this.loading = false;
     // const rememberPassword = true;
     // if (rememberPassword) {
@@ -70,8 +75,8 @@ export class LoginComponent {
     //   this.headerService.clearUserToken();
     //   this.headerService.userToken = authToken;
     // }
-    this.headerService.clearUserToken();
-    this.headerService.userToken = authToken;
+    this.headerService.setUserTokenAndRemember(authToken);
+    console.log(this.headerService.userToken);
+    this.router.navigate(['/account']);
   }
-
 }

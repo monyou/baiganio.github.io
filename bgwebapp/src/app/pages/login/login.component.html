@@ -14,6 +14,9 @@
       <div id="login-form" class="text-left">
         <div class="main-login-form">
           <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveForm.value)">
+            <div class="alert" *ngIf="loginFail">
+              {{loginAlert}}
+          </div>
             <div class="form-container">  
               <!--Email-->
               <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
@@ -45,19 +48,7 @@
       </div>
     </div>
     <!-- END FORM -->
-  
-    <!-- START someInfo FORM -->
-    <ng-template #someInfo>
-      <div class="container">
-        <div class="row">
-          <h1>{{username}}</h1>
-          <h1>{{password}}</h1>
-        </div>
-      </div>
-    </ng-template>
-    <!-- END someInfo FORM -->
-  
-  
+      
     <br>
     <br>
     <br>
@@ -73,6 +64,7 @@
     </h3>
     <hr>
     <!-- <h1 class="theMonkiesAteMySoul" style="color: #c0a16b"><b>Use another service to log in.</b></h1> -->
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
   </section>
   <!-- END LOGIN CONTENT -->
     
