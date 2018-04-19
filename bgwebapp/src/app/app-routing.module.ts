@@ -4,7 +4,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from './pages/_partials/not-found/not-found.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
 import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';

@@ -17,7 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HeaderService } from './core/services/header/header.service';
 import { BackendService } from './core/services/backend/backend.service';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from './pages/_partials/not-found/not-found.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CourseService } from './core/services/course/course.service';
 import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
