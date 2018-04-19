@@ -9,7 +9,7 @@ import { RegisterEntry } from './registerEntry.model';
 import * as _ from 'lodash';
 import { HeaderService } from '../../core/services/header/header.service';
 import { BackendService } from '../../core/services/backend/backend.service';
-
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -17,6 +17,7 @@ import { BackendService } from '../../core/services/backend/backend.service';
 })
 export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
+  ipInfo: any;
   registerEntry = new RegisterEntry();
   loadingMessage;
   acceptTerms = false;
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
   emailAlert = 'This field is required.';
   passwordAlert = 'The password must be at least 6 characters long.';
   loading = false;
+
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, 
     private http: Http, private backendService: BackendService, private headerService: HeaderService) {
     this.reactiveForm = formBuilder.group({
@@ -42,10 +44,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.headerService.userToken = '';
+    this.http.get(environment.IPCheckingServiceUrl).subscribe(data => {
+      this.ipInfo = data.json();
+    });
   }
 
   sendRegisterRequest(registerEntry) {
     this.loading = true;
+    registerEntry = new RegisterEntry(registerEntry.email, registerEntry.password, this.ipInfo.ip);
+    
     this.backendService.registerUser(registerEntry).subscribe(
       response => {
         this.loadingMessage = '';
@@ -55,12 +62,13 @@ export class RegisterComponent implements OnInit {
       error => {
         this.loading = false;
         this.registrationFail = true;
-        this.takenEmailAlert = error._body = error._body.replace(/"/g, ''); 
+        this.takenEmailAlert = error.json();
       },
        // this.errorHandlerService.handleRequestError(error, this.handleError, [this, false], null, this.retryFunction, [fullRegistration]),
       () => {
         this.completedRegistration = true;
         this.loading = false;
+        this.router.navigate(['/welcome']);
         // if (this.utilityService.isLocalStorageNameSupported()) {
         //   localStorage.removeItem('signupData');
         // }

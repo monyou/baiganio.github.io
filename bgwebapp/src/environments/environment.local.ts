@@ -6,7 +6,7 @@ export const environment = {
     // idsUrl: 'http://localhost:5000/',
     idsUrl: 'https://ids4core20.azurewebsites.net/',
 
-    IPCheckingServiceUrl: 'https://freegeoip.net/json/',
+    IPCheckingServiceUrl: 'http://ipinfo.io',
 
     identityServerClientCredentials: {
         client_id: 'bgwebapp-client',

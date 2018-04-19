@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { ConfirmationComponent } from './pages/_partials/confirmation/confirmation.component';
+import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';
 
 const routes: Routes = [
 	{
@@ -46,10 +47,10 @@ const routes: Routes = [
 	// 	path: 'confirm',
 	// 	component: ConfirmComponent
 	// },
-	// {
-	// 	path: 'welcome',
-	// 	component: WelcomeComponent
-	// },
+	{
+		path: 'welcome',
+		component: WelcomeComponent
+	},
 	{
 		path: '**',
 		component: LandingPageComponent

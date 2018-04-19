@@ -24,6 +24,7 @@ import { ConfirmationComponent } from './pages/_partials/confirmation/confirmati
 import { CourseListComponent } from './pages/courses/course-list/course-list.component';
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 import { CourseItemComponent } from './pages/courses/course-list/course-item/course-item.component';
+import { WelcomeComponent } from './pages/_partials/welcome/welcome.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { CourseItemComponent } from './pages/courses/course-list/course-item/cou
     ConfirmationComponent,
     CourseListComponent,
     CourseDetailComponent,
-    CourseItemComponent
+    CourseItemComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

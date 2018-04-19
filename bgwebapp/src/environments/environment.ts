@@ -9,7 +9,7 @@ export const environment = {
   appUrl: 'http://localhost:5003/',
   apiUrl: 'http://localhost:5001/api/',
   idsUrl: 'http://localhost:5000/',
-  //idsUrl: 'https://ids4core20.azurewebsites.net/',
+  // idsUrl: 'https://ids4core20.azurewebsites.net/',
 
   IPCheckingServiceUrl: 'https://freegeoip.net/json/',
 
