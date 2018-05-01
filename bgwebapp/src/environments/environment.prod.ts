@@ -3,7 +3,6 @@ export const environment = {
 	production: true,
 	appUrl: 'https://baiganio.github.io/',
 	apiUrl: 'https://bgapi.azurewebsites.net/api/',
-	// idsUrl: 'http://localhost:5000/',
 	idsUrl: 'https://ids4core20.azurewebsites.net/',
 
 	IPCheckingServiceUrl: 'https://freegeoip.net/json/',

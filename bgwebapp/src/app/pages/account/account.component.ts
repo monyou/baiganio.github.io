@@ -7,6 +7,7 @@ import { BackendService } from '../../core/services/backend/backend.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
+  retryFunction = null;
   loading = false;
   userId;
   errorMsg = '';
@@ -14,19 +15,19 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    // this.retryFunction = this.ngOnInit.bind(this);
+    this.retryFunction = this.ngOnInit.bind(this);
     this.backendService.getCurrentUser()
       .subscribe(
       response => {
         const data = response.json();
-        //this.userId = data.Id.id;
-        console.log(data);
+        console.log('get the fucka ' + data);
         // this.processResponse(data);
         this.loading = false;
       },
       error => {
         this.loading = false;
-        this.errorMsg = error.json();
+        this.errorMsg = error.json(); // .error_description;
+        console.log('error ' + this.errorMsg);
         // this.errorHandlerService.handleRequestError(error, this.handleError, [this], null, this.retryFunction);
       },
       () => this.handleSuccess()

@@ -41,22 +41,6 @@ export class BackendService {
     }
   }
 
-  private getClientAccessToken(): Observable<Response> {
-    const idsCredentials = environment.identityServerClientCredentials;
-    const params = new URLSearchParams();
-
-    params.set('client_id', idsCredentials.client_id);
-    params.set('client_secret', idsCredentials.client_secret);
-    params.set('scope', idsCredentials.scope);
-    params.set('grant_type', idsCredentials.grant_type);
-
-    return this.http.post(
-      environment.idsUrl + 'connect/token',
-      params,
-      { headers: this.headerService.getFormURLEncodedHeaders() }
-    );
-  }
-
 
   registerUser(data): Observable<Response> {
     return this.backendRequest('post', 'account/register', data);
@@ -74,21 +58,38 @@ export class BackendService {
   }
 
   getCurrentUser(): Observable<Response> {
-		return this.backendRequest('get', 'account/GetByToken', null, true);
-	}
+    return this.backendRequest('get', 'account/GetByToken', null, true);
+  }
 
+
+  private getClientAccessToken(): Observable<Response> {
+    const idsCredentials = environment.identityServerClientCredentials;
+    const params = new URLSearchParams();
+
+    params.set('client_id', idsCredentials.client_id);
+    params.set('client_secret', idsCredentials.client_secret);
+    params.set('scope', idsCredentials.scope);
+    params.set('grant_type', idsCredentials.grant_type);
+
+    return this.http.post(
+      environment.idsUrl + 'connect/token',
+      params,
+      { headers: this.headerService.getFormURLEncodedHeaders() }
+    );
+  }
   getUserAccessToken(email, password): Observable<Response> {
     const idsCredentials = environment.identityServerUserCredentials;
-    const encodedEmail = email; // encodeURIComponent();
+    //const encodedEmail = email; // encodeURIComponent();
 
     const params = new URLSearchParams();
     params.set('client_id', idsCredentials.client_id);
     params.set('client_secret', idsCredentials.client_secret);
     params.set('scope', idsCredentials.scope);
     params.set('grant_type', idsCredentials.grant_type);
-    params.set('username', encodedEmail);
+    params.set('username', email);
     params.set('password', password);
-
+console.log(environment.idsUrl);
+console.log(this.headerService.getFormURLEncodedHeaders());
     return this.http.post(environment.idsUrl + 'connect/token', params,
       { headers: this.headerService.getFormURLEncodedHeaders() });
   }

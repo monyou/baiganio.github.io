@@ -61,6 +61,7 @@ export class LoginComponent {
           this.loading = false;
           this.loginAlert = error.json().error_description;
           this.loginFail = true;
+          console.log(error);
         },
         () => this.handleSuccess(authToken)
       );
@@ -76,7 +77,6 @@ export class LoginComponent {
     //   this.headerService.userToken = authToken;
     // }
     this.headerService.setUserTokenAndRemember(authToken);
-    console.log(this.headerService.userToken);
     this.router.navigate(['/account']);
   }
 }

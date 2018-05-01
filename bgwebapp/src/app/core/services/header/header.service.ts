@@ -38,7 +38,8 @@ constructor() {
 		simpleHeaders.append('Accept', 'application/json');
 
 		let authToken = this.pickAuthenticationToken();
-		if (useUserToken) authToken = this.userToken;
+		console.log('getSimpleHeaders ' + authToken);
+		if (useUserToken) {authToken = this.userToken; }
 		simpleHeaders.append('Authorization', `Bearer ${authToken}`);
 
 		//simpleHeaders.append('Active-Property', this.userDataService.selectedPropertyId);
