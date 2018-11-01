@@ -11,21 +11,21 @@
   and then redirects all 404 responses to the app’s index.html page -->
   <!-- See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
   <script>
-    // sessionStorage.redirect = location.href;
+     sessionStorage.redirect = location.href;
   </script>
-  <!-- <meta name="refresh" http-equiv="refresh" content="0;URL=/"> -->
+  <meta name="refresh" http-equiv="refresh" content="0;URL=/baiganio.github.io">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script>
     // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
-    // (function(){
-    //   var redirect = sessionStorage.redirect;
-    //   delete sessionStorage.redirect;
-    //   if (redirect && redirect != location.href) {
-    //     history.replaceState(null, null, redirect);
-    //   }
-    // })();
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
   </script>
 </head>
 <body>
