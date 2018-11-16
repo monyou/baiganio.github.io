@@ -1,0 +1,62 @@
+h2{
+    font-size: 3em;
+    text-align: center;
+}
+.alert-danger {
+    font-size: 20px;
+}
+.done {
+    font-size: 2em;
+    animation: PopUp 1s ease-in-out;
+}
+.thumb-holder {
+    width: 60%;
+    margin: 0 auto;
+
+    button {
+        width: 100%;
+        margin: 0 auto;
+        margin-top:5px;
+        font-size: 0.9em;
+    }
+}
+@media only screen and (max-width: 591px) {
+    .alert-danger {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 576px) {
+   
+    h4 {
+        font-size: 1em;
+    }
+    #fields {
+        margin-bottom: 30px;
+    }
+    mat-form-field {
+        font-size: 1em;
+        width: 100%;
+    }
+    .thumbnail {
+        width: 80%;
+        margin: 0 auto;
+    
+        button {
+            width: 100%;
+            margin: 0 auto;
+            margin-top:5px;
+            font-size: 0.9em;
+        }
+    }
+
+
+    #avatarRight button {
+        font-size: 0.65em;
+        padding: 0 5px;
+        width: 50%;
+        font-weight: 500;
+    }
+    .done {
+        font-size: 1.6em;
+    }
+}

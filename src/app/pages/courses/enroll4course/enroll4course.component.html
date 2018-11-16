@@ -1,0 +1,99 @@
+<div class="content" style="overflow: hidden !important;">
+    <br>
+    <div *ngIf='isUserLogged()' class="text-center">
+      <h3>We need additional info to complete your student profile.</h3>
+      <br>
+    </div>
+    <div class="row">
+        <div class="col-10 col-sm-8 col-center">
+             <!-- Student Dash Form -->
+            <form [formGroup]="studentDashForm" #formDirective="ngForm">
+                <br>
+                <div class="md-form">
+                    <input type="text" id="studentGitHub" formControlName="studentGitHub" class="form-control" mdbInputDirective>
+                    <label for="studentGitHub">GitHub Profile URL</label>
+                </div>
+  
+                <mat-form-field>
+                    <mat-select placeholder="University" id="studentUniversity" formControlName="studentUniversity">
+                        <mat-option value=''>
+                            N/A
+                        </mat-option>
+                        <mat-option value='Plovdiv University "Paisii Hilendarski"'>
+                            Plovdiv University "Paisii Hilendarski"
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+  
+                <ng-container *ngIf='studentDashForm.controls["studentUniversity"].value !== null && studentDashForm.controls["studentUniversity"].value !== ""'>
+                    <div class="md-form">
+                        <input type="text" id="studentFN" formControlName="studentFN" class="form-control" mdbInputDirective>
+                        <label for="studentFN">Faculty number</label>
+                    </div>
+                
+                    <div class="md-form">
+                        <input type="text" id="studentSpeciality" formControlName="studentSpeciality" class="form-control" mdbInputDirective>
+                        <label for="studentSpeciality">Speciality</label>
+                    </div>
+    
+                    <div class="md-form">
+                        <input type="text" id="studentGroup" formControlName="studentGroup" class="form-control" mdbInputDirective>
+                        <label for="studentGroup">Group</label>
+                    </div>
+    
+                    <div class="md-form">
+                        <input type="number" id="studentYearOfStudy" formControlName="studentYearOfStudy" class="form-control" mdbInputDirective>
+                        <label for="studentYearOfStudy">Year of Study</label>
+                    </div>
+                
+                    <div class="md-form">
+                        <input type="number" id="studentYearOfGraduating" formControlName="studentYearOfGraduating" class="form-control" mdbInputDirective>
+                        <label for="studentYearOfGraduating">Year of Graduating</label>
+                    </div>
+                </ng-container>
+  
+                <h1 class="done text-center" *ngIf='notificationFlagUpdateInfo'>Student info updated successfuly!</h1>
+               <div *ngIf='updateFlagError' class="text-center">
+                 <br>
+                 <br>
+                 <br>
+                  <h1 class="updateError text-center">
+                      Error on update. Missing fields!
+                   </h1>
+               </div>
+                
+                <div *ngIf='isUserLogged(); else defaultBtnHolder'>
+                    <div class="text-center">
+                        <button mdbBtn color="primary" class="waves-light" mdbWavesEffect (click)='updateStudentInfo(formDirective)'>
+                            Update <i class="fa fa-paper-plane-o ml-1"></i>
+                        </button>
+                    </div>
+                </div>  
+                <ng-template #defaultBtnHolder>  
+                  <br>
+                  <div class="text-center">
+                      <button                           
+                        class="btn btn-outline-success waves-effect" 
+                        disabled>
+                        <b style="font-size:1.2em;">You need to be logged in to be able to enroll 4 a course</b>
+                    </button>
+                  </div>
+                </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
+            <!-- ./Student Dash Form -->
+        </div>
+    </div>
+  </div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

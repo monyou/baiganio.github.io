@@ -1,0 +1,63 @@
+<button class="d-none" id="openReportIssueModal" (click)="reportIssueModal.show()"></button>
+<div mdbModal id="reportIssueModal" #reportIssueModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+[config]="{backdrop: 'static', keyboard: false}" aria-labelledby="issueModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" (click)="reportIssueModal.hide(); navbarComponent.reportIssueModalVisibility = false;">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Report an issue</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <!-- Default form contact -->
+            <form class="text-center p-3" [formGroup]='issueForm'>
+              <!-- Email -->
+              <mat-form-field>
+                <input matInput type="text" id="email" formControlName='email' placeholder="Sender">
+              </mat-form-field>
+
+              <!-- Picture Proof -->
+              <label for="issueImage">Upload Picture Proof</label>
+              <div class="thumb-holder">
+                <img class="issueImg img-fluid img-thumbnail" [src]='issueImgSrc' alt="Issue picture">
+                <input type="file" formControlName='issuePicture' #issueImage style="display: none" (change)="onFileSelected($event)" accept="image/*">
+                <button mat-stroked-button color="primary" class="m-2" (click)="issueImage.click()">Upload picture</button>
+                <button mat-stroked-button color="warn" class="m-2" (click)='clearPicture()'>Clear Picture</button>
+              </div> 
+
+              <!-- Message -->
+              <mat-form-field hintLabel="*Required">
+                <textarea matInput id="message" formControlName="message" rows="10" placeholder="Describe the issues you found..."></textarea>
+              </mat-form-field>
+            </form>
+            <!-- Default form contact -->
+          </div>
+        </div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="danger" class="waves-light" (click)="reportIssueModal.hide(); navbarComponent.reportIssueModalVisibility = false;" mdbWavesEffect>Cancel</button>
+        <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="sendIssue(); reportIssueModal.hide();" [disabled]='issueForm.valid != true' mdbWavesEffect>Send report</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf='issueSubmited' class="toast-msg animated bounceIn" aria-live="polite" role="alert">
+    <div class="success">
+        <i class="far fa-check-circle" aria-hidden="true"></i>
+        Your report for issue was successfuly submited.
+    </div>
+</div>
+<div *ngIf='issueRejected' class="toast-msg animated bounceIn" aria-live="polite" role="alert">
+    <div class="error">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        Unexpected error!
+        <br>
+        Your report was rejected!
+        <br>
+        Try again later...
+    </div>
+</div>

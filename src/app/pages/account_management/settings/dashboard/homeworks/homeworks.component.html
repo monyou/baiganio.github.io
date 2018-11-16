@@ -1,0 +1,41 @@
+<div class="content" style="overflow: hidden !important;">
+    <mat-nav-list dense flex>
+        <div *ngFor='let p of progresses'>
+            <a mat-list-item id="pLinie">
+              <mat-icon class="text-center" matListAvatar style="width: 6%; border-radius:0%; font-size: 1.5em; background: rgba(0, 247, 255, 0.158)">{{p?.Week}} </mat-icon>
+              <!-- <mat-icon matListAvatar>{{p?.Week}}</mat-icon> -->
+              <p matLine class="succs" *ngIf='p?.AdditionalNotes === "Success!"'  style="font-size: 1.4em;background-color:lightgreen;"> 
+                Task: {{p?.Task}} => Points: {{p?.HomeworkPoints}} => Notes: {{p?.AdditionalNotes}}    
+              </p>
+             
+              <p class="err" matLine *ngIf='p?.AdditionalNotes === "Bad syntax in code detected!"' style="background-color:lightcoral;font-size: 1.4em;"> 
+                Task: {{p?.Task}} => Points: {{p?.HomeworkPoints}} => Notes: {{p?.AdditionalNotes}}    
+              </p>
+              
+              <p class="err" matLine *ngIf='p?.AdditionalNotes === "Let me in!"' style="background-color:rgb(128, 208, 240);font-size: 1.4em;"> 
+                Task: {{p?.Task}} => Points: {{p?.LetMeInPoints}} => Notes: {{p?.AdditionalNotes}}    
+              </p>
+              <p matLine style="color:black;"><b>Created on: {{p.CreatedOn | date :'medium'}}</b> </p>
+             
+              <td-notification-count>
+                <div *ngIf='p?.AdditionalNotes === "Success!"'>
+                  <p>
+                    <i class="fas fa-check" style="color: lightgreen; font-size: 1.2em;"></i>
+                  </p>
+                </div> 
+                <div *ngIf='p?.AdditionalNotes === "Let me in!"'>
+                  <p>
+                    <i class="fas fa-check" style="color: lightgreen; font-size: 1.2em;"></i>
+                  </p>
+                </div> 
+                <div *ngIf='p?.AdditionalNotes === "Bad syntax in code detected!" '>
+                  <p>
+                    <i class="fas fa-close" style="color: rgb(245, 10, 10); font-size: 1.2em;"></i>
+                  </p>
+                </div> 
+              </td-notification-count>
+            </a>
+            <mat-divider [inset]="true"></mat-divider>
+        </div>
+      </mat-nav-list>
+</div>

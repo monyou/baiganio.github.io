@@ -1,0 +1,76 @@
+.card{    
+    background: rgb(19, 33, 37) url(../../../assets/images/banner/binary-globe.jpg) no-repeat 0 0;
+    background-size: auto auto;
+    background-size: cover;
+}
+.py-5{  
+    h3 {
+        font-size: 1.2em;
+    }
+    h2{
+        font-weight: bold;
+    }
+
+    #clock {
+        text-align: center;
+        width: 100%;
+        border: none;
+        padding: 5px;
+        margin: 5px;
+        color: black;
+        background-color: transparent;
+    }
+    
+    .links {
+        // background-color: rgba(115, 171, 223, 0.233);
+        img {
+            width: 60px;
+            margin:0px 20px;
+            padding: 10px;
+        }
+    
+        img:hover {
+            background-color: rgba(61, 158, 238, 0.507);
+        }
+    
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #footer-holder {
+        padding: 50px;
+
+        .links a{
+            margin-left: 10px;
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .card {
+        color: white;
+
+        #clock {
+            width: 88%; 
+            color: black;           
+            font-size: 0.4em;
+            background-color: rgba(214, 223, 231, 0.897);
+        }
+
+        .links {
+            background-color:transparent;        
+            img {
+                width: 45px;  
+                margin: 10px; 
+                // background-color: rgba(214, 223, 231, 0.295);
+                background-color: rgba(214, 223, 231, 0.74);
+            }
+        }
+
+        #all-rights, #copy-symb{
+            font-size: 1.2em;
+        }
+    }
+}

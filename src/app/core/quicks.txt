@@ -1,0 +1,27 @@
+
+                <!--Accordion wrapper-->
+                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                    <!-- Accordion card -->
+                    <div class="card">        
+                        <!-- Card header -->
+                        <div class="card-header" role="tab" id="headingOne1">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                            <p class="mb-0">
+                                Will see...   <i class="fa fa-angle-down rotate-icon"></i>
+                            </p>
+                            </a>
+                        </div>        
+                        <!-- Card body -->
+                        <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                            <div class="card-body">
+                              
+                                <a *ngFor='let s of activeSubscriptions' class="dropdown-item waves-effect" routerLink="/settings/dashboard/{{s['subscription_type']}}-dash"
+                                    [queryParams]="{ qp: s.id + '--' + user?.id }">{{s['subscription_type']}} Dashboard
+                                </a>
+                                
+                            </div>
+                        </div>        
+                    </div>
+                    <!-- Accordion card -->
+                </div>
+                <!-- Accordion wrapper -->

@@ -1,0 +1,37 @@
+<div class="container-fluid text-center"> 
+  <h3>Roslyn C# Code Syntax Checker</h3>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Test area:</h4>
+      <div class="md-form">
+        <textarea [(ngModel)]="codeForTest" #code type="text" id="textareaCode" class="md-textarea form-control validate" rows="10"></textarea>
+        <label for="textareaCode">Test your raw code here:</label>
+        <br>
+        <button class="btn btn-blue btn-rounded btn-lg btn-block" (click)="testCode()" [disabled]='code.value == ""'>Test</button>
+      
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Result:</h4>
+      <div>
+      <div class="alert" *ngIf="notcompiled">
+        <div *ngFor="let err of notcompMsg">
+          <p>{{err.message}}</p>
+          <p>Line {{err.lineSpan}}</p>
+          <p>Character {{err.characterSpan}}</p>
+        </div>
+      </div>
+      <div  *ngIf="compiled"> 
+        <h1>Stage 1. Compiling</h1>
+        <h5>
+            {{succMsg}}
+        </h5>
+        <hr>
+        <br>
+        <h1>Stage 2. Calculating</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

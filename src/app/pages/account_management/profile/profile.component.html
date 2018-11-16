@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="row">
+        <div class="col-12 col-center text-center">
+            <h2>Profile Info</h2>
+            <hr>
+            <div class="row">
+                <div class="col-7 col-sm-8">
+                    <div id="contentLeft">
+                        <br>
+                        Should have some additional info
+                        <br>
+                    </div>
+                </div>
+                <div class="col-5 col-sm-4">
+                    <div id="contentRight">
+                        <h4>Profile picture</h4>
+                        <hr>
+                        <div class="thumbnail">
+                            <img class="profileImg" [src]='profileImgSrc' alt="Profile picture">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="row">
+    <div class="col-xs-12 col-center text-center">
+        <h1 *ngIf="!successMessage && !errorMessage">Please wait...</h1>
+        <h1 *ngIf="successMessage">{{successMessage}}</h1>
+        <h1 *ngIf="errorMessage">{{errorMessage}}</h1>
+        <div  *ngIf="successMessage"> 
+          <br>    
+          <h1>
+              Thank you for confirming your link.<br>
+              You are subscribed!
+          </h1>
+          <br>
+          <br>
+          <button mat-raised-button color="primary" routerLink='/settings/subscriptions'>
+              Go to Subscriptions
+          </button>
+          <br>
+        </div>
+    </div>
+  </div>
+</div>

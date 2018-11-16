@@ -1,0 +1,18 @@
+.alert {
+    background: rgb(231, 9, 9);
+    padding: 7px;
+    font-size: 2em;
+    color:whitesmoke;
+    display: inline-block;
+    animation: 2s alertAnimation forward;
+}
+h5{
+    background: rgb(9, 231, 39);
+    padding: 7px;
+    color:whitesmoke;
+    display: inline-block;
+    animation: 2s alertAnimation forward;
+}
+p {
+    font-size: 0.6em;
+}

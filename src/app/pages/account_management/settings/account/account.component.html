@@ -1,0 +1,111 @@
+<div class="content">
+  <h2>Account</h2>
+  <hr>
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-md-8 mb-4 text-center">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h3>Additional Info</h3>
+          <hr>
+          <form ngNativeValidate #infoForm='ngForm'>
+            <div style="text-align: center;">
+              <mat-form-field>
+                  <input matInput [ngModel]="user?.first_name" (ngModelChange)="user.first_name = $event" type="text" placeholder="First name" name="firstName">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput [ngModel]="user?.last_name" (ngModelChange)="user.last_name = $event" type="text" placeholder="Last name" name="lastName">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput [ngModel]="user?.username" (ngModelChange)="user.username = $event" type="text" placeholder="Username" name="username">
+              </mat-form-field>
+              <br>
+            </div>
+          </form>   
+        </div>
+        <div class="col-md-6 mb-4">  
+          <h3>Profile picture</h3>
+          <div class="thumb-holder">
+              <img class="profileImg img-fluid img-thumbnail" [src]='profileImgSrc' alt="Profile picture">
+              <input type="file" #imgInput style="display: none" name="profilePicture" (change)="onFileSelected($event, infoForm)" accept="image/*">
+              <button mat-stroked-button (click)='imgInput.click()'>Change picture</button>
+          </div> 
+        </div>
+        <div class="col-md-12 mb-4">
+          <br>
+            <div class="md-form" style="width: 80%; margin: 0 auto;">
+              <input type="text" id="addInfoInput" class="form-control">
+              <label for="addInfoInput">Address or something else...</label>
+            </div>
+            <br>
+            <!-- <div class="md-form" style="width: 80%; margin: 0 auto;">
+              <input type="text" id="addInfoInput2" class="form-control">
+              <label for="addInfoInput2">Address or something else2...</label>
+            </div> -->
+        </div>  
+      </div>
+      <h1 class="done" *ngIf='notificationFlagUpdate; else btnUpdate'>Profile updated successfuly!</h1>
+      <ng-template #btnUpdate>
+          <button mat-raised-button color="primary" (click)='updateProfile(infoForm)' style="width: 95%; margin: 0 auto;" [disabled]='infoForm.pristine'>Update profile</button>
+      </ng-template>  
+     <hr>
+    </div>
+    <!--Grid column-->
+  
+    <!--Grid column-->
+    <div class="col-md-4 mb-4 text-center">
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <h3>Email</h3>
+          <hr>
+          <form ngNativeValidate #changeEmailForm='ngForm'>
+            <mat-form-field>
+              <input matInput id="emailInput" [(ngModel)]='newEmail' type="email" placeholder="{{user?.email}}" name="changeEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </mat-form-field>
+            <br>
+          </form>
+          <h1 class="done" *ngIf='notificationFlagEmail; else btnChangeEmail'>Email updated successfuly!</h1>
+          <ng-template #btnChangeEmail>
+            <button mat-raised-button color="primary" [disabled]='changeEmailForm.invalid' (click)='changeEmail(changeEmailForm)' style="width: 95%; margin: 0 auto;">
+              Change email
+            </button>
+          </ng-template>
+          <hr>
+        </div>
+        <div class="col-md-12 mb-4">
+            <h3>Password</h3>
+            <hr>
+            <form ngNativeValidate #changePassForm='ngForm'>
+              <mat-form-field>
+                <input matInput [(ngModel)]='newPassword' type="password" placeholder="New password" name="newPass" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput [(ngModel)]='confirmedPassword' type="password" placeholder="Confirm new password" name="confPass" required>
+              </mat-form-field>
+              <br>
+              <div *ngIf="errorMsg != ''" class="alert alert-danger">
+                  {{ errorMsg }}
+                  <br>
+              </div>
+            </form>
+            <br>
+            <h1 class="done" *ngIf='notificationFlagPass; else btnPass'>Password updated successfuly!</h1>
+            <ng-template #btnPass>
+              <button mat-raised-button color="primary" [disabled]='changePassForm.invalid' (click)='updatePassword(changePassForm)'
+              style="width: 95%; margin: 0 auto;">Update password</button>
+            </ng-template>
+            <hr>
+        </div>
+      </div>
+        
+    </div>
+    <!--Grid column-->
+  
+  </div>
+  <!--Grid row-->
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

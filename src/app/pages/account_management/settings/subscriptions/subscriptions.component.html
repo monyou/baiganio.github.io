@@ -1,0 +1,145 @@
+
+<div class="content">
+    <h2>Subscriptions</h2>
+    <hr>
+    <div class="dim" *ngIf='notificationRequest'>
+        <span class="msg">
+            Please check your email for confirmation request link!
+        </span>
+    </div>
+    <!-- Card -->
+    <div class="card-deck">
+        <div class="" *ngFor='let s of subscriptions'>
+            <!--News card-->
+            <div class="card text-center hoverable">
+                <div class="card-body">
+                    <input type="text" #id style="display: none" value="{{ s.id }}">  
+                    <!--Grid row-->
+                    <div class="row animated fadeInDown">
+                        <!--Grid column-->
+                        <div>
+                            <!--Featured image-->
+                            <div class="card card-cascade">
+                                <div class="view view-cascade overlay">
+                                    <img src='{{ s.image }}' class="img-fluid" alt="Sample image">
+                                    <!--Title-->
+                                    <h1 class="card-title">
+                                        <span 
+                                            id="subscReqStatus" 
+                                            style="color: lightgreen; font-size: 0.7em;">
+                                        </span> 
+                                        {{ s.subscription_type }}
+                                    </h1>
+                                    <p id="statusHolder">Status: <br> <span id="status">{{getSubscrStatus(s.users)}}</span></p>
+                                    <!-- Link -->
+                                    <br>
+                                    <p *ngIf='totalUsers(s.users) > 0'>
+                                        Active students =
+                                        <span class="badge badge-primary"> {{totalUsersInSubscr}}</span>
+                                    </p>
+                                    <br>
+                                    <div *ngIf='false; else defaultBtnHolder'>
+                                            <div style="text-align: center">
+                                                <h1>
+                                                    <i 
+                                                        class="fab fa-rocketchat"
+                                                        data-toggle="modal" data-target="#chatModalCenter">
+                                                    </i>
+                                                </h1>
+                                            </div>
+                                    </div>                                    
+                                    <!-- <button 
+                                        type="button" 
+                                        class="btn btn-outline-info waves-effect" 
+                                        data-toggle="modal" 
+                                        data-target=".modalQuickView{{i+1}}" (click)="frame.show()">
+                                        Details
+                                    </button> -->
+                                    <ng-template #defaultBtnHolder>  
+                                        <button 
+                                            #disabledBtn 
+                                            mat-raised-button 
+                                            color="primary"
+                                            disabled
+                                            *ngIf = '!s.is_active; else sendReqBtnHolder'>
+                                            Subscription currently unavailable!
+                                        </button>
+                                    </ng-template>
+                                    <ng-template #sendReqBtnHolder>
+                                        <button 
+                                            #sendReqBtn 
+                                            mat-raised-button 
+                                            color="primary"
+                                            (click)='sendRequest(id.value, sendReqBtn)' 
+                                            *ngIf = 'hasPendingRequest(s.users, sendReqBtn)'>
+                                            Send request
+                                        </button>  
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+        
+                        <!--Grid column-->
+                        <!-- <div class="col-md-7 text-left ml-3 mt-3">
+                            <br>
+                            <ul class="list-group" style="font-size: 1em;">
+                                <li class="list-group-item justify-content-between align-items-center">
+                                    <span class="badge badge-primary">14 </span> 
+                                    Users liked this
+                                </li>
+                                <li class="list-group-item justify-content-between align-items-center">
+                                    <span class="badge badge-primary">{{totalUsers(s.users)}} </span>
+                                    Active students                    
+                                </li>
+                                <li class="list-group-item justify-content-between align-items-center">
+                                    <span class="badge badge-primary">3 </span>
+                                    Available courses
+                                </li>
+                                <li class="list-group-item justify-content-between align-items-center">
+                                    Expired on 
+                                    <span class="badge badge-primary">{{ s.expired_on | date:'longDate' }}</span>
+                                </li>
+                            </ul>
+                            <br>
+                        </div> -->
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+            </div>
+            <!--News card-->
+        </div>
+    </div>
+<div> 
+<!-- <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading> -->
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="chatModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal --
+        <div class="modal-dialog modal-dialog-centered" role="document">
+    
+    
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 
+                        class="modal-title" 
+                        id="exampleModalLongTitle">
+                        Benefit from our awesome chat functionality 
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ask, answer & share content with other active students...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Go to chat</button>
+                </div>
+            </div>
+        </div>
+</div> -->

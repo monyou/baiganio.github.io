@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-12 mb-4 animated fadeInLeftBig">
+    <h2>
+        Local account
+    </h2>
+      <!-- START LOGIN CONTENT -->
+      <section id="viewLogin">
+          <hr>
+          <br>
+          <!-- START FORM -->
+          <div class="login-form-1"  >
+            <div id="login-form" class="text-left">
+              <div class="main-login-form">
+                <form [formGroup]="reactiveForm" (ngSubmit)="sendLoginRequest(reactiveForm.value)">
+                  <div class="alert" *ngIf="loginFail">
+                    {{loginAlert}}
+                </div>
+                  <div class="form-container">  
+                    <!--Email-->
+                    <div class="alert" *ngIf="!reactiveForm.controls['email'].valid && reactiveForm.controls['email'].touched">
+                      {{formAlert}}
+                  </div>
+                  <div class="form-group">
+                    <input type="email" placeholder="Email" formControlName="email">
+                  </div>
+        
+                    <!--Password-->
+                    <div class="alert" *ngIf="!reactiveForm.controls['password'].valid && reactiveForm.controls['password'].touched">
+                        {{formAlert}}
+                    </div>
+                    <div class="form-group">
+                      <input type="password"  placeholder="Password" formControlName="password">
+                    </div>
+      
+                    <!--Button GO-->
+                    <div class="form-group">
+                      <input type="submit" class="login-button" value="GO" [disabled]="!reactiveForm.valid"/>
+                    </div>
+                    <i class="fa fa-gea"></i>
+                    <div class="custom-control custom-checkbox">
+                      <input 
+                        type="checkbox" 
+                        class="custom-control-input" 
+                        id="rememberMe" 
+                        [disabled]="!reactiveForm.valid"
+                        (change)='rememberMeChangeStates()'>
+                      <label class="custom-control-label" for="rememberMe">Remember me?</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- END FORM -->
+          <br>
+          <br>
+          <br>
+      </section>
+  </div>
+</div>
+<hr>
+<div class="row animated fadeInDown">
+  <div class="col-md-12 mb-4 text-center">
+    <button class="btn btn-outline-info waves-effect" routerLink="/forgotten-password">Forgot your password?</button>
+  </div>
+  <!-- <div class="col-md-12 mb-4 text-center">
+    <button class="btn btn-outline-info waves-effect" routerLink="/another-service">Use another service to log in</button>
+  </div> -->
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>

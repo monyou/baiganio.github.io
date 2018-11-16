@@ -1,0 +1,75 @@
+.side-nav {
+    font-size: 1em;
+    position: fixed;
+    width: 255px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100%;
+    height: -webkit-calc(100%+ 60px);
+    height: calc(100%+ 60px);
+    height: -moz-calc(100%);
+    color: #d8d8d8;
+    background-color: rgb(44, 47, 52);
+    padding: 0;
+    z-index: 1030;
+    overflow: auto;
+
+    .nav-link{
+        width: 100%;
+        color: white;
+        transition: 0.3s;
+        padding-left: 30px;
+
+        &:hover, &:visited {
+            background-color: rgba(37,207,207,.8);
+        }
+    }
+}
+#mainDropdownMenu, #settingsDropdownMenu, #subscriptionsDropdownMenu {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-color: rgb(40, 43, 48);
+    top: -8px;
+    left: 0;
+    word-wrap: break-word;
+
+    a {
+        color: white;
+        padding-left: 45px;
+        white-space: pre-line;
+        
+        &:hover, &:visited, &:focus {
+            background-color: rgba(37,207,207,.8);
+        }
+    }
+
+    #settingsDropdownMenu {
+        background-color: rgb(36, 39, 44);
+
+        a {
+            padding-left: 65px;
+        }
+    }
+
+    #subscriptionsDropdownMenu {
+        background-color: rgb(32, 35, 40);
+
+        a {
+            padding-left: 85px;
+            font-size: 0.85em;
+        }
+    }
+}
+.myCustomDivider {
+    height: 50px;
+    margin: 15px 0;
+    background: transparent url(../../../assets/images/divide_lines/divide_line3w.png) center / 100% 100% no-repeat scroll;
+}
+
+@media only screen and (min-width: 700px) {
+    .side-nav {
+        width: 350px;
+    }
+}

@@ -1,0 +1,118 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* You can add global styles to this file, and also import other style files */
+@font-face { font-family: "Alsandra"; src: url("./assets/fonts/alsandra.ttf"); }
+@font-face { font-family: "BuxtonSketch"; src: url("./assets/fonts/BuxtonSketch.ttf"); }
+@font-face { font-family: "Guildof"; src: url("./assets/fonts/guildof.ttf"); }
+@font-face { font-family: "Lobster"; src: url("./assets/fonts/Lobster.otf"); }
+@font-face { font-family: "Qtarabianregular"; src: url("./assets/fonts/qtarabianregular.ttf"); }
+@font-face { font-family: "TheMonkiesAteMySoul"; src: url("./assets/fonts/TheMonkiesAteMySoul.ttf"); }
+@font-face { font-family: "GaramondRegular"; src: url("./assets/fonts/eb-garamond/EBGaramond08-Regular.ttf"); }
+@font-face { font-family: "DancingOnTheRooftop"; src: url("./assets/fonts/KGDancingOnTheRooftop.ttf"); }
+
+.Alsandra{
+    font-family: Alsandra;
+}
+.BuxtonSketch{
+    font-family: BuxtonSketch;
+}
+.Guildof{
+    font-family: Guildof;
+}
+.Lobster{
+    font-family: Lobster;
+}
+.Qtarabianregular{
+    font-family: Qtarabianregular;
+}
+.TheMonkiesAteMySoul{
+    font-family: TheMonkiesAteMySoul;
+}
+.GaramondRegular{
+    font-family: Garamond;
+}
+.DancingOnTheRooftop{
+    font-family: DancingOnTheRooftop;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+mat-tab-body-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+// Custom toast messages error,info,success 
+%toast-msg-content {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-shadow: 0 0 50px black;
+    font-weight: bold;
+    color: white;
+    border-radius: 2px;
+}
+.toast-msg {
+    position: fixed;
+    top: 5vh;
+    left: 34vw;
+    width: 34vw;
+    display: block;
+    z-index: 999999;
+    border-radius: 2px;
+    box-shadow: 3 3 30px black;
+    opacity: 0.8;
+
+    .error {
+        @extend %toast-msg-content;
+        background-color: #ff3547;
+    }
+
+    .info {
+        @extend %toast-msg-content;
+        background-color: #33b5e5;
+    }
+
+    .success {
+        @extend %toast-msg-content;
+        background-color: #00c851;
+    }
+}
+
+.col-center {
+    float: none;
+    margin: 0 auto;
+}
+
+.initUsers{font-family:'GaramondRegular'; font-size:2.0em;}
+
+@keyframes PopUp {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.3; transform: scale(2,2);}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.8; transform: scale(1,1);}
+    100% {opacity: 1;}
+}
+
+@keyframes alertAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    %toast-msg-content {
+        width: 90vw;
+    }
+    .toast-msg {
+        left: 5vw;
+    }
+}

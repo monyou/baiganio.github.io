@@ -1,0 +1,174 @@
+h2{
+    font-size: 3em;
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+#viewRegister {
+    width: 40%;
+    margin: 0 auto;
+
+    .register-form-1{
+        width: 100%;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+    
+        .form-control {
+            color: #999999;
+        }
+    
+        .form-group {
+            margin-bottom: 0;
+            border-bottom: 2px solid #efefef;
+            padding-right: 20px;
+            position: relative;
+    
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        .alert {
+            background: rgb(231, 9, 9);
+            padding: 7px;
+            font-size: 2em;
+            color:whitesmoke;
+            display: inline-block;
+            animation: 2s alertAnimation forward;
+        }
+
+        .register-button {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            background: #f7f3f3;
+            color: black;
+            font-size: 2.4em;
+            padding: 10px 0;
+            width: 130px;
+            height: 130px;
+            margin-top: -45px;
+            border: 5px solid #efefef;
+            border-radius: 50%;
+            -moz-transition: all ease-in-out 500ms;
+            -o-transition: all ease-in-out 500ms;
+            -webkit-transition: all ease-in-out 500ms;
+            transition: all ease-in-out 500ms;
+        
+            &:enabled {
+                color: whitesmoke;
+                background:rgb(52, 199, 243);
+            }
+        
+            &:enabled:hover {
+                color: black;
+                cursor: pointer;
+                background:rgb(20, 238, 20);
+                -moz-transform: rotate(720deg);
+                -ms-transform: rotate(720deg);
+                -o-transform: rotate(720deg);
+                -webkit-transform: rotate(720deg);
+                transform: rotate(720deg);
+            }
+        }
+
+        .custom-checkbox {
+            font-size: 1.3em;
+            color: #999999;
+            transition: 0.5s all;
+            margin-left: 10px;
+        }
+    }
+    
+    input {
+        border: none;
+
+        &:focus {
+            outline:none;
+        }
+
+        &[type='email'], &[type="password"] {
+            border: none;
+            width: 100%;
+            font-size: 2em;
+            padding: 5px;
+            margin: 5px;
+            color: black;
+            background-color: transparent;
+        }
+
+        &[type="text"] {
+            border: none;
+            padding: 5px;
+            margin: 5px;
+            color: black;
+            background-color: transparent;
+        }
+
+        &[type="text"] {
+            padding: 5px;
+            margin: 10px;
+        }
+    }
+}
+.custom-checkbox {
+    font-size: 1.3em;
+    color: #999999;
+    transition: 0.5s all;
+    margin-left: 10px;
+}
+.btn-outline-info{
+    font-size: 1em; 
+}
+@media only screen and (max-width: 576px) {
+    h2{
+        font-size: 2em;
+    }
+    #viewRegister {
+        width: 80%;
+
+        h3 {
+            font-size: 20px;
+        }
+
+        .custom-control-label {
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
+        
+        .register-form-1 {
+            .register-button {
+                margin-top: -35px;
+                width: 100px;
+                height: 100px;
+            }
+            .custom-checkbox {
+                font-size: 0.8em;
+            }
+
+            .alert {
+                font-size: 1em;
+            }
+        }
+
+        input {
+            border: none;
+    
+            &:focus {
+                outline: none;
+            }
+    
+            &[type='email'], &[type="password"] {
+                font-size: 1.1em;
+            }
+        }
+
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    #viewRegister {
+        width: 80%;
+    }
+}

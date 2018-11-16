@@ -1,0 +1,35 @@
+
+<p class="h2 text-center mb-4">Student Dashboard</p>
+<mat-tab-group [selectedIndex]="activeTab">   
+    <mat-tab label="Student Info">
+        <ng-template matTabContent>
+            <app-student-info></app-student-info>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Courses & Scores">
+        <ng-template matTabContent>
+            <app-courses-and-scores></app-courses-and-scores>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="In Class">
+        <ng-template matTabContent>
+            <app-in-class></app-in-class>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Homeworks">
+        <ng-template matTabContent>
+        <app-homeworks></app-homeworks>
+        </ng-template>
+    </mat-tab>
+    <!-- <mat-tab label="Exams">
+        <ng-template matTabContent>
+            Exams Content
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Activities">
+        <ng-template matTabContent>
+            Activities Content
+        </ng-template>
+    </mat-tab> -->
+</mat-tab-group>
+<br><br>

@@ -1,0 +1,120 @@
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+h3 {
+    font-size: 2.5em;
+    text-align: left;
+}
+h4 {
+    font-size: 1.5em;
+    margin-left: 10px;
+    color: #337ab7;
+}
+p {
+    margin-left: 20px;
+    margin-right: 20px;
+    word-wrap: break-word;
+    font-size: 1.2em;
+}
+
+#statusHolder{
+    background: #62cbf527;
+    font-size:1.3em; 
+    text-align: center;
+}
+
+.thumbnail {
+    // width: 45%;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    text-align: left;
+    margin: 0px 0px 20px 20px;
+
+    button {
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #feedback {
+        float: right;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        vertical-align: middle;
+    
+        span {
+            float: left;
+            color: #337ab7;
+        }
+    
+        p {
+            margin: 0 0 0 5px !important;
+            float: left;
+        }
+    }
+}
+.dim
+{
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:100 !important;
+    background-color:black; 
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+
+    .msg {
+        display:inline-block;
+        position: absolute;
+        font-size: 2.6em;
+        text-align: center;
+        color: whitesmoke;
+        transition: 0.3s all;
+        animation: PopUp 1s;
+        text-shadow: 0 0 100px white;
+        height: 100px;
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0;
+        margin: auto;
+    }
+}
+.mat-primary{
+    width: 100%;
+}
+@media only screen and (max-width: 576px) {
+    h2 {
+        font-size: 2.2em;
+    }
+    h3 {
+        font-size: 2em;
+        text-align: center;
+    }
+    .thumbnail {
+        float: none;
+        margin: 20px auto;
+        width: 100%;
+
+        button {
+            float: none;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #feedback {
+            display: block;
+            padding: 0;
+            margin: 10px auto;
+            text-align: center;
+        }
+    }
+}

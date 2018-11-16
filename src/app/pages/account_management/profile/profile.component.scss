@@ -1,0 +1,25 @@
+h2 {
+    font-size: 3em;
+}
+#contentLeft{
+    text-align: left;
+    font-size: 1.5em;
+
+    #textareaCode {
+        overflow: auto;
+    }
+}
+#contentRight {
+    .thumbnail {
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+    
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 576px) {
+}

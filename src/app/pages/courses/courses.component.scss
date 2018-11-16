@@ -1,0 +1,66 @@
+// Variables
+%hBasics {
+    margin: 0;
+}
+
+.modal {
+    overflow: auto;
+}
+h1{
+    font-family: DancingOnTheRooftop;
+}
+h2 {
+    @extend %hBasics;
+}
+h4 {
+    @extend %hBasics;
+    margin-bottom: 10px;
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+}
+span{
+    font-size: 1.5em;
+}
+.btn{
+    font-size: 1.2em;
+}
+.dim
+{
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:100 !important;
+    background-color:black; 
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+    animation-delay: 2s;
+    .msg {
+        display:inline-block;
+        position: absolute;
+        font-size: 2.6em;
+        text-align: center;
+        color: whitesmoke;
+        transition: 0.3s all;
+        animation: PopUp 1s;
+        text-shadow: 0 0 100px white;
+        height: 100px;
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 591px) {
+    h4 {
+        font-size: 1em;
+        b{
+            font-size: 0.8em;
+        }
+    }
+}

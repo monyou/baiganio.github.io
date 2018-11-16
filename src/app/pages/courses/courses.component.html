@@ -1,0 +1,216 @@
+<div class="content">
+    <div class="animated fadeInUp text-center" *ngIf='flagEnrollSuccess; else courseInfo'>
+        <img src="../../../../../../assets/images/Checkmark.png" style="width:20%">
+        <br>
+        <h1>Congrats! <br> You are enrolled 4 the course  ;) <br> Reloading page, please wait...</h1>
+    </div>
+    <ng-template #courseInfo>
+        <div *ngFor='let c of courses; index as i'>
+            <!--News card-->
+            <div front class="card mb-3 text-center hoverable">
+                <div class="card-body" style="background: snow">
+                    <!--Grid row-->
+                    <div class="row animated fadeInDown">
+
+                        <!--Grid column-->
+                        <div class="col-md-4 offset-md-1 mx-3 my-3">
+                            <!--Featured image-->
+                            <div class="card card-cascade">
+                                <div class="view view-cascade overlay">
+                                    <img src='{{ c.Image2Base64 }}' class="img-thumbnail img-fluid" alt="Sample image">
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-7 text-left ml-3 mt-3">
+                            <!--Excerpt-->
+                            <h1>{{ c.Name }}</h1>
+                            <h4 class="mb-4" [innerHTML]="c.Description">
+                                <!-- <strong>{{ c.Description }}</strong> -->
+                            </h4>
+                            <h4>
+                            <b>Start date: <i class="fa fa-calendar-check-o"></i> {{ c.StartDate | date:'longDate' }}</b>
+                            </h4>
+                            <h4>
+                            <b>End date: <i class="fa fa-calendar-check-o"></i> {{ c.EndDate | date:'longDate' }}</b> 
+                            </h4>
+                            <hr style="width: 60%; color: blue;">                            
+                            
+                            <div *ngIf='c.IsActive; else nonActiveHolder'>
+                                <div class="text-left">
+                                    <!-- <button 
+                                        type="button" 
+                                        class="btn btn-primary btn-lg" 
+                                        data-toggle="modal" 
+                                        data-target=".modalQuickView{{i+1}}" (click)="frame.show()">
+                                        Details
+                                    </button> -->
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-info" >
+                                        <b><em>Total students: {{c.TotalUsers}}</em></b>
+                                    </button>
+                                    <button  
+                                        type="button"                        
+                                        class="btn btn-outline-success" 
+                                        (click)='enroll(c.Id)' >
+                                        <b><em>Enroll 4 Course</em></b>
+                                    </button>
+                                    <button *ngIf='student?.subscriptionId' class="btn btn-outline-secondary" routerLink='/settings/dashboard'>
+                                        Go To Dashboard <i class="fa fa-paper-plane-o ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>  
+                            <ng-template #nonActiveHolder>                                      
+                                <div class="text-left">
+                                    <!-- <button 
+                                        type="button" 
+                                        class="btn btn-primary btn-lg" 
+                                        data-toggle="modal" 
+                                        data-target=".modalQuickView{{i+1}}" (click)="frame.show()">
+                                        Details
+                                    </button> -->
+                                </div>
+                                <div *ngIf='c.IsActive'>
+                                    <div class="text-center">
+                                        <button class="btn btn-outline-info waves-effect">
+                                            <b><em>Total students: {{c.TotalUsers}}</em></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </ng-template>                            
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>     
+            </div>
+            <!--News card-->
+            <!-- Modal: modalQuickView -->
+            <div mdbModal  #frame="mdbModal" class="modal fade modalQuickView{{i+1}}" tabindex="-1" role="dialog" aria-labelledby="exampleModal{{i+1}}" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                            <div class="col-lg-12">
+                                <button class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()" style="position: static; z-index: 9999">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>                    
+                            <div class="col-lg-5">
+                                <!--Featured image-->
+                            <div class="view overlay">
+                                <img src='{{ c.Image2Base64 }}' class="img-fluid" alt="Sample image">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-7">                    
+                                <h1 class="h1-responsive">
+                                <strong>{{ c.Name }}</strong>
+                                </h1>
+                    
+                                <!--Accordion wrapper-->
+                                <div id="accordion{{i+1}}" role="tablist" aria-multiselectable="true">
+                    
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                    
+                                        <!-- Card header -->
+                                        <div class="card-header" role="tab" id="headingOne{{i+1}}">
+                                            <a data-toggle="collapse" href="#collapseOne{{i+1}}" role="button" aria-expanded="true" aria-controls="collapseOne{{i+1}}">
+                                                <h5 class="mb-0">
+                                                    Description <i class="fa fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                    
+                                        <!-- Card body -->
+                                        <div id="collapseOne{{i+1}}" class="collapse show" role="tabpanel">
+                                            <div class="card-body">
+                                                {{c.Description}}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <!-- Accordion card -->
+                    
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                    
+                                        <!-- Card header -->
+                                        <div class="card-header" role="tab" id="headingTwo{{i+1}}">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseTwo{{i+1}}" role="button" aria-expanded="false" aria-controls="collapseTwo{{i+1}}">
+                                                <h5 class="mb-0">
+                                                    Details <i class="fa fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                    
+                                        <!-- Card body -->
+                                        <div id="collapseTwo{{i+1}}" class="collapse" role="tabpanel">
+                                            <div class="card-body">
+                                                Details {{ i+1 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Accordion card -->
+                    
+                                    <!-- Accordion card -->
+                                    <div class="card">
+                    
+                                        <!-- Card header -->
+                                        <div class="card-header" role="tab" id="headingThree{{i+1}}">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseThree{{i+1}}" role="button" aria-expanded="false" aria-controls="collapseThree{{i+1}}">
+                                                <h5 class="mb-0">
+                                                    Shipping <i class="fa fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                    
+                                        <!-- Card body -->
+                                        <div id="collapseThree{{i+1}}" class="collapse" role="tabpanel">
+                                            <div class="card-body">
+                                                Shipping {{ i+1 }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Accordion card -->
+                                </div>
+                                <!--/.Accordion wrapper-->
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal: modalQuickView -->
+        </div>
+    </ng-template>
+</div>
+<!-- Template construction for toast message -->
+<div id="msgLogIn" class="toast-msg animated bounceIn d-none" aria-live="polite" role="alert">
+    <div class="error">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{msgLogIn}}
+    </div>
+</div>
+<div id="msgLogInUpdate" class="toast-msg animated bounceIn d-none" aria-live="polite" role="alert">
+    <div class="error">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{msgLogIn}}
+    </div>
+</div>
+<div id="msgIncomplete" class="toast-msg animated bounceIn d-none" aria-live="polite" role="alert">
+    <div class="error">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        Your should have active 'Student' subscription.
+        <br>
+         Go to your account settings & subscribe for one!
+    </div>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop: true }"></ngx-loading>
